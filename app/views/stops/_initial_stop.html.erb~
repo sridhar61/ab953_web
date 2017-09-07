@@ -1,6 +1,9 @@
-<h1>Stop</h1>
+<h3>Stop</h3>
 
-<form action="/action_page.php" class ="form-horizontal form-bordered">
+
+
+<%= form_tag initial_stop_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+  
                  
   <div class="form-group">
   
@@ -30,7 +33,7 @@
     <label class="col-md-3 control-label" for=""> Time of Stop</label>
    
     <div class="col-md-6">
-      <input type="text" name="firstname" value="Mickey" class="form-control">
+      <input type="text" name="firstname" value="" class="form-control">
     </div>
     
     
@@ -51,7 +54,7 @@
 
 
 
-<h1>Stop Type</h1>
+<h3>Stop Type</h3>
   
   <div class="form-group">
   
@@ -76,7 +79,7 @@
   
   
 
-<h1>Person Details</h1>
+<h3>Person Details</h3>
   
   
   <div class="form-group">
@@ -100,13 +103,13 @@
   </div>  
   
 
-<h1>Location</h1>
+<h3>Location</h3>
 
 
 
 
   <input type="submit" value="Submit" class="btn btn-primary pull-right">
   
-</form> 
+<% end %>
 
 

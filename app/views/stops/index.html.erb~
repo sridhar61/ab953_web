@@ -73,67 +73,17 @@
             </ul>
             <div class="tab-content">
 
-              <div id="edit" class="tab-pane active">
-                 
-                <form action="/action_page.php" class ="form-horizontal form-bordered">
-                 
-                  <div class="form-group">
-                  
-                    <label class="col-md-3 control-label" for=""> Agency ORI</label>
-                   
-                    <div class="col-md-6">
-                      <input type="text" name="firstname" value="Mickey" class="form-control">
-                    </div>
-                    
-                  </div>  
-                  
-                  
-                    
-                  <div class="form-group">
-                  
-                    <label class="col-md-3 control-label" for="">Date of Stop</label>
-                   
-                    <div class="col-md-6">
-                      <input type="text" name="firstname" value="Mickey" class="form-control">
-                    </div>
-                    
-                    
-                  </div>  
-                    
-                  <div class="form-group">
-                  
-                    <label class="col-md-3 control-label" for=""> Time of Stop</label>
-                   
-                    <div class="col-md-6">
-                      <input type="text" name="firstname" value="Mickey" class="form-control">
-                    </div>
-                    
-                    
-                  </div>  
-                    
-                  <div class="form-group">
-                  
-                    <label class="col-md-3 control-label" for=""> Duration of Stop</label>
-                   
-                    <div class="col-md-6">
-                      <input type="text" name="firstname" value="Mickey" class="form-control">
-                    </div>
-                    
-                    
-                  </div>  
-                  
-                  <input type="submit" value="Submit" class="btn btn-primary pull-right">
-                </form> 
-              
+              <div id="initial_stop" class="tab-pane active">
+                <%= render 'stops/initial_stop' %>
               </div>
               
-              <div id="address" class="tab-pane">
-                <%# render 'addresses/form' %>
+              <div id="stop_type" class="tab-pane">
+                <%# render 'stops/stop_type' %>
               </div>
-              <div id = "availability" class="tab-pane">
-                <%# render "profile_availability"%>
+              <div id = "person_details" class="tab-pane">
+                <%# render "stops/person_details"%>
               </div>
-              <div id="skills" class="tab-pane">
+              <div id="location" class="tab-pane">
                 <%# render 'interviewers/form' %>
               </div>
             </div>
