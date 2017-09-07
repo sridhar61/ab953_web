@@ -15,10 +15,18 @@ class StopsController < ApplicationController
   end
   
   def stop_type
+    call = '/data_validation.json'
+    url =   HTTParty.get("http://192.168.167.162:3000#{call}",
+      :headers => {'ContentType' => 'application/json'})
+    response = url.parsed_response  
     
   end
   
-  def personal_details
+  def person_details
+    call = '/data_validation.json'
+    url =   HTTParty.get("http://192.168.167.162:3000#{call}",
+      :headers => {'ContentType' => 'application/json'})
+    response = url.parsed_response 
   
   end
   

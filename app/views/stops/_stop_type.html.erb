@@ -1,0 +1,23 @@
+
+
+
+
+<h3>Stop Type</h3>
+<%= form_tag stop_type_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+  Type of Stop<br>
+  
+  
+  <input type="radio" name="gender" value="male"> Vehicle<br>
+  <input type="radio" name="gender" value="female"> Driver<br>
+  <input type="radio" name="gender" value="other"> Passenger <br>
+  <input type="radio" name="gender" value="male"> Bicycle<br>
+  <input type="radio" name="gender" value="female"> Non-vehicle/Pedestrian<br>
+  <input type="radio" name="gender" value="other"> Other
+  <br><br>
+  
+
+ 
+  <button type="button"> Save </button>
+  
+  
+<%end%>

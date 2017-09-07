@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :stops do
   	collection do
   	  get 'initial_stop'
+  	  get 'stop_type'
+  	  get 'person_details'
   	end
   end
 end

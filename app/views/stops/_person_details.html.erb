@@ -1,0 +1,61 @@
+
+<h2> Contact(s)</h2>
+
+<%= form_tag person_details_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+
+Contact:
+  <input type="number" name="quantity" min="1" max="100 "> <br>
+  <br>
+<form action="/action_page.php" method="get">
+  Preceived Race or ethencity:<br>
+  <select>
+  <option value="american_indian_or_alaska_native">American Indian or Alaska Nativeo</option>
+  <option value="asian">Asian</option>
+  <option value="black_or_african_american">Black or African American</option>
+  <option value="native_hawaiian_or_other_pacific_islander">Native Hawaiian or Other Pacific Islander</option>
+  <option value="White">White</option>
+  </select>
+ <br>
+ <br>
+
+
+
+Preceived Gender:<br>
+  <select>
+  <option value="male">Male</option>
+  <option value="female">Female</option>
+  </select>
+  <br>
+  <br>
+  <br>
+
+Preceived Age:<br>
+  <input type="number" name="quantity" min="1" max="100 "> <br>
+  <br>
+  
+ <input id="checkBox" type="checkbox"> Limited English Fluency or pronounced Accent<br>
+<br>
+
+
+Preceived Disability:<br>
+<select>
+  <option value="disability_blind_visually_impaired">Disability-Blind-VisuallyImpaired</option>   
+  <option value="disability_mental_health_condition">Disability-MentalHealthCondition</option>
+  <option value="disability_intellectual_developmental">Disability-Intellectual-Developmental</option>
+  <option value="disability_other">Disability-other</option>
+  <option value="disability_none">Disability-None</option>
+  <option value="k-12_hyperactivity_impulsive">K-12-Hyperactivity-Impulsive</option>
+</select>
+
+<br>
+<br>
+
+<input id="checkBox" type="checkbox"> Property Searched? <br>
+<br>
+<br>
+
+<button type="button">add contact</button> <br>
+<br>
+<br>
+  <input type="submit" value="Submit">
+<%end%>
