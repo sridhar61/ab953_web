@@ -1,3 +1,5 @@
+  require 'resque/server'
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -8,4 +10,14 @@ Rails.application.routes.draw do
   	  get 'person_details'
   	end
   end
+
+	
+
+	# Of course, you need to substitute your application name here, a block
+	# like this probably already exists.
+	Ab953Web::Application.routes.draw do
+	  mount Resque::Server.new, at: "/resque"
+	end
+
+
 end
