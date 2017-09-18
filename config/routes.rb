@@ -8,10 +8,14 @@ Rails.application.routes.draw do
   	  get 'initial_stop'
   	  get 'stop_type'
   	  get 'person_details'
+  	  get 'single_role'
+  	  get 'multiple_role'
   	end
   end
 
-	
+	get '/login' => 'sign_in#login'
+
+	post '/after_login' => "sign_in#after_login"
 
 	# Of course, you need to substitute your application name here, a block
 	# like this probably already exists.

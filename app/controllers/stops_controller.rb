@@ -11,18 +11,30 @@ class StopsController < ApplicationController
     #raise @queue.inspect
     #Resque::Job.create(select_queue(params), self, 5)
     if true 
-
       Resque.enqueue(SleeperWorker, 5)
+=begin       
       respond_to do |format|
         format.html { redirect_to stop_type_stops_path, notice: 'Snippet was successfully destroyed.' }
         format.json { head :no_content }
       end
+=end      
     else
     end  
   end
 
   def stop_type
 
+  end
+
+  def single_role
+    @cookies = params[:cookies]
+    @parsed_cookie = JSON.parse(@cookies)
+  end
+
+
+  def multiple_role
+    @cookies = params[:cookies]
+    @parsed_cookie = JSON.parse(@cookies)
   end
 
   def stop_type_submit

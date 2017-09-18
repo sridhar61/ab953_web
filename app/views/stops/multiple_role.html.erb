@@ -1,0 +1,31 @@
+
+<div class="container" style="background-color: red;">
+  <div class="jumbotron">
+    <h1>Hello Multiple role page</h1>
+
+    <%# raise @parsed_cookie["roles"].inspect %>
+   
+  
+  </div>
+
+
+
+  
+</div> <br/><br/><br/><br/>
+
+<div class="row offset3"> 
+
+ <div class="container">
+	<div class="col-md-8">
+		<%= select_tag "roles",  options_for_select(@parsed_cookie["roles"]) %>
+	</div>
+
+	<div class="col-md-4">
+
+		<input type="submit" value="Continue">
+
+	</div>
+
+</div>
+
+ </div>
