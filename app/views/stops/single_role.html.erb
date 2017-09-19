@@ -1,54 +1,88 @@
-
-
-
 <div class="container" >
-    <h3>Hello Single role page</h3>
-   
-  </div>
   
+  <div class="pull-right"><a href="/login" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-log-out"></span>Log out</a> </div>
+  <h3 style="color: brown;">Hello Single role user </h3>
+    <%# raise @parsed_cookie["roles"].inspect %>
+
+
+
+	<br/><br/>
+  
+	<div class="row offset3"> 
+
+		<div class="col-md-6 border-right">
+			<table>
+				<tr>
+					<td>
+						<label>ORI:</label>
+					</td>
+					<td>
+						PA10FD111D
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>User ID:</label>
+					</td>
+					<td>
+						U923701
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>User Email:</label>
+					</td>
+					<td>
+						Single_role_user@gmail.com
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>User Roles:</label>
+					</td>
+					<td>
+						Single
+					</td>
+				</tr>
+
+			</table>
+				
+		</div>
+
+		<div class="col-md-5 col-md-offset-1 "> 
+
+			
+						
+					</td>
+				</tr>
+			</table>	
+
+	  </div>
+
+	</div>
+
+	<div class="row" style="margin-top: 100px;">
+		
+		<div class="actions">
+		   <h4 style="color: black;">User Actions :</h4>
+		</div>
+
+	</div>	
 </div>
 
 
-<br/><br/><br/><br/>
+<style>
+	.border-right {
+    border-right: 1px solid black;
+	}
+</style>
 
-<div class="row "> 
+<script>
+	var cookies_list = [];
 
- <div class="container">
-	<div class="col-md-1">
-	</div>
+	$(document).ready(function(){	
+		cookies_list.push("Action: logged in as Single role user");
+		$('.actions').append(cookies_list[0]+ '<br/>');
+	});
 
-	<div class="col-md-8">
-
-		<input type="submit" value="Continue">
-
-	</div>
-
-	
- 
-
-<br/><br/><br/><br/>
-
-  <div class="jumbotron">
-  
-  <%= button_to "Logout", login_path, method: :get %>
-    
-  </div>
- 
-
-
-
-
-	
-
-
-
-
-
-</div>
-
- </div>
-
-
-
-
-  
+</script>

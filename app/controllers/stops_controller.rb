@@ -27,14 +27,14 @@ class StopsController < ApplicationController
   end
 
   def single_role
-    @cookies = params[:cookies]
-    @parsed_cookie = JSON.parse(@cookies)
+    #@cookies = params[:cookies]
+    #@parsed_cookie = JSON.parse(@cookies)
   end
 
 
   def multiple_role
-    @cookies = params[:cookies]
-    @parsed_cookie = JSON.parse(@cookies)
+    #@cookies = params[:cookies]
+    #@parsed_cookie = JSON.parse(@cookies)
   end
 
   def stop_type_submit

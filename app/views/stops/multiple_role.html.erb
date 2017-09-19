@@ -1,65 +1,147 @@
 <div class="container" >
   
-    <h3 style="color: blue;">Hello multiple role page</h3>
+  <div class="pull-right"><a href="/login" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-log-out"></span>Log out</a> </div>
+
+
+  <h3 style="color: brown;">Hello Multiple role user </h3>
     <%# raise @parsed_cookie["roles"].inspect %>
-   
-  </div>
+
+
+
+	<br/><br/>
   
+	<div class="row offset3"> 
+
+		<div class="col-md-6 border-right">
+			<table>
+				<tr>
+					<td>
+						<label>ORI:</label>
+					</td>
+					<td>
+						SD03200
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>User ID:</label>
+					</td>
+					<td>
+						U79345
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>User Email:</label>
+					</td>
+					<td>
+						Multiple_roles_user@gmail.com
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>User Roles:</label>
+					</td>
+					<td>
+						"DOJ View Only" ,"DOJ Application Administrator", ..
+					</td>
+				</tr>
+
+			</table>
+				
+		</div>
+
+		<div class="col-md-5 col-md-offset-1 "> 
+
+			
+						
+					</td>
+				</tr>
+			</table>	
+
+	  </div>
+
+
+	  <div class="col-md-5 col-md-offset-1">
+
+			<table>
+				<tr>
+					<td>
+						<label>Select user role : </label>
+					</td>
+					<td>						
+						<%= select_tag "roles",  options_for_select(["DOJ View Only","DOJ Application Administrator" ,"LEA Officer","LEA Proxy", "LEA Administrator", "LEA Error Resolution", "LEA View Only"]) %>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label></label>
+					</td>
+					<td>
+				
+					</td>
+				</tr>
+			</table>	
+
+	  </div>
+
+	</div>
+
+
+
+
+	<div class="row" style="margin-top: 100px;">
+		
+		<div class="actions">
+
+
+		   <h4 style="color: black;">User Actions :</h4>
+
+		   <p class="action_items"> </p>
+		
+		</div>
+
+	</div>	
+
+		</div>
 </div>
 
 
-<br/><br/><br/><br/>
-
-<div class="row offset3"> 
-
- <div class="container">
-	<div class="col-md-8">
-		<%= select_tag "roles",  options_for_select(@parsed_cookie["roles"]) %>
-	</div>
-
-	<div class="col-md-4">
-
-		<input type="submit" value="Continue">
-
-	</div>
-
-	
- 
-
-<br/><br/><br/><br/>
-
-  <div class="jumbotron">
-  
-  <%= button_to "Logout", login_path, method: :get %>
+<style>
+	.border-right {
+    border-right: 1px solid black;
+	}
+</style>
 
 
-    
-  </div>
- 
 
-
-</div>
-
- </div>
-
+<style>
+	.border-right {
+    border-right: 1px solid black;
+	}
+</style>
 
 <script>
-	var cookies_list = [];
+	
 
-	$(document).ready(function(){	
-		cookies_list.push("action: logged in as multiple user");
-		$('.jumbotron').append(cookies_list[0]);
+	$(document).one('ready', function(){	
+		$('.actions').append('Action: logged in as multiple role user');
 	});
 
 	$('#roles').on('change', function() { 
-		var a = "User selected role to : " + $('#roles').val();
+		var cookies_list = [];
+		var a = "User changed role to : " + $('#roles').val();
 		cookies_list.push(a);       
 
 		for (i = 0; i < cookies_list.length; i++) { 
- 		   $('.jumbotron').append(cookies_list[i]);
+ 		   $('.action_items').append(cookies_list[i] + '<br/>');
 		}
 	});
 </script>
+
+
+
+		
 
 
   

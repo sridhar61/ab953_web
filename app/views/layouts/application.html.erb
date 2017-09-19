@@ -21,80 +21,41 @@
 
   
 
-  <body>
-  
-  
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
     <div class="global-nav navbar navbar-inverse">
       <div class="navbar-inner">
 
-      
-      
-        <div>      
-            <a class="brand" href="/"><img src="/assets/doj-seal.png" alt="" height = "90px"></a>
-        </div>
+
+        <h1 class="text-center"> 
+        <a class="pull-left" href="#"> <img src="/assets/doj-seal.png" alt="" height = "90px">
+
+        </a><span class="m1-title">Welcome to AB953 Stop Data Collection</span></h1>
+              
+              
+                
       </div>
-      <h3 class="page-title"> </h3>
     </div>
 
-
-
-<h1 class="doj">
-<span id = "m1-title" >California AB953 Law Website</span>
-<br>
-<span class ="main-title">State of California Department of Justice</span>
-<span class ="nowrap-gray"> Office of the Attorney General</span>
-</h1>
-
-
-
-
-
-
-
-
-
-
-<style>
-
-body {
-
-background-color: lightgrey;
-padding: 10px;
-}
-
-
-.doj{
-text-align: center;
-  
-}
-#m1-title {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 20px;
-    color:#069;
-}
-
-
-.main-title {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 18px;
-    color:#069;
-}
-
-.nowrap-gray{
-  color: #898989; 
-  font-size: 18px;
-}
-
-
-
-</style>
-
-
-
-
-
-
     <%= yield %>
+    
+    <style>
+
+      body {
+        background-color: lightgrey;
+        padding: 10px;
+      }      
+
+      .m1-title {
+          font-family: "Times New Roman", Times, serif;
+          font-size: 30px;
+          margin-left: -10%;
+          color: white;
+      }
+
+    </style>
+
+
   </body>
 
 
