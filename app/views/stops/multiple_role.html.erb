@@ -1,17 +1,14 @@
-
-<div class="container" style="background-color: red;">
-  <div class="jumbotron">
-    <h1>Hello Multiple role page</h1>
-
+<div class="container" >
+  
+    <h3 style="color: blue;">Hello multiple role page</h3>
     <%# raise @parsed_cookie["roles"].inspect %>
    
-  
   </div>
-
-
-
   
-</div> <br/><br/><br/><br/>
+</div>
+
+
+<br/><br/><br/><br/>
 
 <div class="row offset3"> 
 
@@ -26,6 +23,43 @@
 
 	</div>
 
+	
+ 
+
+<br/><br/><br/><br/>
+
+  <div class="jumbotron">
+  
+  <%= button_to "Logout", login_path, method: :get %>
+
+
+    
+  </div>
+ 
+
+
 </div>
 
  </div>
+
+
+<script>
+	var cookies_list = [];
+
+	$(document).ready(function(){	
+		cookies_list.push("action: logged in as multiple user");
+		$('.jumbotron').append(cookies_list[0]);
+	});
+
+	$('#roles').on('change', function() { 
+		var a = "User selected role to : " + $('#roles').val();
+		cookies_list.push(a);       
+
+		for (i = 0; i < cookies_list.length; i++) { 
+ 		   $('.jumbotron').append(cookies_list[i]);
+		}
+	});
+</script>
+
+
+  
