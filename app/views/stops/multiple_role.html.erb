@@ -19,15 +19,15 @@
 						<label>ORI:</label>
 					</td>
 					<td>
-						SD03200
-					</td>
+						<p> SD03200 </p>
+ 					</td>
 				</tr>
 				<tr>
 					<td>
 						<label>User ID:</label>
 					</td>
 					<td>
-						U79345
+						<p> U79345 </p> 
 					</td>
 				</tr>
 				<tr>
@@ -35,7 +35,7 @@
 						<label>User Email:</label>
 					</td>
 					<td>
-						Multiple_roles_user@gmail.com
+						<p> Multiple_roles_user@gmail.com </p>
 					</td>
 				</tr>
 				<tr>
@@ -43,7 +43,16 @@
 						<label>User Roles:</label>
 					</td>
 					<td>
-						"DOJ View Only" ,"DOJ Application Administrator", ..
+						<p> "DOJ View Only" ,"DOJ Application Administrator", .. </p>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label>Default Roles:</label>
+					</td>
+					<td>
+						<p class="action_items"> </p>
 					</td>
 				</tr>
 
@@ -74,14 +83,7 @@
 						<%= select_tag "roles",  options_for_select(["DOJ View Only","DOJ Application Administrator" ,"LEA Officer","LEA Proxy", "LEA Administrator", "LEA Error Resolution", "LEA View Only"])%>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<label></label>
-					</td>
-					<td>
 				
-					</td>
-				</tr>
 			</table>	
 
 	  </div>
@@ -98,7 +100,7 @@
 
 		   <h4 style="color: black;">User Actions :</h4>
 
-		   <p class="action_items"> </p>
+		   <p class="action_items1"> </p>
 		
 		</div>
 
@@ -155,19 +157,22 @@
 <script>
 	
 
-	$(document).one('ready', function(){	
-		$('.actions').append('Action: logged in as multiple role user');
+	$(document).ready(function(){	
+		$('.action_items1').append('Action: logged in as multiple role user' + '<br/>');
 	});
 
 	$('#roles').on('change', function() { 
 		var cookies_list = [];
-		var a = "User changed role to : " + $('#roles').val();
+		var a =  $('#roles').val();
+
+		//alert(a)
 		cookies_list.push(a);       
 		//alert("0");
 		$('#confirm-ok').modal('show');
 
 		document.getElementById('btn-okay').onclick = function() {
 			$('#confirm-ok').modal('hide');
+			$('.action_items').html("");
 			for (i = 0; i < cookies_list.length; i++) { 
 	 		   $('.action_items').append(cookies_list[i] + '<br/>');
 			}
