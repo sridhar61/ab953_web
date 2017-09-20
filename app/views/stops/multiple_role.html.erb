@@ -69,8 +69,9 @@
 					<td>
 						<label>Select user role : </label>
 					</td>
-					<td>						
-						<%= select_tag "roles",  options_for_select(["DOJ View Only","DOJ Application Administrator" ,"LEA Officer","LEA Proxy", "LEA Administrator", "LEA Error Resolution", "LEA View Only"]) %>
+					<td>					
+
+						<%= select_tag "roles",  options_for_select(["DOJ View Only","DOJ Application Administrator" ,"LEA Officer","LEA Proxy", "LEA Administrator", "LEA Error Resolution", "LEA View Only"])%>
 					</td>
 				</tr>
 				<tr>
@@ -107,6 +108,36 @@
 </div>
 
 
+<div class="modal fade" id="confirm-ok" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Change Role</h4>
+            </div>
+        
+            <div class="modal-body">
+                <p>Do you really want to change your role ?</p>
+                <p class="debug-url"></p>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" id="btn-okay">okay</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+    
+</script>
+
+
 <style>
 	.border-right {
     border-right: 1px solid black;
@@ -132,9 +163,14 @@
 		var cookies_list = [];
 		var a = "User changed role to : " + $('#roles').val();
 		cookies_list.push(a);       
+		//alert("0");
+		$('#confirm-ok').modal('show');
 
-		for (i = 0; i < cookies_list.length; i++) { 
- 		   $('.action_items').append(cookies_list[i] + '<br/>');
+		document.getElementById('btn-okay').onclick = function() {
+			$('#confirm-ok').modal('hide');
+			for (i = 0; i < cookies_list.length; i++) { 
+	 		   $('.action_items').append(cookies_list[i] + '<br/>');
+			}
 		}
 	});
 </script>
