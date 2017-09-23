@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
 	post '/after_login' => "sign_in#after_login"
 
+  get 'download_pdf', to: "stops#download_pdf"
+
 	# Of course, you need to substitute your application name here, a block
 	# like this probably already exists.
 	Ab953Web::Application.routes.draw do

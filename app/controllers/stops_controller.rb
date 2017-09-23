@@ -26,6 +26,10 @@ class StopsController < ApplicationController
 
   end
 
+  def download_pdf
+    send_file "#{Rails.root}/app/assets/docs/Физика.pdf", type: "application/pdf", x_sendfile: true
+  end
+
   def single_role
     #@cookies = params[:cookies]
     #@parsed_cookie = JSON.parse(@cookies)
