@@ -1,6 +1,6 @@
 <section role="main" class="content-body">
     
-   <input type="button" value="logout" class="btn btn-primary pull-right">
+   
 
   <section class="panel">
     <header class="panel-heading">
@@ -20,13 +20,12 @@
           <div class="tabs">
             <ul class="nav nav-tabs tabs-primary">
               <li class="active initial_stop">
-                <a href="#link_intial_stop" data-toggle="tab">Initial Stop</a>
+                <a href="#link_intial_stop_data" data-toggle="tab">Initial Stop Data</a>
               </li>
-              <li class="stop_type">
-                <a href="#link_stop_type" data-toggle="tab">Stop Type</a>
+              
               </li>
               <li class="person_details">
-                <a href="#link_person_details" data-toggle="tab">Person details</a>
+                <a href="#link_person_details" data-toggle="tab">Preceived Data/Person details</a>
               </li>
               <li class="location">
                 <a href="#link_location" data-toggle="tab">Location</a>
@@ -35,10 +34,12 @@
               <li class="stop_reason">
                 <a href="#link" data-toggle="tab">Stop Reason</a>
               </li>
-              
+              <!--
               <li class="skills_li">
                 <a href="#skills" data-toggle="tab">Post Stop Action</a>
               </li>
+              <li class="stop_type">
+                <a href="#link_stop_type" data-toggle="tab">Stop Type</a>
               
               <li class="skills_li">
                 <a href="#skills" data-toggle="tab">Search</a>
@@ -54,22 +55,25 @@
               
               <li class="skills_li">
                 <a href="#skills" data-toggle="tab">Officers at Scene</a>
-              </li>
+              </li> -->
+              <div class="container" >
+  
+  <div class="pull-right"><a href="/login" class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-log-out"></span>Log out</a> </div>
             </ul>
             <div class="tab-content">
 
-              <div id="initial_stop" class="tab-pane active">
+              <div id="link_intial_stop_data" class="tab-pane active">
                 <%= render 'stops/initial_stop' %>
               </div>
               
-              <div id="stop_type" class="tab-pane">
-                <%# render 'stops/stop_type' %>
+              <div id="link_stop_type" class="tab-pane">
+                <%= render 'stops/stop_type' %>
               </div>
-              <div id = "person_details" class="tab-pane">
-                <%# render "stops/person_details"%>
+              <div id = "link_person_details" class="tab-pane">
+                <%= render "stops/person_details"%>
               </div>
-              <div id="location" class="tab-pane">
-                <%# render 'stops/location' %>
+              <div id="#link_location" class="tab-pane">
+                <%= render 'stops/location' %>
               </div>
             </div>
           </div>  

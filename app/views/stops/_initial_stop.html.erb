@@ -1,111 +1,95 @@
-<h3>Stop</h3>
+<br>
+<br>
 
 
 
-<%= form_tag initial_stop_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+<%= form_tag initial_stop_stops_path, :method => :get, :remote => true, :id => 'initial_stop_form',:class => "form-horizontal form-bordered"  do %>
   
                  
   <div class="form-group">
-  
-    <label class="col-md-3 control-label" for=""> Agency ORI</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="ori" value=" " class="form-control">
-    </div>
-    
+   <label class="col-md-3 control-label" for="" > Agency ORI: <em>*</em>  </label>
+     <div class="col-md-6"> CA001023J
+      <!--input type="text" name="ori" value=" " class="form-control"> -->
+     </div>
   </div>  
-  
-  
-    
-  <div class="form-group">
-  
-    <label class="col-md-3 control-label" for="">Date of Stop</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="firstname" value=" " class="form-control">
-    </div>
-    
-    
-  </div>  
-    
-  <div class="form-group">
-  
-    <label class="col-md-3 control-label" for=""> Time of Stop</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="firstname" value="" class="form-control">
-    </div>
-    
-    
-  </div>  
-    
-  <div class="form-group">
-  
-    <label class="col-md-3 control-label" for=""> Duration of Stop</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="firstname" value=" " class="form-control">
-    </div>
-    
-    
-  </div>  
-  
-  
 
 
-
-<h3>Stop Type</h3>
-  
   <div class="form-group">
-  
-    <label class="col-md-3 control-label" for="">Type of Stop</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="firstname" value=" " class="form-control">
-    </div>
-  
+   <label class="col-md-3 control-label" for="">Unique Id:<em>*</em>   </label>
+    <div class="col-md-6"> CA7854821
+     <!--input type="text" name="firstname" value=" " class="form-control"--> 
+   </div>
   </div>  
+
+    
+  <div class="form-group">
+   <label class="col-md-3 control-label" for="">Date of Stop: <em>*</em></label>
+    <div class="col-md-6">
+     <input type="date" id="date" value=" " class="form-control">
+   </div>
+  </div>  
+    
+
+  <div class="form-group">
+    <label class="col-md-3 control-label" for=""> Time of Stop: <em>*</em></label> 
+     <div class="col-md-6">
+      <input type="text"  size="5" placeholder="Enter time value in military hh:mm format" id="hour" maxlength="5"  class="form-control" >
+    </div>
+    <div id='hour-error' class='hide'>Time of Stop cannot be
+blank</div>
+    
+  </div>  
+
+
+  <div class="form-group">
+     <label class="col-md-3 control-label" for=""> Duration of Stop: <em>*</em></label>
+      <div class="col-md-6">
+       <input type="number" placeholder="Please enter duration in minutues" min="1" max="1440" id="min" class="form-control">
+      </div>
+      <div id='min-error' class='hide'>Duration
+of Stop cannot be blank</div>
+  </div>  
+  
   
    <div class="form-group">
-     
-     <label class="col-md-3 control-label" for="">Contact</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="firstname" value=" " class="form-control">
-    </div>
-    
-    
-  </div>  
-  
+      <label class="col-md-3 control-label" for="">Experience: <em>*</em></label>
+       <div class="col-md-6"> 5 years
+        <!--input type="number" name="firstname" value=" " class="form-control"> -->
+       </div>
+    </div>  
   
 
-<h3>Person Details</h3>
-  
-  
   <div class="form-group">
-  
-    <label class="col-md-3 control-label" for="">Ethinicity</label>
-   
+   <label class="col-md-3 control-label" for="">Assignment Type: <em>*</em></label>
     <div class="col-md-6">
-      <input type="text" name="firstname" value=" " class="form-control">
-    </div>
-  </div>  
-  
-  <div class="form-group">
-     
-     <label class="col-md-3 control-label" for="">Gender</label>
-   
-    <div class="col-md-6">
-      <input type="text" name="firstname" value=" " class="form-control">
-    </div>
-    
-    
-  </div>  
-  
-<!--
-<h3>Location</h3>
--->
+      <select id = "select" class="form-control required"> 
+      <option>Select</option>
+       <option> Patrol, traffic enforcement, field operations</option>
+       <option> Gang enforcement</option>
+       <option> Compliance check (e.g., parole/PRCS/probation/mandatory supervision)</option>
+       <option> Special events (e.g., sports, concerts, protests)</option>
+       <option> Roadblock or DUI sobriety checkpoint</option>
+       <option> Narcotics/vice</option>
+       <option> Task force</option>
+       <option> K-12 Public School, including school resource officer or school police officer</option>
+       <option> Investigative/detective</option>
+       <option> Other</option>
+      </select>
 
+    </div>
+  </div>  
+  
+  <!--<div class="form-group">
+     
+     <label class="col-md-3 control-label" for="">Other Assignment Type: </label>
+   
+    <div class="col-md-6">
+      
+    </div> 
+    
+    
+  </div>  -->
+  
 
 
   <input type="submit" value="Submit" class="btn btn-primary pull-right">
@@ -113,3 +97,26 @@
 <% end %>
 
 
+<script type="text/javascript">
+// Form validation code will come here.
+
+$('document').ready(function(){
+  $('#initial_stop_form').submit(function(e){
+    e.preventDefault()
+    if($('#min').val().length == 0) {
+      $('#min-error').removeClass('hide')
+    }
+    if($('#hour').val().length == 0) {
+      $('#hour-error').removeClass('hide')
+      return false
+    }
+    $("#select").val() == "select"
+    
+
+  });
+});
+
+
+
+  
+</script>

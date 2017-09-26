@@ -11,7 +11,7 @@ class StopsController < ApplicationController
     #raise @queue.inspect
     #Resque::Job.create(select_queue(params), self, 5)
     if true 
-      Resque.enqueue(SleeperWorker, 5)
+      #Resque.enqueue(SleeperWorker, 5)
 =begin       
       respond_to do |format|
         format.html { redirect_to stop_type_stops_path, notice: 'Snippet was successfully destroyed.' }
@@ -39,7 +39,7 @@ class StopsController < ApplicationController
 
   def stop_type_submit
     call = '/data_validation.json'
-    url =   HTTParty.get("http://192.168.167.162:3000#{call}",
+    url =   HTTParty.get("http://192.168.167.162:3001#{call}",
       :headers => {'ContentType' => 'application/json'})
     response = url.parsed_response  
     
@@ -47,7 +47,7 @@ class StopsController < ApplicationController
   
   def person_details
     call = '/data_validation.json'
-    url =   HTTParty.get("http://192.168.167.162:3000#{call}",
+    url =   HTTParty.get("http://192.168.167.162:3001#{call}",
       :headers => {'ContentType' => 'application/json'})
     response = url.parsed_response 
   

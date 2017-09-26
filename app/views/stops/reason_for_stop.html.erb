@@ -1,0 +1,33 @@
+<%= form_tag reason_for_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %> 
+
+<div class="form-group">
+  
+    <label class="col-md-3 control-label" for="" > Location for Stop: <em>*</em></label>
+   
+    <div class="col-md-6">
+      <select>
+      	<option>  Traffic violation</option>
+      	<option>  Reasonable suspicion of criminal activity</option>
+      	<option>  Known to be on parole/probation/PRCS/mandatory supervision</option>
+      	<option>  Knowledge of outstanding arrest warrant/wanted person</option>
+      	<option>  Investigation to determine whether the person was truant</option>
+      	<option>  Consensual encounter resulting in search</option>
+      	<option>  Possible conduct warranting discipline under Education Code</option>
+      	<option>  Determine whether the student violated school policy</option>
+
+
+      </select>
+    </div>
+    
+ </div>  
+
+
+<div class="form-group">
+  
+    <label class="col-md-3 control-label" for="" > Reason for Stop Explanation/Narrative: <em>*</em></label>
+   
+    <div class="col-md-6">
+
+    <textarea rows="10" cols="60" maxlength="250"> Enter text here...</textarea>
+    </div>
+</div>
