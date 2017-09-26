@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   	  get 'stop_type'
   	  get 'person_details'
       get 'location'
+      get 'reason_for_stop'
   	  get 'single_role'
   	  get 'multiple_role'
   	end

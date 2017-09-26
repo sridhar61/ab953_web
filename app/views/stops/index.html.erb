@@ -31,8 +31,8 @@
                 <a href="#link_location" data-toggle="tab">Location</a>
               </li>
               
-              <li class="stop_reason">
-                <a href="#link" data-toggle="tab">Stop Reason</a>
+              <li class="reason_for_stop">
+                <a href="#link_reason_for_stop" data-toggle="tab">Stop Reason</a>
               </li>
               <!--
               <li class="skills_li">
@@ -72,13 +72,16 @@
               <div id = "link_person_details" class="tab-pane">
                 <%= render "stops/person_details"%>
               </div>
-              <div id="#link_location" class="tab-pane">
+              <div id="link_location" class="tab-pane">
                 <%= render 'stops/location' %>
+              </div>
+              <div id="link_reason_for_stop" class="tab-pane">
+                <%= render 'stops/reason_for_stop' %>
               </div>
             </div>
           </div>  
 
-        </div>
+  </div>
 
     </div> 
     <div align="center">

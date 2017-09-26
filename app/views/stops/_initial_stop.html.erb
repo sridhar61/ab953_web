@@ -1,5 +1,3 @@
-<br>
-<br>
 
 
 
@@ -61,8 +59,8 @@ of Stop cannot be blank</div>
 
   <div class="form-group">
    <label class="col-md-3 control-label" for="">Assignment Type: <em>*</em></label>
-    <div class="col-md-6">
-      <select id = "select" class="form-control required"> 
+    <div class="col-md-6 ">
+      <select id = "select" class="form-control"> 
       <option>Select</option>
        <option> Patrol, traffic enforcement, field operations</option>
        <option> Gang enforcement</option>
@@ -77,6 +75,7 @@ of Stop cannot be blank</div>
       </select>
 
     </div>
+    <div id='ass-error' class='hide'>Duration of Stop cannot be blank</div>
   </div>  
   
   <!--<div class="form-group">
@@ -90,6 +89,7 @@ of Stop cannot be blank</div>
     
   </div>  -->
   
+ 
 
 
   <input type="submit" value="Submit" class="btn btn-primary pull-right">
@@ -104,13 +104,15 @@ $('document').ready(function(){
   $('#initial_stop_form').submit(function(e){
     e.preventDefault()
     if($('#min').val().length == 0) {
-      $('#min-error').removeClass('hide')
+      $('#min-error').removeClass('hide');
     }
     if($('#hour').val().length == 0) {
-      $('#hour-error').removeClass('hide')
-      return false
+      $('#hour-error').removeClass('hide');
     }
-    $("#select").val() == "select"
+    if($("#select").val() == "Select"){   
+       $('#ass-error').removeClass('hide');
+       return false
+    }
     
 
   });
@@ -120,3 +122,8 @@ $('document').ready(function(){
 
   
 </script>
+
+<style>
+  
+ 
+</style>
