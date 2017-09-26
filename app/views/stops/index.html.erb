@@ -63,20 +63,30 @@
             <div class="tab-content">
 
               <div id="link_intial_stop_data" class="tab-pane active">
-                <%= render 'stops/initial_stop' %>
+                <div class="row top-buffer">
+                  <%= render 'stops/initial_stop' %>
+                </div>  
               </div>
               
               <div id="link_stop_type" class="tab-pane">
-                <%= render 'stops/stop_type' %>
+                <div class="row top-buffer">
+                  <%= render 'stops/stop_type' %>
+                </div>
               </div>
               <div id = "link_person_details" class="tab-pane">
-                <%= render "stops/person_details"%>
+                <div class="row top-buffer">
+                  <%= render "stops/person_details"%>
+                </div>  
               </div>
               <div id="link_location" class="tab-pane">
-                <%= render 'stops/location' %>
+                <div class="row top-buffer">
+                  <%= render 'stops/location' %>
+                </div>  
               </div>
               <div id="link_reason_for_stop" class="tab-pane">
-                <%= render 'stops/reason_for_stop' %>
+                <div class="row top-buffer">
+                  <%= render 'stops/reason_for_stop' %>
+                </div>  
               </div>
             </div>
           </div>  

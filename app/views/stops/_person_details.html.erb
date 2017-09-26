@@ -1,73 +1,82 @@
+<div class="container">
+
 <h2> Contact(s)</h2>
 
 <%= form_tag person_details_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %> 
 
+<div class="row">
+
+  <div class="col-md-6">
+    <fieldset>
+      <b>Preceived Race Set:<em>*</em> </b> <br/>
+      <input type=checkbox value= asian name= Asian > Asian <br>
+      <input type=checkbox value=black_or_african_american name=Black/African >Black/African <br>
+      <input type=checkbox value="hispanic_latino" name=Hispanic/Latino(a)>Hispanic/Latino(a) <br>
+      <input type=checkbox value="middle_eastern_or_south_asian" name=Middle_Eastern_or_South_Asian>Middle Eastern or South Asian <br>
+      <input type=checkbox value="native_american" name= Native_American>Native American <br>
+      <input type=checkbox value="pacific_islander" name=Pacific_Islander>Pacific Islander <br>
+      <input type=checkbox value="white" name=White>White<br>
+    </fieldset>
+  </div>  
 
 
-<fieldset>
-  <legend> Preceived Race Set:<em>*</em> </legend>
-  <input type=checkbox value= asian name= Asian > Asian <br>
-  <input type=checkbox value=black_or_african_american name=Black/African >Black/African <br>
-  <input type=checkbox value="hispanic_latino" name=Hispanic/Latino(a)>Hispanic/Latino(a) <br>
-  <input type=checkbox value="middle_eastern_or_south_asian" name=Middle_Eastern_or_South_Asian>Middle Eastern or South Asian <br>
-  <input type=checkbox value="native_american" name= Native_American>Native American <br>
-  <input type=checkbox value="pacific_islander" name=Pacific_Islander>Pacific Islander <br>
-  <input type=checkbox value="white" name=White>White<br>
-</fieldset>
+
+  <div class="col-md-6">
+    <fieldset>
+      <b> Preceived Gender: <em>*</em></b><br>
+      
+      <input type=checkbox value="male">Male <br>
+      <input type=checkbox value="female">Female <br>
+      <input type=checkbox value="transgender_man_boy">Transgender man/boy <br>
+      <input type=checkbox value="transgender_woman_girl">Transgender woman/girl <br>
+      
+    </fieldset>
+  </div>  
+
+</div>    
   
- <br>
+<div class="row row-buffer">
+  <div class="col-md-6">
+    <b>Preceived Age <em>*</em></b><br/>
+    <input type="number" name="quantity" min="1" max="100" class="form-control"> <br>
+  </div>  
+  <div class="col-md-6">
+    <input id="checkBox" type="checkbox"> Limited English Fluency 
+  </div>    
+</div>  
 
 
+<div class="row row-buffer ">
 
-<fieldset>
-  <legend>  Preceived Gender: <em>*</em></legend>
-  
-  <input type=checkbox value="male">Male <br>
-  <input type=checkbox value="female">Female <br>
-  <input type=checkbox value="transgender_man_boy">Transgender man/boy <br>
-  <input type=checkbox value="transgender_woman_girl">Transgender woman/girl <br>
-  
-  </fieldset>
-  
-  <br>
-  <br>
-  <br>
+  <div class="col-md-6">
 
-  
+    <fieldset>
+      <b>Preceived Disability: <em>*</em></b></br>
+      <input type=checkbox value="deafness_or_difficulty_hearing">Deafness or difficulty hearing<br>   
+      <input type=checkbox value="speech_impairment_or_limited_use_of_language">Speech impairment or limited use of language<br>
+      <input type=checkbox value="blind_or_limited_vision">Blind or limited vision<br>
+      <input type=checkbox value="mental_health_condition">Mental health condition<br>
+      <input type=checkbox value="intellectual_or_developed_disability">Intellectual or develeoped disability,including dementia<br>
+      <input type=checkbox value="other_disability">Other disability<br>
+      <input type="checkbox" value="none">None<br>
+      <input type="checkbox" value="disability_related_to_hyperactivity_or_impulsive_behavior">Disability related to hyperactivity or impulsive behavior<br>
+    </fieldset>
 
-Preceived Age <em>*</em>:
-  <input type="number" name="quantity" min="1" max="100 "> <br>
-  <br>
-  
-  
- <input id="checkBox" type="checkbox"> Limited English Fluency <br>
-<br>
+  </div>  
 
-<fieldset>
-<legend> Preceived Disability: <em>*</em></legend> 
+  <div class="col-md-6">
+    <b>Property Searched?: </b><br>
+    <input type="checkbox" value = "yes"> Yes <br>
+    <input type="checkbox" value = "no"> No <br>
+  </div>
+    
+</div>
 
-  <input type=checkbox value="deafness_or_difficulty_hearing">Deafness or difficulty hearing<br>   
-  <input type=checkbox value="speech_impairment_or_limited_use_of_language">Speech impairment or limited use of language<br>
-  <input type=checkbox value="blind_or_limited_vision">Blind or limited vision<br>
-  <input type=checkbox value="mental_health_condition">Mental health condition<br>
-  <input type=checkbox value="intellectual_or_developed_disability">Intellectual or develeoped disability,including dementia<br>
-  <input type=checkbox value="other_disability">Other disability<br>
-  <input type="checkbox" value="none">None<br>
-  <input type="checkbox" value="disability_related_to_hyperactivity_or_impulsive_behavior">Disability related to hyperactivity or impulsive behavior<br>
-  </fieldset>
-
-
-
-<br>
-<br>
-
- Property Searched?: <br>
- <input type="checkbox" value = "yes"> Yes <br>
- <input type="checkbox" value = "no"> No <br>
-
-<br>
-<br>
-<br>
-<br>
+<div class="row row-buffer pull-right">    
    <input type="submit" value="Submit" class="btn btn-primary pull-right">
+</div>   
+
+
 <%end%> 
+
+</div>
