@@ -45,6 +45,8 @@ gem 'resque-web', require: 'resque_web'
 
 gem 'unicorn'
 
+gem 'bootstrap-datepicker-rails'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
