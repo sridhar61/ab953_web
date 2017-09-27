@@ -33,21 +33,26 @@
       
       <input type=checkbox value="male">Male <br>
       <input type=checkbox value="female">Female <br>
-      <input type=checkbox value="transgender_man_boy">Transgender man/boy <br>
-      <input type=checkbox value="transgender_woman_girl">Transgender woman/girl <br>
-      
+      <input type=checkbox id="tansgender_man" value="transgender_man_boy">Transgender man/boy <br>
+      <input type=checkbox id="tansgender_woman" value="transgender_woman_girl">Transgender woman/girl <br>
+       <input type=checkbox id="gender_nonconfirming" value="transgender_woman_girl">Gender Nonconfirming <br>
+       
     </fieldset>
   </div>  
 
 </div>    
   
 <div class="row row-buffer">
-  <div class="col-md-6">
+   <div class="col-md-6">
     <b>Preceived Age <em>*</em></b><br/>
-    <input type="number" name="quantity" min="1" max="100" class="form-control"> <br>
-  </div>  
+    <input type="number" name="quantity" min="1" max="100" class="form-control" style="width:400px;"> <br>
+  </div> 
+    
+ 
   <div class="col-md-6">
-    <input id="checkBox" type="checkbox"> Limited English Fluency 
+   <b>Perceived to be LGBT?<em>*</em></b><br/>
+     <input type=checkbox id="lgbt" value="lgbt"> LGBT <br>
+      
   </div>    
 </div>  
 
@@ -70,10 +75,10 @@
 
   </div>  
 
-  <div class="col-md-6">
-   
-  </div>
-    
+   <div class="col-md-6">
+    <b>Preceived English Fluency<em>*</em></b><br/>
+    <input id="checkBox" type="checkbox"> Limited English Fluency 
+  </div>  
 </div>
 
 <div class="row row-buffer pull-right">    
@@ -92,6 +97,15 @@
 
 <script type="text/javascript">
   
-
+  $('#tansgender_man').change(function(){
+    if($("#tansgender_man").is(":checked")) {
+     $('#lgbt').attr('checked', true);
+    }
+    
+    if($("#tansgender_woman").is(":checked")){
+      $('#lgbt').attr('checked', true);
+    }
+    
+  });
 
 </script>
