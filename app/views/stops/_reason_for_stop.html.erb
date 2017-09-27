@@ -6,9 +6,10 @@
     <label class="col-md-3 control-label" for="" >Primar Reason for Stop: <em>*</em></label>
    
     <div class="col-md-6">
-      <select class="form-control">
-      	<option>  Traffic violation</option>
-      	<option>  Reasonable suspicion of criminal activity</option>
+      <select class="form-control select_reason_for_stop">
+         <option>  Select</option>
+      	<option value="violation">  Traffic violation</option>
+      	<option value="suspicion_criminal_activity">  Reasonable suspicion of criminal activity</option>
       	<option>  Known to be on parole/probation/PRCS/mandatory supervision</option>
       	<option>  Knowledge of outstanding arrest warrant/wanted person</option>
       	<option>  Investigation to determine whether the person was truant</option>
@@ -36,34 +37,12 @@
 </div>
 
 
-
-<div class="form-group">
-  <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label>
-   <div class="col-md-6">
-<<<<<<< HEAD
-    <select>
-        <option>  Select</option>
-=======
-    <select class="form-control">
->>>>>>> cdaf90941cbc5e1eac89bf9f524443ab3fbfd237
-        <option>  Moving</option>
-        <option>  Equipment violation</option>
-        <option>  Non-moving violation, including registration violation</option>
-    </select>
-    </div>
-</div>
-
-
-<div class="form-group">
+<div class="form-group ">
   <label class="col-md-3 control-label" for="" > Traffic Violation CJIS Offense Code:
  <em>*</em></label>
    <div class="col-md-6">
-<<<<<<< HEAD
-    <select>
-        <option>  Select</option>
-=======
     <select class="form-control">
->>>>>>> cdaf90941cbc5e1eac89bf9f524443ab3fbfd237
+        <option>  Select</option>
         <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
         <option>  Code Section (e.g. 290, 647, etc)</option>
         <option>  Description (e.g. Drunk in public)</option>
@@ -72,10 +51,10 @@
 </div>
 
 
-<div class="form-group">
+<div class="form-group type_traffic_violation" style="display: none;">
   <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label>
    <div class="col-md-6">
-    <select>
+    <select class="form-control">
         <option>  Select</option>
         <option>  Moving</option>
         <option>  Equipment violation</option>
@@ -83,4 +62,39 @@
     </select>
     </div>
 </div>
+
+<div class="form-group suspicion_cjis_offense_code" style="display: none;">
+  <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label>
+   <div class="col-md-6">
+    <select class="form-control">
+        <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+        <option>  Code Section (e.g. 290, 647, etc)</option>
+        <option>  Description (e.g. Drunk in public</option>
+    </select>
+    </div>
+</div>
 <% end %>
+
+
+
+<script>
+  
+  $(document).ready(function(){
+    $('.type_traffic_violation').hide();
+  });
+
+  $('.select_reason_for_stop').change(function(){
+    if($('.select_reason_for_stop').val() == 'violation') {
+      $('.type_traffic_violation').show();
+    }
+    else{
+      $('.type_traffic_violation').hide();
+    }
+    if($('.select_reason_for_stop').val() == 'suspicion_criminal_activity') {
+      $('.suspicion_cjis_offense_code').show();
+    }
+    else{
+      $('.suspicion_cjis_offense_code').hide();
+    }
+  });
+</script>

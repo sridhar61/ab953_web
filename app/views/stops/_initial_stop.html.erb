@@ -33,7 +33,7 @@
      <div class="col-md-6">
       <input type="text"  size="5" placeholder="Enter time value in military hh:mm format" id="hour" maxlength="5"  class="form-control" >
     </div>
-    <div id='hour-error' class='hide'>Time of Stop cannot be
+    <div id='hour-error' class='hide error'>Time of Stop cannot be
 blank</div>
     
   </div>  
@@ -44,7 +44,7 @@ blank</div>
       <div class="col-md-6">
        <input type="number" placeholder="Please enter duration in minutues" min="1" max="1440" id="min" class="form-control">
       </div>
-      <div id='min-error' class='hide'>Duration
+      <div id='min-error' class='hide error'>Duration
 of Stop cannot be blank</div>
   </div>  
   
@@ -75,7 +75,7 @@ of Stop cannot be blank</div>
       </select>
 
     </div>
-    <div id='ass-error' class='hide'>Duration of Stop cannot be blank</div>
+    <div id='ass-error' class='hide error'>Duration of Stop cannot be blank</div>
   </div>  
   
   <!--<div class="form-group">
@@ -102,10 +102,13 @@ of Stop cannot be blank</div>
 
 $('document').ready(function(){
   $('#initial_stop_form').submit(function(e){
+    alert();
+    $(".error").removeClass("error");
     e.preventDefault()
     if($('#min').val().length == 0) {
       $('#min-error').removeClass('hide');
     }
+    if()
     if($('#hour').val().length == 0) {
       $('#hour-error').removeClass('hide');
     }
@@ -113,10 +116,10 @@ $('document').ready(function(){
        $('#ass-error').removeClass('hide');
        return false
     }
-    
-
   });
 });
+
+
 
 
 
