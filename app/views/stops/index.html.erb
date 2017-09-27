@@ -1,12 +1,3 @@
-  <section>
-    <header class="panel-heading">
-      <div class="panel-actions">
-        <a href="#" class="fa fa-caret-down"></a>
-        <a href="#" class="fa fa-times"></a>
-      </div>
-
-      <h2 class="panel-title"></h2>
-    </header>
 
     
     <div class="panel-body">    
@@ -20,13 +11,13 @@
               </li>
               
               </li>
-              <li class="person_details">
-                <a href="#link_person_details" data-toggle="tab">Preceived Data/Person details</a>
-              </li>
+              
               <li class="location">
                 <a href="#link_location" data-toggle="tab">Location</a>
               </li>
-              
+              <li class="person_details">
+                <a href="#link_person_details" data-toggle="tab">Preceived Data/Person details</a>
+              </li>
               <li class="reason_for_stop">
                 <a href="#link_reason_for_stop" data-toggle="tab">Reason for Stop</a>
               </li>
@@ -54,7 +45,6 @@
               </li> -->
               <div class="container" >
   
-  <div class="pull-right log_out"><a class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-log-out"></span>Log out</a> </div>
             </ul>
             <div class="tab-content">
 
@@ -69,17 +59,20 @@
                   <%= render 'stops/stop_type' %>
                 </div>
               </div>
-              <div id = "link_person_details" class="tab-pane">
-                <div class="row top-buffer">
-                  <%= render "stops/person_details"%>
-                </div>  
-              </div>
+              
 
               <div id="link_location" class="tab-pane">
                 <div class="row top-buffer">
                   <%= render 'stops/location' %>
                 </div>  
               </div>
+
+              <div id = "link_person_details" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render "stops/person_details"%>
+                </div>  
+              </div>
+              
               <div id="link_reason_for_stop" class="tab-pane">
                 <div class="row top-buffer">
                   <%= render 'stops/reason_for_stop' %>
@@ -103,44 +96,6 @@
 
 
 
-  </section>
-      
-
-
-<div class="modal fade" id="confirm-logout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel"></h4>
-            </div>
-        
-            <div class="modal-body">
-                <p> Do you want to save before logging out of the application ?</p>
-                <p class="debug-url"></p>
-            </div>
-            
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" id="btn-okay">okay</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-  $('.log_out').click(function(){
-    $('#confirm-logout').modal('show');
-    document.getElementById('btn-okay').onclick = function() {
-      $('#confirm-ok').modal('hide');
-      window.location.replace("/login");
-    }
-  });
-
-</script>
-
-     
 
 
 

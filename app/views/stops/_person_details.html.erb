@@ -1,6 +1,12 @@
 <div class="container">
 
-<h2> Contact(s)</h2>
+<h2> Person - 1</h2>
+
+<button type="button" class="pull-right btn btn-default btn-sm">
+  <span class="glyphicon glyphicon-plus"></span> Add Person
+</button>
+
+<div class="person_form">
 
 <%= form_tag person_details_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %> 
 
@@ -65,18 +71,27 @@
   </div>  
 
   <div class="col-md-6">
-    <b>Property Searched?: </b><br>
-    <input type="checkbox" value = "yes"> Yes <br>
-    <input type="checkbox" value = "no"> No <br>
+   
   </div>
     
 </div>
 
 <div class="row row-buffer pull-right">    
-   <input type="submit" value="Submit" class="btn btn-primary pull-right">
+   <input type="submit" value="Next" class="btn btn-primary pull-right">
 </div>   
 
 
 <%end%> 
 
 </div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+  
+
+
+</script>

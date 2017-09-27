@@ -50,6 +50,26 @@
     </div>
 </div>
 
+ 
+<div class="form-group suspicion_cjis_offense_code" style="display: none;">
+  <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label>
+   <div class="col-md-6">
+    <select class="form-control">
+        <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+        <option>  Code Section (e.g. 290, 647, etc)</option>
+        <option>  Description (e.g. Drunk in public</option>
+    </select>
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="" > <em>*</em></label>
+  <div class="col-md-6">
+    <input type="radio" name="Offense_code" value="male"> Code Type 
+    <input type="radio" name="Offense_code" value="female"> Code Section 
+    <input type="radio" name="Offense_code" value="other"> Description
+  </div>  
+</div>   
 
 <div class="form-group type_traffic_violation" style="display: none;">
   <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label>
@@ -63,16 +83,7 @@
     </div>
 </div>
 
-<div class="form-group suspicion_cjis_offense_code" style="display: none;">
-  <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label>
-   <div class="col-md-6">
-    <select class="form-control">
-        <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
-        <option>  Code Section (e.g. 290, 647, etc)</option>
-        <option>  Description (e.g. Drunk in public</option>
-    </select>
-    </div>
-</div>
+
 <% end %>
 
 

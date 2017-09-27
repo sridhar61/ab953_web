@@ -25,20 +25,43 @@
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    <div class="global-nav navbar navbar-inverse">
+    <div class="global-nav navbar navbar-inverse" style="margin-bottom: 0px !important">
       <div class="navbar-inner">
 
+        <div class="row">
 
-        <h1 class="text-center"> 
-        <a class="pull-left" href="#"> <img src="/assets/doj-seal-header_321_pixel.png" alt="" height = "90px">
+          <div class="col-md-3">
+            <a class="pull-left" href="#"> <img src="/assets/doj-seal-header_321_pixel.png" alt="" height = "90px"></a>
 
-        </a><span class="m1-title"> Stop Data Collection System</span></h1>
+          </div>    
+
+          <div class="col-md-5">
               
-              
-                
+          <h1 class="text-center"> 
+          
+            <span class="m1-title"> Stop Data Collection System</span>
+          </h1>
+
+          </div>  
+
+          <div class="col-md-4" style="margin-top: 30px;">    
+            
+            <ul class="nav navbar-nav navbar-right"> 
+              <li><a href="/">Alameda PD</a></li> 
+              <li><a>lea_agent_uid@gmail.com</a></li> 
+
+              <li><a class="log_out btn btn-default btn-sm"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li> 
+            </ul> 
+          </div>
+
+        </div>  
+       
+            
       </div>
      
     </div>
+
+
 
 
     <%= yield %>
@@ -70,6 +93,43 @@
 
 
   </div>
+
+
+
+<div class="modal fade" id="confirm-logout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+        
+            <div class="modal-body">
+                <p> Do you want to save before logging out of the application ?</p>
+                <p class="debug-url"></p>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" id="btn-okay">okay</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  $('.log_out').click(function(){
+    $('#confirm-logout').modal('show');
+    document.getElementById('btn-okay').onclick = function() {
+      $('#confirm-ok').modal('hide');
+      window.location.replace("/login");
+    }
+  });
+
+</script>
+
+     
 
 
 
