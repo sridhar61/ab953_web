@@ -54,7 +54,8 @@
               </li> -->
               <div class="container" >
   
-              </ul>
+  <div class="pull-right log_out"><a class="btn btn-default btn-sm"> <span class="glyphicon glyphicon-log-out"></span>Log out</a> </div>
+            </ul>
             <div class="tab-content">
 
               <div id="link_intial_stop_data" class="tab-pane active">
@@ -100,8 +101,46 @@
     
   -->
 
+
+
   </section>
       
+
+
+<div class="modal fade" id="confirm-logout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+        
+            <div class="modal-body">
+                <p> Do you want to save before logging out of the application ?</p>
+                <p class="debug-url"></p>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" id="btn-okay">okay</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  $('.log_out').click(function(){
+    $('#confirm-logout').modal('show');
+    document.getElementById('btn-okay').onclick = function() {
+      $('#confirm-ok').modal('hide');
+      window.location.replace("/login");
+    }
+  });
+
+</script>
+
+     
 
 
 

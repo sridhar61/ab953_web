@@ -102,13 +102,11 @@ of Stop cannot be blank</div>
 
 $('document').ready(function(){
   $('#initial_stop_form').submit(function(e){
-    alert();
     $(".error").removeClass("error");
     e.preventDefault()
     if($('#min').val().length == 0) {
       $('#min-error').removeClass('hide');
     }
-    if()
     if($('#hour').val().length == 0) {
       $('#hour-error').removeClass('hide');
     }
