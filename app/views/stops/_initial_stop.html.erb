@@ -36,9 +36,10 @@ of Stop cannot be blank</div>
   
    <div class="form-group">
       <label class="col-md-3 control-label" for="">Experience: <em>*</em></label>
-       <div class="col-md-6"> 5 years
-        <!--input type="number" name="firstname" value=" " class="form-control"> -->
+       <div class="col-md-6"> 
+        <input type="number" id="experience" name="firstname" value=" " class="form-control" min=0 > 
        </div>
+        <div id='exp-error' class='hide error'>Experience cannot be blank</div>
     </div>  
   
 
@@ -60,7 +61,7 @@ of Stop cannot be blank</div>
       </select>
 
     </div>
-    <div id='ass-error' class='hide error'>Duration of Stop cannot be blank</div>
+    <div id='ass-error' class='hide error'>Please select Assignment type</div>
   </div>  
   
   <!--<div class="form-group">
@@ -106,6 +107,12 @@ $('document').ready(function(){
     }
     else{
       $('#min-error').addClass('hide');
+    }
+    if($('#experience').val().length == 0) {
+      $('#exp-error').removeClass('hide');
+    }
+    else{
+      $('#exp-error').addClass('hide');
     }
     if($('#hour').val().length == 0) {
       $('#hour-error').removeClass('hide');

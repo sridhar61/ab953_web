@@ -16,12 +16,12 @@
     <fieldset>
       <b>Preceived Race Set:<em>*</em> </b> <br/>
       <input type=checkbox value= asian name= Asian > Asian <br>
-      <input type=checkbox value=black_or_african_american name=Black/African >Black/African <br>
-      <input type=checkbox value="hispanic_latino" name=Hispanic/Latino(a)>Hispanic/Latino(a) <br>
-      <input type=checkbox value="middle_eastern_or_south_asian" name=Middle_Eastern_or_South_Asian>Middle Eastern or South Asian <br>
-      <input type=checkbox value="native_american" name= Native_American>Native American <br>
-      <input type=checkbox value="pacific_islander" name=Pacific_Islander>Pacific Islander <br>
-      <input type=checkbox value="white" name=White>White<br>
+      <input type=checkbox value=black_or_african_american name=Black/African > Black/African <br>
+      <input type=checkbox value="hispanic_latino" name=Hispanic/Latino(a)> Hispanic/Latino(a) <br>
+      <input type=checkbox value="middle_eastern_or_south_asian" name=Middle_Eastern_or_South_Asian> Middle Eastern or South Asian <br>
+      <input type=checkbox value="native_american" name= Native_American> Native American <br>
+      <input type=checkbox value="pacific_islander" name=Pacific_Islander> Pacific Islander <br>
+      <input type=checkbox value="white" name=White> White<br>
     </fieldset>
   </div>  
 
@@ -31,11 +31,11 @@
     <fieldset>
       <b> Preceived Gender: <em>*</em></b><br>
       
-      <input type=checkbox value="male">Male <br>
-      <input type=checkbox value="female">Female <br>
-      <input type=checkbox id="tansgender_man" value="transgender_man_boy">Transgender man/boy <br>
-      <input type=checkbox id="tansgender_woman" value="transgender_woman_girl">Transgender woman/girl <br>
-       <input type=checkbox id="gender_nonconfirming" value="transgender_woman_girl">Gender Nonconfirming <br>
+      <input type=checkbox value="male"> Male <br>
+      <input type=checkbox value="female"> Female <br>
+      <input type=checkbox id="tansgender_man" value="transgender_man_boy"> Transgender man/boy <br>
+      <input type=checkbox id="tansgender_woman" value="transgender_woman_girl"> Transgender woman/girl <br>
+       <input type=checkbox id="gender_nonconfirming" value="transgender_woman_girl"> Gender Nonconfirming <br>
        
     </fieldset>
   </div>  
@@ -63,14 +63,14 @@
 
     <fieldset>
       <b>Preceived Disability: <em>*</em></b></br>
-      <input type=checkbox value="deafness_or_difficulty_hearing">Deafness or difficulty hearing<br>   
-      <input type=checkbox value="speech_impairment_or_limited_use_of_language">Speech impairment or limited use of language<br>
-      <input type=checkbox value="blind_or_limited_vision">Blind or limited vision<br>
-      <input type=checkbox value="mental_health_condition">Mental health condition<br>
-      <input type=checkbox value="intellectual_or_developed_disability">Intellectual or develeoped disability,including dementia<br>
-      <input type=checkbox value="other_disability">Other disability<br>
-      <input type="checkbox" value="none">None   <br/>
-      <input type="checkbox" value="disability_related_to_hyperactivity_or_impulsive_behavior">Disability related to hyperactivity or impulsive behavior<br>
+      <input type=checkbox value="deafness_or_difficulty_hearing"> Deafness or difficulty hearing<br>   
+      <input type=checkbox value="speech_impairment_or_limited_use_of_language"> Speech impairment or limited use of language<br>
+      <input type=checkbox value="blind_or_limited_vision"> Blind or limited vision<br>
+      <input type=checkbox value="mental_health_condition"> Mental health condition<br>
+      <input type=checkbox value="intellectual_or_developed_disability"> Intellectual or develeoped disability,including dementia<br>
+      <input type=checkbox value="other_disability"> Other disability<br>
+      <input type="checkbox" value="none"> None   <br/>
+      <input type="checkbox" value="disability_related_to_hyperactivity_or_impulsive_behavior"> Disability related to hyperactivity or impulsive behavior<br>
     </fieldset>
 
   </div>  
@@ -101,11 +101,18 @@
     if($("#tansgender_man").is(":checked")) {
      $('#lgbt').attr('checked', true);
     }
-    
-    if($("#tansgender_woman").is(":checked")){
-      $('#lgbt').attr('checked', true);
+    else{
+      $('#lgbt').attr('checked', false);
     }
     
   });
 
+  $("#tansgender_woman").change(function(){
+   if($("#tansgender_woman").is(":checked")){
+      $('#lgbt').attr('checked', true);
+    }
+    else{
+      $('#lgbt').attr('checked', false);
+    }
+  });  
 </script>
