@@ -3,7 +3,7 @@
 
 <div class="form-group">
   
-    <label class="col-md-3 control-label" for="" >Primar Reason for Stop: <em>*</em></label>
+    <label class="col-md-3 control-label" for="" >Primary Reason for Stop: <em>*</em></label>
    
     <div class="col-md-6">
       <select class="form-control select_reason_for_stop">
@@ -36,7 +36,7 @@
 
 </div>
 
-<div class="form-group violation_types">
+<div class="form-group">
   <label class="col-md-3 control-label" for="" ></label>
   <div class="col-md-6">
     <input type="radio" name="Offense_code" value="male"> Code Type 
@@ -56,6 +56,20 @@
     </div>
 </div>
 
+<div class="form-group suspicion_cjis_offense_code" style="display: none;">
+  <label class="col-md-3 control-label" for="" > Reasonable Suspicion Sub Type: <em>*</em></label>
+   <div class="col-md-6">
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Officer witnessed commission of a crime <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Matched suspect description <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Witness or victim identification of suspect at the scene <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Carrying suspicious object <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Actions indicative of casing a victim or location <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Suspected of acting as a lookout <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Actions indicative of a drug transaction <br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Actions indicative of engaging in a violent crime <br/>
+       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Other reasonable suspicion of a crime<br/>
+    </div>
+</div>
 
 
 <div class="form-group type_traffic_violation" style="display: none;">
