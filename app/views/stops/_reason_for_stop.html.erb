@@ -2,10 +2,16 @@
 <%= form_tag reason_for_stop_stops_path, :method => :get, :remote => true, :id => 'reason_for_stop_form',:class => "form-horizontal form-bordered"  do %>
 
 <div class="form-group">
-  
-    <label class="col-md-3 control-label" for="" >Primary Reason for Stop: <em>*</em></label>
-   
-    <div class="col-md-6">
+  <label class="col-md-3 control-label" for="">Stop Made in Response to a Call of Service? <em>*</em> </label>
+  <div class="col-md-6">
+    <input type=checkbox value= asian name= yes > Yes <br>
+</div>  
+</div> 
+
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="" >Primary Reason for Stop: <em>*</em></label>
+      <div class="col-md-6">
       <select class="form-control select_reason_for_stop">
          <option>  Select</option>
       	<option value="violation">  Traffic violation</option>
@@ -25,23 +31,18 @@
 
 
 <div class="form-group">
-  
-    <label class="col-md-3 control-label" for="" > Reason for Stop Explanation/Narrative: <em>*</em></label>
-   
-    <div class="col-md-6">
-
-    <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
-    </div>
-
-
+      <label class="col-md-3 control-label" for="" > Reason for Stop Explanation/Narrative: <em>*</em></label>
+      <div class="col-md-6">
+        <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
+      </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-3 control-label" for="" ></label>
   <div class="col-md-6">
-    <input type="radio" name="Offense_code" value="male"> Code Type 
-    <input type="radio" name="Offense_code" value="female"> Code Section 
-    <input type="radio" name="Offense_code" value="other" checked> Description
+    <input type="radio" name="Offense_code" value="male"> Code Type &nbsp
+    <input type="radio" name="Offense_code" value="female" checked> Code Section &nbsp
+    <input type="radio" name="Offense_code" value="other" > Description
   </div>  
 </div>   
  
