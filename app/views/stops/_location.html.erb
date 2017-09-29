@@ -9,7 +9,7 @@
     <label class="col-md-3 control-label" for="" > Location for Stop: <em>*</em></label>
    
     <div class="col-md-6">
-      <input type="text" name="ori" value=" " class="form-control">
+      <input type="text" name="location_for_stop" value=" " class="form-control">
     </div>
     
   </div>  
@@ -19,10 +19,38 @@
     <label class="col-md-3 control-label" for="" > Closest City: <em>*</em></label>
    
     <div class="col-md-6">
-      <input type="text" name="ori" value=" " class="form-control">
+      <input type="text" name="closest_city" value=" " class="form-control">
     </div>
     
   </div>  
-   <input type="submit" value="Next" class="btn btn-primary pull-right">
+   <input type="submit" value="Submit" class="btn btn-primary pull-right" id="submit">
   <% end %>
 
+
+<script type="text/javascript">
+  $(function(){
+    $("#location_form").validate({
+        rules: {
+            location_for_stop: { required: true},
+            closest_city: {required: true}
+
+        },
+        messages: {
+            input: { required: "required" }
+        },
+        ignore:      "",
+        errorClass:  'fieldError',
+        onkeyup:     false,
+        onblur:      false,
+        errorElement:'label',
+        submitHandler: function() {                        
+            alert("alert");
+        }
+    });
+    
+    $("#submit").click(function(){
+        $("#location_form").submit();
+        return false;
+    });
+});
+</script>
