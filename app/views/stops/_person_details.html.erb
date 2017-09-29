@@ -8,7 +8,14 @@
 
 <div class="person_form">
 
-<%= form_tag person_details_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %> 
+<%= form_tag person_details_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+
+<div class = "row">
+<div class="col-md-6">
+   <b>Contact number:<em>*</em> </b>
+   <input type="number" name="contact_number" placeholder="(xxx) xxx-xxxx" class="form-control" style="width:400px;"> 
+  </div>
+  </div>
 
 <div class="row">
 
