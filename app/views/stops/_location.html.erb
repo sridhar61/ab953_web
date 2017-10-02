@@ -2,28 +2,28 @@
 
 <%= form_tag location_stops_path, :method => :get, :remote => true, :id => 'location_form',:class => "form-horizontal form-bordered"  do %>
 
-  
-                 
+
+
   <div class="form-group">
-  
+
     <label class="col-md-3 control-label" for="" > Location for Stop: <em>*</em></label>
-   
+
     <div class="col-md-6">
       <input type="text" name="location_for_stop" value=" " class="form-control">
       <p style="font-family:Times New Roman;">Please enter the Location as one of the following (listed in order of preference): block number and street name; closest intersection; or highway and highway exit. If none of these are available, then enter a road marker, landmark, or other description</p>
     </div>
-    
-  </div>  
+
+  </div>
 
   <div class="form-group">
-  
+
     <label class="col-md-3 control-label" for="" > Closest City: <em>*</em></label>
-   
+
     <div class="col-md-6">
       <input type="text" name="closest_city" value=" " class="form-control">
     </div>
-    
-  </div>  
+
+  </div>
    <input type="submit" value="Submit" class="btn btn-primary pull-right" id="submit">
   <% end %>
 
@@ -44,11 +44,11 @@
         onkeyup:     false,
         onblur:      false,
         errorElement:'label',
-        submitHandler: function() {                        
+        submitHandler: function() {
             alert("alert");
         }
     });
-    
+
     $("#submit").click(function(){
         $("#location_form").submit();
         return false;
