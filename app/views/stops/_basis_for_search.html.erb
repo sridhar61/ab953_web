@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h2> Contact - 1</h2>
+  <%= form_tag location_stops_path, :method => :get, :remote => true, :id => 'location_form',:class => "form-horizontal form-bordered"  do %>
+
+    <div class="control-group">
+      <div class="controls span2">
+        <% @basis_search_options.each do |option| %>
+          <label class="checkbox">
+            <%= check_box_tag "search_options[]", option  %> <%= option %>
+          </label>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
