@@ -19,3 +19,7 @@
 .top-buffer { margin-top:10px; }
 
 .row-buffer { margin-top:20px; }
+
+#standard_form .error {
+    color: red;
+}
