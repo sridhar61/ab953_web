@@ -1,7 +1,7 @@
 <div class="container">
 
   <h2> Contact - 1</h2>
-  <%= form_tag location_stops_path, :method => :get, :remote => true, :id => 'location_form',:class => "form-horizontal form-bordered"  do %>
+  <%= form_tag basis_for_search_stops_path, :method => :get, :remote => true, :id => 'location_form',:class => "form-horizontal form-bordered"  do %>
 
     <div class="control-group">
       <div class="controls span2">
@@ -12,6 +12,10 @@
         <% end %>
       </div>
     </div>
+
+    <div class="row row-buffer pull-right">
+       <input type="submit" value="Next" class="btn btn-primary pull-right">
+    </div>   
 
   <% end %>
 

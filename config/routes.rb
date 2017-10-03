@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
+
   resources :stops do
   	collection do
   	  get 'initial_stop'
@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       get 'reason_for_stop'
   	  get 'single_role'
   	  get 'multiple_role'
+      get 'action_taken'
+      get 'property_seized'
+      get 'basis_for_search'
   	end
   end
 

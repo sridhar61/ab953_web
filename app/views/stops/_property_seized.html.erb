@@ -1,0 +1,37 @@
+<h3>Contact:</h3>
+<%= form_tag property_seized_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+
+
+<div class="row">
+
+  <div class="col-md-6">
+    <fieldset>
+      <b>Property Seized:<em>*</em> </b> <br/>
+      <%= check_box_tag "Safekeeping as allowed by law/statute",:id => "" %>&nbsp Safekeeping as allowed by law/statute <br>
+      <%= check_box_tag "Contraband", :id => "" %>&nbsp Contraband<br>
+      <%= check_box_tag "Evidence", :id => "" %>&nbsp Evidence<br>
+      <%= check_box_tag "Impound of vehicle", :id => "" %>&nbsp Impound of vehicle<br>
+      <%= check_box_tag "Abandoned property", :id => "" %>&nbsp Abandoned property<br>
+      <%= check_box_tag "Abandoned property", :id => "" %>&nbsp Suspected of violation of school policy<br>
+</fieldset>
+   </div>
+
+   <div class="col-md-6">
+     <fieldset>
+       <b>Type of property seized:<em>*</em> </b> <br/>
+       <%= check_box_tag "Safekeeping as allowed by law/statute", :id => "" %> Firearms <br>
+       <%= check_box_tag "Contraband", :id => "" %>  Ammunition <br>
+       <%= check_box_tag "Evidence", :id => "" %>  Weapon(s) other than firearm <br>
+       <%= check_box_tag "Impound of vehicle", :id => "" %>&nbsp  Drugs/narcotics <br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Alcohol <br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Money <br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Drug paraphernalia<br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Suspected stolen property <br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Cell phone(s) or electronic devices <br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Vehicle <br>
+       <%= check_box_tag "Abandoned property", :id => "" %>&nbsp  Other contraband or evidence<br>
+ </fieldset>
+    </div>
+  </div>
+   <input type="submit" value="Next" class="btn btn-primary pull-right">
+<% end %>

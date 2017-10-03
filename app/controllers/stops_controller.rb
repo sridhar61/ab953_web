@@ -72,5 +72,8 @@ class StopsController < ApplicationController
 
   end
 
+  def basis_for_search
+
+  end
 
 end
