@@ -5,17 +5,22 @@
 
     <div class="control-group">
       <div class="controls span2">
-        <% @basis_search_options.each do |option| %>
-          <label class="checkbox">
-            <%= check_box_tag "search_options[]", option  %> <%= option %>
-          </label>
-        <% end %>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Consent given <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Officer safety/safety of others <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Search Warrant <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Suspected weapons <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Visible contraband <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Odor of contraband <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Canine detection <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Evidence of crime <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Exigent circumstances /emergency <br> 
       </div>
     </div>
 
     <div class="row row-buffer pull-right">
        <input type="submit" value="Next" class="btn btn-primary pull-right">
-    </div>   
+    </div>
 
   <% end %>
 
