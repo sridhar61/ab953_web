@@ -8,7 +8,7 @@
 
 <div class="person_form">
 
-<%= form_tag person_details_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+<%= form_tag person_details_stops_path, :method => :get, :id => 'person_details_form', :remote => true, :class => "form-horizontal form-bordered"  do %>
 
 <!--div class = "row">
 <<div class="col-md-6">
@@ -22,14 +22,15 @@
   <div class="col-md-6">
 
     <fieldset>
-      <b>Perceived Race Set:<em>*</em> </b> <br/>
-      <input type=checkbox value= asian name= Asian > Asian <br>
-      <input type=checkbox value=black_or_african_american name=Black/African > Black/African <br>
-      <input type=checkbox value="hispanic_latino" name=Hispanic/Latino(a)> Hispanic/Latino(a) <br>
-      <input type=checkbox value="middle_eastern_or_south_asian" name=Middle_Eastern_or_South_Asian> Middle Eastern or South Asian <br>
-      <input type=checkbox value="native_american" name= Native_American> Native American <br>
-      <input type=checkbox value="pacific_islander" name=Pacific_Islander> Pacific Islander <br>
-      <input type=checkbox value="white" name=White> White<br>
+      <b>Perceived Race Set:<em>*</em> </b><b class='raceError'style="display:none;">Please select atleast one option</b>
+<br/>
+      <input type="checkbox" class="perceived_race_set" name="perceived_race_set[asian]"> Asian <br>
+      <input type="checkbox" class="perceived_race_set" name="perceived_race_set[african]"> Black/African <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[hispanic_latino]"> Hispanic/Latino(a) <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[middle_eastern_or_south_asian]"> Middle Eastern or South Asian <br>
+      <input type= "checkbox" class="perceived_race_set" name= "perceived_race_set[native_american]"> Native American <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[pacific_islander]"> Pacific Islander <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[white]"> White<br>
     </fieldset>
   </div>
 
@@ -37,13 +38,13 @@
 
   <div class="col-md-6">
     <fieldset>
-      <b> Perceived Gender: <em>*</em></b><br>
+      <b> Perceived Gender: <em>*</em></b><b class='genderError'style="display:none;">Please select atleast one option</b><br>
 
-      <input type=checkbox value="male"> Male <br>
-      <input type=checkbox value="female"> Female <br>
-      <input type=checkbox id="tansgender_man" value="transgender_man_boy"> Transgender man/boy <br>
-      <input type=checkbox id="tansgender_woman" value="transgender_woman_girl"> Transgender woman/girl <br>
-       <input type=checkbox id="gender_nonconfirming" value="transgender_woman_girl"> Gender Nonconfirming <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gender[male]"> Male <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gender[female]"> Female <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gender[transgender_man]"> Transgender man/boy <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gender[transgender_woman]"> Transgender woman/girl <br>
+       <input type=checkbox class="perceived_gender" name="perceived_race_gender[gender_nonconfirming]"> Gender Nonconfirming <br>
 
     </fieldset>
   </div>
@@ -53,13 +54,13 @@
 <div class="row row-buffer">
    <div class="col-md-6">
     <b>Perceived Age <em>*</em></b><br/>
-    <input type="number" name="quantity" min="1" max="100" class="form-control" style="width:400px;"> <br>
+    <input type="number" class="perceived_age" name="perceived_age" min="1" max="100" class="form-control" style="width:400px;"> <br>
   </div>
 
 
   <div class="col-md-6">
    <b>Perceived to be LGBT?<em>*</em></b><br/>
-     <input type=checkbox id="lgbt" value="lgbt"> LGBT <br>
+     <input type=checkbox id="lgbt" value="lgbt" class="perceived_lgbt" name="perceived_lgbt"> LGBT <br>
 
   </div>
 </div>
@@ -70,27 +71,27 @@
   <div class="col-md-6">
 
     <fieldset>
-      <b>Perceived Disability: <em>*</em></b></br>
-      <input type=checkbox value="deafness_or_difficulty_hearing"> Deafness or difficulty hearing<br>
-      <input type=checkbox value="speech_impairment_or_limited_use_of_language"> Speech impairment or limited use of language<br>
-      <input type=checkbox value="blind_or_limited_vision"> Blind or limited vision<br>
-      <input type=checkbox value="mental_health_condition"> Mental health condition<br>
-      <input type=checkbox value="intellectual_or_developed_disability"> Intellectual or develeoped disability,including dementia<br>
-      <input type=checkbox value="other_disability"> Other disability<br>
-      <input type="checkbox" value="none"> None   <br/>
-      <input type="checkbox" value="disability_related_to_hyperactivity_or_impulsive_behavior"> Disability related to hyperactivity or impulsive behavior<br>
+      <b>Perceived Disability: <em>*</em></b><b class='disabilityError'style="display:none;">Please select atleast one option</b></br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[deafness]"> Deafness or difficulty hearing<br>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[speech_impairment]"> Speech impairment or limited use of language<br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[blind_limited_version]"> Blind or limited vision<br>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[mental_health_condition]"> Mental health condition<br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[intellectual_or_developed]"> Intellectual or develeoped disability,including dementia<br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[other_disability]"> Other disability<br>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[none]"> None   <br/>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[disability_related_to_hyperactivity]"> Disability related to hyperactivity or impulsive behavior<br>
     </fieldset>
 
   </div>
 
    <div class="col-md-6">
     <b>Perceived English Fluency<em>*</em></b><br/>
-    <input id="checkBox" type="checkbox"> Limited English Fluency
+    <input name="perceived_english_fluency" class="perceived_english_fluency" type="checkbox"> Limited English Fluency
   </div>
 </div>
 
 <div class="row row-buffer pull-right">
-   <input type="submit" value="Next" class="btn btn-primary pull-right">
+   <input type="submit" value="Next" class="btn btn-primary pull-right person_details_submit">
 </div>
 
 
@@ -106,6 +107,7 @@
 
 
 <script type="text/javascript">
+
 
   $('#tansgender_man').change(function(){
     if($("#tansgender_man").is(":checked")) {
@@ -124,5 +126,21 @@
     else{
       $('#lgbt').attr('checked', false);
     }
+  });
+
+  $('.person_details_submit').click(function(){
+    if($('.perceived_race_set:checked').length < 1){
+      $('.raceError').show();
+      //return false;
+    }
+    if($('.perceived_gender:checked').length < 1){
+      $('.genderError').show();
+      //return false;
+    }
+    if($('.perceived_disability:checked').length < 1){
+      $('.disabilityError').show();
+      return false;
+    }
+
   });
 </script>
