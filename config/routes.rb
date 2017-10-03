@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   	  get 'multiple_role'
       get 'action_taken'
       get 'property_seized'
+      get 'basis_for_search'
   	end
   end
 

@@ -1,9 +1,8 @@
 class StopsController < ApplicationController
   include HTTParty
 
-
   def index
-
+    @basis_search_options = Constant.get_all_constants
   end
 
 
@@ -65,17 +64,6 @@ class StopsController < ApplicationController
 
   end
 
-  def action_taken
-
-  end
-
-  def property_seized
-  end
-
-  def stop_summary
-
-  end
-
   def post_stop_action
 
   end
@@ -84,5 +72,8 @@ class StopsController < ApplicationController
 
   end
 
+  def basis_for_search
+
+  end
 
 end

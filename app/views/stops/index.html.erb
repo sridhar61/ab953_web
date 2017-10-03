@@ -21,6 +21,8 @@
               <li class="reason_for_stop">
                 <a href="#link_reason_for_stop" data-toggle="tab">Reason for Stop</a>
               </li>
+              <li class="basis_for_search">
+                <a href="#link_basis_for_search" data-toggle="tab">Basis for Search page</a>
               <li class="action_taken">
                 <a href="#link_action_taken_stop" data-toggle="tab">Action Taken</a>
               </li>
@@ -79,17 +81,24 @@
 
               <div id = "link_person_details" class="tab-pane">
                 <div class="row top-buffer">
-                  <%= render 'stops/person_details'%>
+
+                  <%= render "stops/person_details"%>
                 </div>
               </div>
-
-
 
               <div id="link_reason_for_stop" class="tab-pane">
                 <div class="row top-buffer">
                   <%= render 'stops/reason_for_stop' %>
                 </div>
+
               </div>
+
+              <div id="link_basis_for_search" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/basis_for_search' %>
+                </div>
+              </div>
+
 
               <div id = "link_action_taken_stop" class="tab-pane">
                 <div class="row top-buffer">
@@ -110,6 +119,7 @@
                 </div>
               </div>
            </div>
+
           </div>
 
   </div>
