@@ -24,7 +24,7 @@
     </div>
 
   </div>
-   <input type="submit" value="Submit" class="btn btn-primary pull-right" id="submit">
+   <input type="submit" value="Next" class="btn btn-primary pull-right" id="next">
   <% end %>
 
 
@@ -47,6 +47,7 @@
         submitHandler: function() {
             alert("alert");
         }
+
     });
 
     $("#submit").click(function(){
@@ -54,4 +55,8 @@
         return false;
     });
 });
+
 </script>
+.fieldError {
+ color:#FF0000;  /* red */
+}

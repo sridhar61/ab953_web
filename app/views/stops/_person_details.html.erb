@@ -13,7 +13,7 @@
 <!--div class = "row">
 <<div class="col-md-6">
    <b>Contact number:<em>*</em> </b>
-   <input type="number" name="contact_number" placeholder="(xxx) xxx-xxxx" class="form-control" style="width:400px;"> 
+   <input type="number" name="contact_number" placeholder="(xxx) xxx-xxxx" class="form-control" style="width:400px;">
   </div>
   </div> -->
 
@@ -31,38 +31,38 @@
       <input type=checkbox value="pacific_islander" name=Pacific_Islander> Pacific Islander <br>
       <input type=checkbox value="white" name=White> White<br>
     </fieldset>
-  </div>  
+  </div>
 
 
 
   <div class="col-md-6">
     <fieldset>
       <b> Perceived Gender: <em>*</em></b><br>
-      
+
       <input type=checkbox value="male"> Male <br>
       <input type=checkbox value="female"> Female <br>
       <input type=checkbox id="tansgender_man" value="transgender_man_boy"> Transgender man/boy <br>
       <input type=checkbox id="tansgender_woman" value="transgender_woman_girl"> Transgender woman/girl <br>
        <input type=checkbox id="gender_nonconfirming" value="transgender_woman_girl"> Gender Nonconfirming <br>
-       
-    </fieldset>
-  </div>  
 
-</div>    
-  
+    </fieldset>
+  </div>
+
+</div>
+
 <div class="row row-buffer">
    <div class="col-md-6">
     <b>Perceived Age <em>*</em></b><br/>
     <input type="number" name="quantity" min="1" max="100" class="form-control" style="width:400px;"> <br>
-  </div> 
-    
- 
+  </div>
+
+
   <div class="col-md-6">
    <b>Perceived to be LGBT?<em>*</em></b><br/>
      <input type=checkbox id="lgbt" value="lgbt"> LGBT <br>
-      
-  </div>    
-</div>  
+
+  </div>
+</div>
 
 
 <div class="row row-buffer ">
@@ -71,7 +71,7 @@
 
     <fieldset>
       <b>Perceived Disability: <em>*</em></b></br>
-      <input type=checkbox value="deafness_or_difficulty_hearing"> Deafness or difficulty hearing<br>   
+      <input type=checkbox value="deafness_or_difficulty_hearing"> Deafness or difficulty hearing<br>
       <input type=checkbox value="speech_impairment_or_limited_use_of_language"> Speech impairment or limited use of language<br>
       <input type=checkbox value="blind_or_limited_vision"> Blind or limited vision<br>
       <input type=checkbox value="mental_health_condition"> Mental health condition<br>
@@ -81,20 +81,22 @@
       <input type="checkbox" value="disability_related_to_hyperactivity_or_impulsive_behavior"> Disability related to hyperactivity or impulsive behavior<br>
     </fieldset>
 
-  </div>  
+  </div>
 
    <div class="col-md-6">
     <b>Perceived English Fluency<em>*</em></b><br/>
-    <input id="checkBox" type="checkbox"> Limited English Fluency 
-  </div>  
+    <input id="checkBox" type="checkbox"> Limited English Fluency
+  </div>
 </div>
 
-<div class="row row-buffer pull-right">    
+<div class="row row-buffer pull-right">
    <input type="submit" value="Next" class="btn btn-primary pull-right">
-</div>   
+</div>
 
 
-<%end%> 
+
+
+<%end%>
 
 </div>
 
@@ -104,7 +106,7 @@
 
 
 <script type="text/javascript">
-  
+
   $('#tansgender_man').change(function(){
     if($("#tansgender_man").is(":checked")) {
      $('#lgbt').attr('checked', true);
@@ -112,7 +114,7 @@
     else{
       $('#lgbt').attr('checked', false);
     }
-    
+
   });
 
   $("#tansgender_woman").change(function(){
@@ -122,5 +124,5 @@
     else{
       $('#lgbt').attr('checked', false);
     }
-  });  
+  });
 </script>
