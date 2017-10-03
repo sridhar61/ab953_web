@@ -45,7 +45,7 @@
         onblur:      false,
         errorElement:'label',
         submitHandler: function() {
-            alert("alert");
+            $.rails.handleRemote( $(form) );
         }
 
     });

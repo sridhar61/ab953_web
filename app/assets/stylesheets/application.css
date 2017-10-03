@@ -23,3 +23,7 @@
 #standard_form .error {
     color: red;
 }
+
+.fieldError {
+  color:#FF0000;
+}
