@@ -2,9 +2,14 @@
 
 <%= form_tag action_taken_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
 
-
+<div class="row top-buffer">
+  <div class="container">
 <label> DOJ Stop ID:
    <%# f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
    <br>
+ </div>
+</div>
    <input type="submit" value="Next" class="btn btn-primary pull-right">
+
+
 <% end %>

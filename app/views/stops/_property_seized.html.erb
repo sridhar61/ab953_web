@@ -1,8 +1,10 @@
 <h3>Contact:</h3>
 <%= form_tag property_seized_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
 
+<div class="row top-buffer">
+ <div class="container">
 
-<div class="row">
+
 
   <div class="col-md-6">
     <fieldset>
@@ -33,5 +35,6 @@
  </fieldset>
     </div>
   </div>
+</div>
    <input type="submit" value="Next" class="btn btn-primary pull-right">
 <% end %>
