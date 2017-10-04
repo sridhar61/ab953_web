@@ -2,13 +2,13 @@
 
   <%= form_tag basis_for_search_stops_path, :method => :get, :remote => true, :id => 'basis_for_search_form',:class => "form-horizontal form-bordered"  do %>
     <div class="container">
-      <h3> Contact - 1</h3><b class='basisSearchError'style="display:none;">Please select atleast one option</b>
-  
+      <h3> Contact - 1</h3>
     <div class="control-group">
       <div class="row">
 
         <div class="col-md-6">
-            <h4> Basis for Search</h4>
+            <h4> Basis for Search</h4><b class='basisSearchError'style="display:none;">Please select atleast one option</b><br/>
+
           <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
           <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
           <%= check_box_tag "basis_for_search[search_warrant]", "", false, class: "basis_for_search" %>&nbsp Search Warrant <br>
@@ -27,20 +27,20 @@
 
       </div>
       <div class="row row-buffer">
-        <h4> Contraband Evidence: <em>*</em></h4>
+        <h4> Contraband Evidence: <em>*</em></h4><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
           <p style="font-family:Times New Roman;"> Please enter any contraband or evidence discovered, including any in plain view or as a result of a search.</p>
             <div class="col-md-6">
-               <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp None <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Firearm(s) <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Ammunition <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Weapon(s) other than a firearm <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Drugs/narcotics <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Alcohol <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Money <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Drug paraphernalia <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Suspected stolen property <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Cell phone(s) or electronic device(s) <br>
-                <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Other contraband or evidence <br>
+               <%= check_box_tag "basis_for_search[none]", "", false, class: "contraband_evidence" %>&nbsp None <br>
+                <%= check_box_tag "basis_for_search[fire_arm]", "", false, class: "contraband_evidence" %>&nbsp Firearm(s) <br>
+                <%= check_box_tag "basis_for_search[ammunition]", "", false, class: "contraband_evidence" %>&nbsp Ammunition <br>
+                <%= check_box_tag "basis_for_search[weapons]", "", false, class: "contraband_evidence" %>&nbsp Weapon(s) other than a firearm <br>
+                <%= check_box_tag "basis_for_search[drugs]", "", false, class: "contraband_evidence" %>&nbsp Drugs/narcotics <br>
+                <%= check_box_tag "basis_for_search[alcohol]", "", false, class: "contraband_evidence" %>&nbsp Alcohol <br>
+                <%= check_box_tag "basis_for_search[money]", "", false, class: "contraband_evidence" %>&nbsp Money <br>
+                <%= check_box_tag "basis_for_search[drug_paraphernalia]", "", false, class: "contraband_evidence" %>&nbsp Drug paraphernalia <br>
+                <%= check_box_tag "basis_for_search[suspected_stolen]", "", false, class: "contraband_evidence" %>&nbsp Suspected stolen property <br>
+                <%= check_box_tag "basis_for_search[cell_phone]", "", false, class: "contraband_evidence" %>&nbsp Cell phone(s) or electronic device(s) <br>
+                <%= check_box_tag "basis_for_search[other_contraband]", "", false, class: "contraband_evidence" %>&nbsp Other contraband or evidence <br>
             </div>
       </div>
 
@@ -58,10 +58,17 @@
 $('.basis_for_search_submit').click(function(){
   if($('.basis_for_search:checked').length < 1){
     $('.basisSearchError').show();
-    return false;
+    //return false;
   }
   else{
     $('.basisSearchError').hide();
+  }
+  if($('.contraband_evidence:checked').length < 1){
+    $('.contrabandEvidenceError').show();
+    return false;
+  }
+  else{
+    $('.contrabandEvidenceError').hide();
   }
 
 });
