@@ -1,27 +1,37 @@
 <div class="container">
 
-  <h2> Contact - 1</h2>
-  <%= form_tag basis_for_search_stops_path, :method => :get, :remote => true, :id => 'location_form',:class => "form-horizontal form-bordered"  do %>
+  <h2> Contact - 1</h2><b class='basisSearchError'style="display:none;">Please select atleast one option</b>
+  <%= form_tag basis_for_search_stops_path, :method => :get, :remote => true, :id => 'basis_for_search_form',:class => "form-horizontal form-bordered"  do %>
 
     <div class="control-group">
       <div class="controls span2">
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Consent given <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Officer safety/safety of others <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Search Warrant <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Suspected weapons <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Visible contraband <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Odor of contraband <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Canine detection <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Evidence of crime <br>
-<%= check_box_tag "Contraband", :id => "" %>&nbsp Exigent circumstances /emergency <br> 
+        <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
+        <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
+        <%= check_box_tag "basis_for_search[search_warrant]", "", false, class: "basis_for_search" %>&nbsp Search Warrant <br>
+        <%= check_box_tag "basis_for_search[condition_of_parole]", "", false, class: "basis_for_search" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
+        <%= check_box_tag "basis_for_search[suspected_weapons]", "", false, class: "basis_for_search" %>&nbsp Suspected weapons <br>
+        <%= check_box_tag "basis_for_search[visible_contraband]", "", false, class: "basis_for_search"%>&nbsp Visible contraband <br>
+        <%= check_box_tag "basis_for_search[odor_of_contraband]", "", false, class: "basis_for_search" %>&nbsp Odor of contraband <br>
+        <%= check_box_tag "basis_for_search[canine_detection]", "", false, class: "basis_for_search" %>&nbsp Canine detection <br>
+        <%= check_box_tag "basis_for_search[evidence_of_crime]", "", false, class: "basis_for_search" %>&nbsp Evidence of crime <br>
+        <%= check_box_tag "basis_for_search[exigent_circumstances]", "", false, class: "basis_for_search" %>&nbsp Exigent circumstances /emergency <br>
       </div>
     </div>
 
     <div class="row row-buffer pull-right">
-       <input type="submit" value="Next" class="btn btn-primary pull-right">
+       <input type="submit" value="Next" class="btn btn-primary pull-right basis_for_search_submit">
     </div>
 
   <% end %>
 
 </div>
+
+<script>
+$('.basis_for_search_submit').click(function(){
+  if($('.basis_for_search:checked').length < 1){
+    $('.basisSearchError').show();
+    return false;
+  }
+
+});
+</script>
