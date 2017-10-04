@@ -76,4 +76,12 @@ class StopsController < ApplicationController
 
   end
 
+  def k12_related
+
+  end
+
+  def result_of_stop
+
+  end
+
 end

@@ -1,0 +1,164 @@
+<%= form_tag location_stops_path, :method => :get, :remote => true, :id => 'location_form',:class => "form-horizontal form-bordered"  do %>
+<h4> Location </h4>
+
+<div class="row top-buffer">
+  <div class="container">
+
+    <div class="form-group">
+      <label class="col-md-3 control-label" for=""> Location of stop is a K-12 Public School:</label>
+
+      <%= radio_button_tag 'k12_public_school', "", false %> Yes&nbsp
+      <%= radio_button_tag 'k12_public_school', "", false %> No
+      </div>
+
+
+
+    <div class="form-group">
+      <label class="col-md-3 control-label" for=""> K-12 School Code:</label>
+       <div class="col-md-6">
+        <%= text_field_tag "time_of_stop", "", placeholder: "", maxlength: "", class: "form-control" %>
+      </div>
+
+    </div>
+  </div>
+
+<h4> Perceived data</h4>
+
+
+<div class="row top-buffer">
+  <div class="container">
+
+    <div class="form-group">
+      <label class="col-md-3 control-label" for=""> Is Person Stopped a Student?</label>
+
+      <%= radio_button_tag 'is_person_stopped_a_student', "", false %> Yes&nbsp
+      <%= radio_button_tag 'is_person_stopped_a_student', "", false %> No
+      </div>
+
+
+
+    <div class="form-group">
+      <label class="col-md-3 control-label" for=""> Perceived or Known Disability:</label>
+       <div class="col-md-6">
+        <%= check_box_tag "perceived_or_known_disability" %>&nbsp Disability related to hyperactivity or impulsive behavior <br>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+  <h4> Reason_for_Stop</h4>
+
+
+  <div class="row top-buffer">
+    <div class="container">
+
+      <div class="form-group">
+        <label class="col-md-3 control-label" for=""> Primary Reason For stop</label>
+        <%= check_box_tag "waranting_disciplane" %>&nbsp Possible conduct warranting discipline under Education Code<br>
+        </div>
+
+
+
+      <div class="form-group">
+        <label class="col-md-3 control-label" for="">Conditional Presentations Education Code:</label>
+         <div class="col-md-6">
+          <%= check_box_tag "education_code" %>&nbsp 48900    <br>
+          <%= check_box_tag "education_code" %>&nbsp 48900.2  <br>
+          <%= check_box_tag "education_code" %>&nbsp 48900.3, <br>
+          <%= check_box_tag "education_code" %>&nbsp 48900.4, <br>
+          <%= check_box_tag "education_code" %>&nbsp 48900.7(a)<br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-3 control-label" for="">Education Code – Sub-division:</label>
+         <div class="col-md-6">
+
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+
+    <h4> Action_Taken</h4>
+
+
+   <div class="row top-buffer">
+      <div class="container">
+
+        <div class="form-group">
+          <label class="col-md-3 control-label" for=""> Actions Taken by Officer During Stop:</label>
+           <div class="col-md-6">
+            <%= check_box_tag "action_taken_by_officer_during_stop" %>&nbsp Admission or written statement obtained from student <br>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+
+
+      <h4> basis_for_search</h4>
+
+
+      <div class="row top-buffer">
+        <div class="container">
+
+          <div class="form-group">
+            <label class="col-md-3 control-label" for=""> Basis for Search</label>
+             <div class="col-md-6">
+              <%= check_box_tag "suspected_of_violation_of_school_policy1" %>&nbsp Suspected violation of school policy<br>
+            </div>
+          </div>
+
+          </div>
+        </div>
+
+
+
+        <h4> Property_Seized</h4>
+
+
+        <div class="row top-buffer">
+          <div class="container">
+
+          <div class="form-group">
+              <label class="col-md-3 control-label" for=""> Basis for Property Seizure</label>
+               <div class="col-md-6">
+                <%= check_box_tag "suspected_of_violation_of_school_policy" %>&nbsp Suspected of violation of school policy <br>
+              </div>
+            </div>
+
+            </div>
+          </div>
+
+
+          <h4> Result_of_Stop</h4>
+
+
+          <div class="row top-buffer">
+            <div class="container">
+
+            <div class="form-group">
+                <label class="col-md-3 control-label" for=""> Basis for Search Person</label>
+                 <div class="col-md-6">
+                  <%= check_box_tag "referral_to_school_administrator" %>&nbsp Referral to school administrator <br>
+                  <%= check_box_tag "referral_to_school_counselor" %>&nbsp Referral to school counselor or other support staff <br>
+                </div>
+              </div>
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+<% end %>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       get 'action_taken'
       get 'property_seized'
       get 'basis_for_search'
+      get 'k12_related'
+      get 'result_of_stop'
   	end
   end
 

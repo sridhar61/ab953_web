@@ -33,6 +33,13 @@
               <li class="stop_summary">
                 <a href="#link_stop_summary_stop" data-toggle="tab">Stop Summary</a>
               </li>
+
+
+              <li class="result_of_stop">
+                <a href="#link_result_of_stop" data-toggle="tab">Result of Stop</a>
+              </li>
+
+
               <!--
               <li class="skills_li">
                 <a href="#skills" data-toggle="tab">Post Stop Action</a>
@@ -118,6 +125,14 @@
                   <%= render 'stops/stop_summary' %>
                 </div>
               </div>
+
+
+              <div id="link_result_of_stop" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/result_of_stop' %>
+                </div>
+              </div>
+
            </div>
 
           </div>
