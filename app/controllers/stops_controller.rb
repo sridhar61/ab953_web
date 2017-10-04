@@ -2,7 +2,7 @@ class StopsController < ApplicationController
   include HTTParty
 
   def index
-    @basis_search_options = Constant.get_all_constants
+    #@basis_search_options = Constant.get_all_constants
   end
 
 
