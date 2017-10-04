@@ -1,0 +1,46 @@
+<h3>Contact-1:</h3>
+<%= form_tag result_of_stop_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
+
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="" >Filter by Offense Type of Statute CD: </label>
+  <div class="col-md-6">
+
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspPenal Code &nbsp &nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspHealth and Safety&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspWelfare and Institution&nbsp<br>
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspVehicle Code&nbsp&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspBusiness and Professional&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspOther&nbsp <br>
+
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="" >Filter by Code Section or Description: </label>
+  <div class="col-md-6">
+
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspCode Section &nbsp &nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspDescription
+</div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-3 control-label" for="" >Result of Stop Section: </label>
+  <div class="col-md-6">
+<%= check_box_tag "Contraband", :id => "" %>&nbsp No action <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Warning <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Citation or infraction	<br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp In-field cite and release			<br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest pursuant to outstanding warrant <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest without warrant		<br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Field interview card completed <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Noncriminal transport or caretaking transport <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Psychiatric hold <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Contacted U.S. Department of Homeland Security (e.g., Immigration and Customs &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Enforcement, Customs and Border Protection)<br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Referral to school administrator <br>
+<%= check_box_tag "Contraband", :id => "" %>&nbsp Referral to school counselor or other support staff <br>
+</div>
+</div>
+<% end %>

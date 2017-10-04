@@ -1,10 +1,11 @@
-<h3>Contact:</h3>
+<h3>Contact-1:</h3>
 <%= form_tag action_taken_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
 
 <div class="row top-buffer">
   <div class="container">
-    <fieldset>
-      <b>"Action Taken" and "Search" data sets:<em>*</em> </b> <br/>
+    <div class="form-group">
+    <h4>Action Taken:<em>*</em> </h4>
+      <div class="col-md-6">
 
 		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person removed from vehicle by order <br>
 		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person removed from vehicle by physical contact<br>
@@ -35,7 +36,9 @@
     <%= check_box_tag "Contraband", :id => "" %>&nbsp NONE <br>
 
 
-	 </fieldset>
+
+ </div>
+ </div>
   </div>
 </div>
 
