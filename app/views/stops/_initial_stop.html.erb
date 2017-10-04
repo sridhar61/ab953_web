@@ -1,7 +1,7 @@
 <div class="container">
 <h4> Stop Timing Information: </h4>
 
-<%= form_tag initial_stop_stops_path, :remote => true, :id => 'initial_stop_form',:class => "form-horizontal form-bordered"  do %>
+<%= form_tag initial_stop_stops_path, :remote => true,  :method => "get",:id => 'initial_stop_form',:class => "form-horizontal form-bordered"  do %>
 
   <div class="form-group">
    <label class="col-md-3 control-label" for="">Date of Stop: <em>*</em></label>
@@ -89,7 +89,7 @@
 
     $.validator.addMethod("valueNotEquals", function(value, element, arg){
       return arg !== value;
-    }, "Value must not equal arg.");
+    },  "Please select a value");
 
     $("#initial_stop_form").validate({
         rules: {
@@ -101,7 +101,7 @@
             duration_of_stop: {required: true},
             experience: {required: true},
             assignment_type: {
-              required: true
+              valueNotEquals: "0"
             }
 
         },
@@ -113,14 +113,14 @@
         onkeyup:     false,
         onblur:      false,
         errorElement:'label',
-        submitHandler: function() {
-            alert("alert");
+        submitHandler: function(form) {
+              $.rails.handleRemote( $(form) );
         }
     });
 
     $("#initial_stop_submit").on("click", function(e) {
       $("#initial_stop_form").submit();
-      return false;
+      //return false;
     });
 });
 </script>
