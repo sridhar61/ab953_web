@@ -73,10 +73,10 @@
 
 
 
-  <div class="form-group">
+  <div class="form-group other_text_area" style="display:none;">
    <label class="col-md-3 control-label" for=""> Other Assignment Type: <em>*</em></label>
     <div class="col-md-6 ">
-      <%= text_area :hatch, cols: "30", rows: "10" %>
+      <%= text_area_tag :hatch, "", cols: "6", rows: "6", class: "form-control" %>
     </div>
     <div id='ass-error' class='hide error'>Please select Assignment type</div>
   </div>
@@ -132,5 +132,16 @@
       $("#initial_stop_form").submit();
       //return false;
     });
-});
+  });
+
+
+  $("#assignment_type").change(function(){
+    if ($("#assignment_type").val() == 10){
+      $('.other_text_area').show();
+    }
+    else{
+      $('.other_text_area').hide();
+    }
+  });
+
 </script>
