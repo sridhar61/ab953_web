@@ -24,7 +24,7 @@
       	<option>  Investigation to determine whether the person was truant</option>
       	<option>  Consensual encounter resulting in search</option>
       	<option>  Possible conduct warranting discipline under Education Code</option>
-      	<option>  Determine whether the student violated school policy</option>  
+      	<option>  Determine whether the student violated school policy</option>
       </select>
     </div>
 
@@ -38,7 +38,7 @@
       </div>
 </div>
 
-<div class="form-group">
+<div class="form-group suspicion_cjis_offense_code " style="display: none;">
   <label class="col-md-3 control-label" for="" ></label>
   <div class="col-md-6">
     <input type="radio" name="Offense_code" value="male"> Code Type &nbsp
@@ -150,6 +150,7 @@
   $(document).ready(function(){
     $('.type_traffic_violation').hide();
     $('.violation_types').hide();
+    //$('.suspicion_cjis_offense_code').hide();
   });
 
   $('.select_reason_for_stop').on('change',function(){

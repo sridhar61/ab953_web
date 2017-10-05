@@ -67,9 +67,19 @@
 
 
 <div class="row row-buffer ">
-
   <div class="col-md-6">
+    <b>If person is a student?<em>*</em></b><br/>
+    <input type="radio" class="is_person_student" name="person_is_student" value="yes" /> Yes &nbsp &nbsp
+    <input type="radio" class="is_person_student" name="person_is_student" value="no" /> No
+  </div>
+   <div class="col-md-6">
+    <b>Perceived English Fluency<em>*</em></b><br/>
+    <input name="perceived_english_fluency" class="perceived_english_fluency" type="checkbox"> Limited English Fluency
+  </div>
+</div>
 
+<div class="row row-buffer">
+  <div class="col-md-6">
     <fieldset>
       <b>Perceived Disability: <em>*</em></b><b class='disabilityError'style="display:none;">Please select atleast one option</b></br>
       <input type="checkbox" class="perceived_disability" name="perceived_disability[deafness]"> Deafness or difficulty hearing<br>
@@ -79,22 +89,21 @@
       <input type="checkbox" class="perceived_disability" name="perceived_disability[intellectual_or_developed]"> Intellectual or develeoped disability,including dementia<br>
       <input type="checkbox" class="perceived_disability" name="perceived_disability[other_disability]"> Other disability<br>
       <input type="checkbox" class="perceived_disability"  name="perceived_disability[none]"> None   <br/>
-      <input type="checkbox" class="perceived_disability"  name="perceived_disability[disability_related_to_hyperactivity]"> Disability related to hyperactivity or impulsive behavior<br>
+      <div class="student_perceived_disability_disability">
+      <input type="checkbox" class="perceived_disability_disability"  name="perceived_disability[disability_related_to_hyperactivity]"> Disability related to hyperactivity or impulsive behavior </div><br>
     </fieldset>
 
   </div>
 
-   <div class="col-md-6">
-    <b>Perceived English Fluency<em>*</em></b><br/>
-    <input name="perceived_english_fluency" class="perceived_english_fluency" type="checkbox"> Limited English Fluency
-  </div>
 </div>
 
 <div class="row row-buffer pull-right">
-   <input type="submit" value="Next" class="btn btn-primary pull-right person_details_submit">
+
+  <div class="col-md-6">
+    <input type="submit" value="Next" class="btn btn-primary pull-right person_details_submit">
+  </div>
+
 </div>
-
-
 
 
 <%end%>
@@ -107,7 +116,9 @@
 
 
 <script type="text/javascript">
-
+  $(document).ready(function(){
+    $('.student_perceived_disability_disability').hide();
+  });
 
   $('#tansgender_man').change(function(){
     if($("#tansgender_man").is(":checked")) {
@@ -126,6 +137,17 @@
     else{
       $('#lgbt').attr('checked', false);
     }
+  });
+
+  $(".is_person_student").change(function(){
+    //alert();
+     if($(".is_person_student:checked").val() == "yes"){
+       $('.student_perceived_disability_disability').show();
+     }
+     if($(".is_person_student:checked").val() == "no"){
+       //alert();
+       $('.student_perceived_disability_disability').hide();
+     }
   });
 
   $('.person_details_submit').click(function(){
