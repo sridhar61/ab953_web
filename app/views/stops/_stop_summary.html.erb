@@ -6,6 +6,140 @@
   <div class="container">
 <label> DOJ Stop ID:
    <%# f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
+
+   <div class="container">
+   <div class="panel-group" id="accordion">
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+             <span class="glyphicon glyphicon-minus"></span>
+             Initial Stop Data
+           </a>
+         </h4>
+       </div>
+       <div id="collapseOne" class="panel-collapse collapse in">
+         <div class="panel-body">
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Officer UID:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Date of Stop::<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Time of Stop:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Duration of Stop:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+
+         </div>
+       </div>
+     </div>
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+             <span class="glyphicon glyphicon-plus"></span>
+            Location
+           </a>
+         </h4>
+       </div>
+       <div id="collapseTwo" class="panel-collapse collapse">
+         <div class="panel-body">
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Location for Stop:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">DClosest City:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+             <span class="glyphicon glyphicon-plus"></span>
+            Person Details
+           </a>
+         </h4>
+       </div>
+       <div id="collapseThree" class="panel-collapse collapse">
+         <div class="panel-body">
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Perceived Race Set:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Perceived Gender:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Perceived Age:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Perceived to be LGBT?:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">Perceived Disability:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+           <div class="form-group">
+               <label class="col-md-3 control-label" for="">PPerceived English Fluency:<em>*</em></label>
+                <div class="col-md-6">
+                   ABC123456
+                </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+   </div>
+   </div>
+
+
    <br>
  </div>
 </div>
