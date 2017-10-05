@@ -22,16 +22,20 @@
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Chemical spray used<br>
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Other physical or vehicle contact<br>
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person photographed<br>
-      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Asked for consent to search person<br><br/>
-      		<b> Additional display if this element is choosen </b>
-      	  <%= radio_button_tag "Contraband", :id => "" %>Yes
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Asked for consent to search person<br>
+      		<b> Consent Given </b> <br>
+      	  <%= radio_button_tag "Contraband", :id => "" %>Yes&nbsp&nbsp
       	  <%= radio_button_tag "Contraband", :id => "" %>No <br>
           <%= check_box_tag "basis_for_search[none]", "", false, class: "additional search_of_person" %>&nbsp Search of person was conducted <br>
           <%= check_box_tag "basis_for_search[none]", "", false, class: "additional asked_for_consent" %>&nbsp Asked for consent to search property <br>
+          <b> Consent Given </b> <br>
+          <%= radio_button_tag "Contraband", :id => "" %>Yes&nbsp&nbsp
+          <%= radio_button_tag "Contraband", :id => "" %>No <br>
           <%= check_box_tag "basis_for_search[none]", "", false, class: "additional search_of_property" %>&nbsp Search of property was conducted <br>
       		<%= check_box_tag "basis_for_search[none]", "", false, class: "additional property_was_seized" %>&nbsp Property was seized <br>
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Vehicle impounded <br>
           <%= check_box_tag "Contraband", :id => "" %>&nbsp NONE <br>
+          <%= check_box_tag "Contraband", :id => "" %>&nbsp Admission or written statement obtained from student <br>
         </div>
       </div>
     </div>
