@@ -1,2 +1,8 @@
+//alert();
+if($(".property_was_seized").is(":checked")){
+  $('.property_seized a').tab('show');
+}
 
-$('.nav-tabs li:eq(5) a').tab('show');
+if(!$(".property_was_seized").is(":checked")){
+  $('.result_of_stop a').tab('show');
+}

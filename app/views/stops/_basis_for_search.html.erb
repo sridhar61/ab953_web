@@ -1,66 +1,31 @@
+<div class="container">
+<h4> Contact - 1 </h4>
 
-  <%= form_tag basis_for_search_stops_path, :method => :get, :remote => true, :id => 'basis_for_search_form',:class => "form-horizontal form-bordered"  do %>
-    <div class="container">
-      <h3> Contact - 1</h3>
-    <div class="control-group">
-      <div class="row">
-
-        <div class="col-md-6">
-          <label> Basis for Search Person: <em>*</em></label><b class='basisSearchError'style="display:none;">Please select atleast one option</b><br/>
-
-          <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
-          <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
-          <%= check_box_tag "basis_for_search[search_warrant]", "", false, class: "basis_for_search" %>&nbsp Search Warrant <br>
-          <%= check_box_tag "basis_for_search[condition_of_parole]", "", false, class: "basis_for_search" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
-          <%= check_box_tag "basis_for_search[suspected_weapons]", "", false, class: "basis_for_search" %>&nbsp Suspected weapons <br>
-          <%= check_box_tag "basis_for_search[visible_contraband]", "", false, class: "basis_for_search"%>&nbsp Visible contraband <br>
-          <%= check_box_tag "basis_for_search[odor_of_contraband]", "", false, class: "basis_for_search" %>&nbsp Odor of contraband <br>
-          <%= check_box_tag "basis_for_search[canine_detection]", "", false, class: "basis_for_search" %>&nbsp Canine detection <br>
-          <%= check_box_tag "basis_for_search[evidence_of_crime]", "", false, class: "basis_for_search" %>&nbsp Evidence of crime <br>
-          <%= check_box_tag "basis_for_search[exigent_circumstances]", "", false, class: "basis_for_search" %>&nbsp Exigent circumstances /emergency <br>
-        </div>
-        <div class="col-md-6">
-              <label> Basis for Search Explanation/Narrative: <em>*</em></label>
-                <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
-        </div>
-
+<%= form_tag basis_for_search_stops_path, :remote => true,  :method => "get",:id => 'initial_stop_form',:class => "form-horizontal form-bordered"  do %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="" >Result of Stop Section: </label><br/>
+        <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
+        <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
+        <%= check_box_tag "basis_for_search[search_warrant]", "", false, class: "basis_for_search" %>&nbsp Search Warrant <br>
+        <%= check_box_tag "basis_for_search[condition_of_parole]", "", false, class: "basis_for_search" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
+        <%= check_box_tag "basis_for_search[suspected_weapons]", "", false, class: "basis_for_search" %>&nbsp Suspected weapons <br>
+        <%= check_box_tag "basis_for_search[visible_contraband]", "", false, class: "basis_for_search"%>&nbsp Visible contraband <br>
+        <%= check_box_tag "basis_for_search[odor_of_contraband]", "", false, class: "basis_for_search" %>&nbsp Odor of contraband <br>
+        <%= check_box_tag "basis_for_search[canine_detection]", "", false, class: "basis_for_search" %>&nbsp Canine detection <br>
+        <%= check_box_tag "basis_for_search[evidence_of_crime]", "", false, class: "basis_for_search" %>&nbsp Evidence of crime <br>
+        <%= check_box_tag "basis_for_search[exigent_circumstances]", "", false, class: "basis_for_search" %>&nbsp Exigent circumstances /emergency <br>
       </div>
-      <!--<div class="row row-buffer">
-        <h4> Contraband Evidence: <em>*</em></h4><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
-          <p style="font-family:Times New Roman;"> Please enter any contraband or evidence discovered, including any in plain view or as a result of a search.</p>
-            <div class="col-md-6">
-               <%= check_box_tag "basis_for_search[none]", "", false, class: "contraband_evidence" %>&nbsp None <br>
-                <%= check_box_tag "basis_for_search[fire_arm]", "", false, class: "contraband_evidence" %>&nbsp Firearm(s) <br>
-                <%= check_box_tag "basis_for_search[ammunition]", "", false, class: "contraband_evidence" %>&nbsp Ammunition <br>
-                <%= check_box_tag "basis_for_search[weapons]", "", false, class: "contraband_evidence" %>&nbsp Weapon(s) other than a firearm <br>
-                <%= check_box_tag "basis_for_search[drugs]", "", false, class: "contraband_evidence" %>&nbsp Drugs/narcotics <br>
-                <%= check_box_tag "basis_for_search[alcohol]", "", false, class: "contraband_evidence" %>&nbsp Alcohol <br>
-                <%= check_box_tag "basis_for_search[money]", "", false, class: "contraband_evidence" %>&nbsp Money <br>
-                <%= check_box_tag "basis_for_search[drug_paraphernalia]", "", false, class: "contraband_evidence" %>&nbsp Drug paraphernalia <br>
-                <%= check_box_tag "basis_for_search[suspected_stolen]", "", false, class: "contraband_evidence" %>&nbsp Suspected stolen property <br>
-                <%= check_box_tag "basis_for_search[cell_phone]", "", false, class: "contraband_evidence" %>&nbsp Cell phone(s) or electronic device(s) <br>
-                <%= check_box_tag "basis_for_search[other_contraband]", "", false, class: "contraband_evidence" %>&nbsp Other contraband or evidence <br>
-            </div>
-      </div> -->
-
+      <div class="col-md-6">
+            <label> Basis for Search Explanation/Narrative: <em>*</em></label>
+              <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
+      </div>
     </div>
-
-    <div class="row row-buffer pull-right">
-       <input type="submit" value="Next" class="btn btn-primary pull-right basis_for_search_submit">
-    </div>
-
-  <% end %>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Next" class="btn btn-primary pull-right" id="initial_stop_submit">
+  </div>
+<% end %>
 
 </div>
-
-<script>
-$('.basis_for_search_submit').click(function(){
-  if($('.basis_for_search:checked').length < 1){
-    $('.basisSearchError').show();
-    //return false;
-  }
-  else{
-    $('.basisSearchError').hide();
-  }
-});
-</script>

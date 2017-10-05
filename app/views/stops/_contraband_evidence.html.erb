@@ -1,3 +1,4 @@
+<div class="container">
   <%= form_tag contraband_evidence_stops_path, :method => :get, :remote => true, :id => 'contraband_evidence_form',:class => "form-horizontal form-bordered"  do %>
   <div class="row row-buffer">
     <label>Contraband Evidence: <em>*</em></label><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
@@ -16,14 +17,14 @@
             <%= check_box_tag "basis_for_search[other_contraband]", "", false, class: "contraband_evidence" %>&nbsp Other contraband or evidence <br>
         </div>
   </div>
+
   <div class="row row-buffer pull-right">
-     <input type="submit" value="Next" class="btn btn-primary pull-right basis_for_search_submit">
+     <input type="submit" value="Next" class="btn btn-primary pull-right contraband_evidence_submit">
   </div>
-
-
 
   <% end %>
 
+</div>
 
   <script>
   $('.basis_for_search_submit').click(function(){
