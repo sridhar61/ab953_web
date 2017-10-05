@@ -1,5 +1,4 @@
 
-
   <%= form_tag basis_for_search_stops_path, :method => :get, :remote => true, :id => 'basis_for_search_form',:class => "form-horizontal form-bordered"  do %>
     <div class="container">
       <h3> Contact - 1</h3>
@@ -7,7 +6,7 @@
       <div class="row">
 
         <div class="col-md-6">
-            <h4> Basis for Search</h4><b class='basisSearchError'style="display:none;">Please select atleast one option</b><br/>
+          <label> Basis for Search Person: <em>*</em></label><b class='basisSearchError'style="display:none;">Please select atleast one option</b><br/>
 
           <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
           <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
@@ -26,7 +25,7 @@
         </div>
 
       </div>
-      <div class="row row-buffer">
+      <!--<div class="row row-buffer">
         <h4> Contraband Evidence: <em>*</em></h4><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
           <p style="font-family:Times New Roman;"> Please enter any contraband or evidence discovered, including any in plain view or as a result of a search.</p>
             <div class="col-md-6">
@@ -42,7 +41,7 @@
                 <%= check_box_tag "basis_for_search[cell_phone]", "", false, class: "contraband_evidence" %>&nbsp Cell phone(s) or electronic device(s) <br>
                 <%= check_box_tag "basis_for_search[other_contraband]", "", false, class: "contraband_evidence" %>&nbsp Other contraband or evidence <br>
             </div>
-      </div>
+      </div> -->
 
     </div>
 
@@ -63,13 +62,5 @@ $('.basis_for_search_submit').click(function(){
   else{
     $('.basisSearchError').hide();
   }
-  if($('.contraband_evidence:checked').length < 1){
-    $('.contrabandEvidenceError').show();
-    return false;
-  }
-  else{
-    $('.contrabandEvidenceError').hide();
-  }
-
 });
 </script>

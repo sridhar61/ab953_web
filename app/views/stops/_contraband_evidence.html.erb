@@ -1,0 +1,39 @@
+  <%= form_tag contraband_evidence_stops_path, :method => :get, :remote => true, :id => 'contraband_evidence_form',:class => "form-horizontal form-bordered"  do %>
+  <div class="row row-buffer">
+    <label>Contraband Evidence: <em>*</em></label><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
+      <p style="font-family:Times New Roman;"> Please enter any contraband or evidence discovered, including any in plain view or as a result of a search.</p>
+        <div class="col-md-6">
+           <%= check_box_tag "basis_for_search[none]", "", false, class: "contraband_evidence" %>&nbsp None <br>
+            <%= check_box_tag "basis_for_search[fire_arm]", "", false, class: "contraband_evidence" %>&nbsp Firearm(s) <br>
+            <%= check_box_tag "basis_for_search[ammunition]", "", false, class: "contraband_evidence" %>&nbsp Ammunition <br>
+            <%= check_box_tag "basis_for_search[weapons]", "", false, class: "contraband_evidence" %>&nbsp Weapon(s) other than a firearm <br>
+            <%= check_box_tag "basis_for_search[drugs]", "", false, class: "contraband_evidence" %>&nbsp Drugs/narcotics <br>
+            <%= check_box_tag "basis_for_search[alcohol]", "", false, class: "contraband_evidence" %>&nbsp Alcohol <br>
+            <%= check_box_tag "basis_for_search[money]", "", false, class: "contraband_evidence" %>&nbsp Money <br>
+            <%= check_box_tag "basis_for_search[drug_paraphernalia]", "", false, class: "contraband_evidence" %>&nbsp Drug paraphernalia <br>
+            <%= check_box_tag "basis_for_search[suspected_stolen]", "", false, class: "contraband_evidence" %>&nbsp Suspected stolen property <br>
+            <%= check_box_tag "basis_for_search[cell_phone]", "", false, class: "contraband_evidence" %>&nbsp Cell phone(s) or electronic device(s) <br>
+            <%= check_box_tag "basis_for_search[other_contraband]", "", false, class: "contraband_evidence" %>&nbsp Other contraband or evidence <br>
+        </div>
+  </div>
+  <div class="row row-buffer pull-right">
+     <input type="submit" value="Next" class="btn btn-primary pull-right basis_for_search_submit">
+  </div>
+
+
+
+  <% end %>
+
+
+  <script>
+  $('.basis_for_search_submit').click(function(){
+    if($('.contraband_evidence:checked').length < 1){
+      $('.contrabandEvidenceError').show();
+      return false;
+    }
+    else{
+      $('.contrabandEvidenceError').hide();
+    }
+
+  });
+  </script>

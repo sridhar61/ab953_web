@@ -84,4 +84,8 @@ class StopsController < ApplicationController
 
   end
 
+  def contraband_evidence
+
+  end
+
 end
