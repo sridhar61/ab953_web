@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       get 'basis_for_search'
       get 'k12_related'
       get 'result_of_stop'
+      get 'contraband_evidence'
   	end
   end
 

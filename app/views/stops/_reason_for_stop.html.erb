@@ -3,8 +3,11 @@
 
 <div class="form-group">
   <label class="col-md-3 control-label" for="">Stop Made in Response to a Call of Service? <em>*</em> </label>
+
   <div class="col-md-6">
-    <input type=checkbox value= asian name= yes > Yes <br>
+    <%= radio_button_tag 'response_to_call_service', "", false %> Yes
+    <%= radio_button_tag 'response_to_call_service', "", false %> No
+    <b id="response-call-error" style="display:none;">Please select an option</b>
 </div>
 </div>
 
@@ -12,8 +15,8 @@
 <div class="form-group">
   <label class="col-md-3 control-label" for="" >Primary Reason for Stop: <em>*</em></label>
       <div class="col-md-6">
-      <select class="form-control select_reason_for_stop">
-         <option>  Select</option>
+      <select class="form-control select_reason_for_stop" name="select_reason_for_stop">
+         <option value="0">  Select</option>
       	<option value="violation">  Traffic violation</option>
       	<option value="suspicion_criminal_activity">  Reasonable suspicion of criminal activity</option>
       	<option>  Known to be on parole/probation/PRCS/mandatory supervision</option>
@@ -33,7 +36,7 @@
 <div class="form-group">
       <label class="col-md-3 control-label" for="" > Reason for Stop Explanation/Narrative: <em>*</em></label>
       <div class="col-md-6">
-        <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
+        <textarea rows="4" cols="60" maxlength="250" class="form-control" name="reason_for_stop_explaination" placeholder="Enter text here..."> </textarea>
       </div>
 </div>
 
@@ -68,16 +71,17 @@
       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Suspected of acting as a lookout <br/>
       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Actions indicative of a drug transaction <br/>
       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Actions indicative of engaging in a violent crime <br/>
-       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Other reasonable suspicion of a crime<br/>
+      <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Other reasonable suspicion of a crime<br/>
     </div>
 </div>
 
 
 <div class="form-group type_traffic_violation" style="display: none;">
   <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label>
+  <div id="traffic-error" class='hide error'>Please select an option</div>
    <div class="col-md-6">
-    <select class="form-control">
-        <option>  Select</option>
+    <select class="form-control" name="type_of_traffic_violation" class="type_of_traffic_violation">
+        <option value="0">  Select</option>
         <option>  Moving</option>
         <option>  Equipment violation</option>
         <option>  Non-moving violation, including registration violation</option>
@@ -85,14 +89,65 @@
     </div>
 </div>
 
-<input type="submit" value="Next" class="btn btn-primary pull-right">
+<input type="submit" value="Next" class="btn btn-primary pull-right reason_for_stop_submit">
 
 
 <% end %>
 
 
 
-<script>
+
+<script type="text/javascript">
+  $(function(){
+
+    $.validator.addMethod("valueNotEquals", function(value, element, arg){
+      return arg !== value;
+    },  "Please select a value");
+
+    $("#reason_for_stop_form").validate({
+        rules: {
+            reason_for_stop_explaination: { required: true},
+            select_reason_for_stop: {
+              valueNotEquals: "0"
+            }
+        },
+        messages: {
+            input: { required: "required" }
+        },
+        ignore:      "",
+        errorClass:  'fieldError',
+        onkeyup:     false,
+        onblur:      false,
+        errorElement:'label',
+        submitHandler: function(form) {
+              $.rails.handleRemote( $(form) );
+        }
+    });
+
+    $(".reason_for_stop_submit").on("click", function(e) {
+      //alert();
+      if(!$("input:radio[name='response_to_call_service']").is(":checked")) {
+        $('#response-call-error').show();
+      }
+      else{
+        $('#response-call-error').hide();
+      }
+      if($('.select_reason_for_stop').val() == 'suspicion_criminal_activity') {
+
+      }
+      if($('.select_reason_for_stop').val() == 'violation') {
+        //alert();
+        if($('.type_of_traffic_violation').val() == '0'){
+          $('#traffic-error').show();
+        }
+      }
+      $("#reason_for_stop_form").submit();
+      return false;
+    });
+});
+
+
+
 
   $(document).ready(function(){
     $('.type_traffic_violation').hide();
@@ -100,8 +155,9 @@
   });
 
   $('.select_reason_for_stop').on('change',function(){
-
+    //alert("1");
     if($('.select_reason_for_stop').val() == 'suspicion_criminal_activity') {
+      //alert("2");
         $('.violation_types').show();
       $('.suspicion_cjis_offense_code').show();
     }
@@ -116,5 +172,6 @@
       $('.type_traffic_violation').hide();
     }
   });
+
 
 </script>
