@@ -1,1 +1,14 @@
-$('.nav-tabs li:eq(6) a').tab('show')
+
+if($(".search_of_person").is(":checked") || $(".search_of_property").is(":checked")) {
+  //alert();
+  $('.basis_for_search a').tab('show');
+}
+if($(".property_was_seized").is(":checked")){
+  $('.property_seized a').tab('show');
+}
+if($(".property_was_seized").is(":checked") && ($(".search_of_person").is(":checked") || $(".search_of_property").is(":checked"))) {
+  $('.basis_for_search a').tab('show');
+}
+if($('.additional:checked').length == 0){
+  $('.stop_summary a').tab('show');
+}

@@ -1,54 +1,68 @@
 <h3>Contact-1:</h3>
 <%= form_tag action_taken_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
 
-<div class="row top-buffer">
-  <div class="container">
-    <div class="form-group">
-    <h4>Action Taken:<em>*</em> </h4>
-      <div class="col-md-6">
-
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person removed from vehicle by order <br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person removed from vehicle by physical contact<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Field sobriety test conducted <br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Curbside detention<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Handcuffed or flex cuffed<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Patrol car detention<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Canine removed from vehicle or used to search<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Firearm pointed at person<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Firearm discharged or used<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Electronic control device<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Impact projectile discharged or used<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Canine bit or held person <br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Baton or other impact weapon used<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Chemical spray used<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Other physical or vehicle contact<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person photographed<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Asked for consent to search person<br>
-		                                           Consent Given: <br>
-
-	  <%= radio_button_tag "Contraband", :id => "" %>Yes
-	  <%= radio_button_tag "Contraband", :id => "" %>No <br>
-    <%= check_box_tag "Contraband", :id => "" %>&nbsp Search of person was conducted<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Asked for consent to search property<br>
-                                                Consent Given: <br>
-    <%= radio_button_tag "Contraband", :id => "" %>Yes
-    <%= radio_button_tag "Contraband", :id => "" %>No <br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Search of property was conducted<br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Property was seized <br>
-		<%= check_box_tag "Contraband", :id => "" %>&nbsp Vehicle impounded <br>
-    <%= check_box_tag "Contraband", :id => "" %>&nbsp NONE <br>
-
-
-
- </div>
- </div>
+  <div class="row top-buffer">
+    <div class="container">
+      <div class="form-group">
+      <h4>Action Taken:<em>*</em> </h4>
+        <div class="col-md-6">
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person removed from vehicle by order <br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person removed from vehicle by physical contact<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Field sobriety test conducted <br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Curbside detention<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Handcuffed or flex cuffed<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Patrol car detention<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Canine removed from vehicle or used to search<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Firearm pointed at person<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Firearm discharged or used<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Electronic control device<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Impact projectile discharged or used<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Canine bit or held person <br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Baton or other impact weapon used<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Chemical spray used<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Other physical or vehicle contact<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person photographed<br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Asked for consent to search person<br><br/>
+      		<b> Additional display if this element is choosen </b>
+      	  <%= radio_button_tag "Contraband", :id => "" %>Yes
+      	  <%= radio_button_tag "Contraband", :id => "" %>No <br>
+          <%= check_box_tag "basis_for_search[none]", "", false, class: "additional search_of_person" %>&nbsp Search of person was conducted <br>
+          <%= check_box_tag "basis_for_search[none]", "", false, class: "additional asked_for_consent" %>&nbsp Asked for consent to search property <br>
+          <%= check_box_tag "basis_for_search[none]", "", false, class: "additional search_of_property" %>&nbsp Search of property was conducted <br>
+      		<%= check_box_tag "basis_for_search[none]", "", false, class: "additional property_was_seized" %>&nbsp Property was seized <br>
+      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Vehicle impounded <br>
+          <%= check_box_tag "Contraband", :id => "" %>&nbsp NONE <br>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-
-
   <input type="submit" value="Next" class="btn btn-primary pull-right">
 
-
-
 <%end%>
+
+<script>
+  $(".search_of_person").change(function(){
+    if($(".search_of_person").is(":checked")) {
+      $('.basis_for_search').show();
+    }
+    else {
+      $('.basis_for_search').hide();
+    }
+  });
+  $(".search_of_property").change(function(){
+    if($(".search_of_property").is(":checked")) {
+      $('.basis_for_search').show();
+    }
+    else {
+      $('.basis_for_search').hide();
+    }
+  });
+  $(".property_was_seized").change(function(){
+    if($(".property_was_seized").is(":checked")) {
+      $('.property_seized').show();
+    }
+    else {
+      $('.property_seized').hide();
+    }
+  });
+</script>
