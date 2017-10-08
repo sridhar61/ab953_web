@@ -26,6 +26,7 @@ class StopsController < ApplicationController
   end
 
   def download_pdf
+    #to send a file
     send_file "#{Rails.root}/app/assets/docs/Физика.pdf", type: "application/pdf", x_sendfile: true
   end
 
