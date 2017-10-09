@@ -6,8 +6,8 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+    <%= javascript_include_tag 'application' %>
+
      <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -25,7 +25,7 @@
 
   </head>
 
-  
+
 
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -37,46 +37,46 @@
           <div class="col-md-2">
             <a class="pull-left" href="#"> <img src="/assets/doj-seal-header_321_pixel.png" alt="" height = "90px"></a>
 
-          </div>    
+          </div>
 
           <div class="col-md-5">
-              
-          <h1 class="text-center"> 
-          
+
+          <h1 class="text-center">
+
             <span class="m1-title"> Stop Data Collection System</span>
           </h1>
 
-          </div>  
-
-          <div class="col-md-5" style="margin-top: 30px;">    
-            
-            <ul class="nav navbar-nav"> 
-              <li><a href="/">Alameda PD</a></li> 
-              <li><a>lea_agent_uid@gmail.com</a></li> 
-             
-<li><a>LEA Officer</a></li> 
-              <li><a class="log_out float-left mr-1"><span class="glyphicon glyphicon-log-out" height="20" width="20"></span>Logout</a></li> 
-            </ul> 
           </div>
 
-        </div>  
-       
-            
+          <div class="col-md-5" style="margin-top: 30px;">
+
+            <ul class="nav navbar-nav">
+              <li><a href="/">Alameda PD</a></li>
+              <li><a>lea_agent_uid@gmail.com</a></li>
+
+<li><a>LEA Officer</a></li>
+              <li><a class="log_out float-left mr-1"><span class="glyphicon glyphicon-log-out" height="20" width="20"></span>Logout</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+
       </div>
-     
+
     </div>
 
 
 
 
     <%= yield %>
- 
+
     <style>
 
       body {
-        
+
         padding: 10px;
-      }      
+      }
 
       .m1-title {
           font-family: "Times New Roman", Times, serif;
@@ -86,7 +86,7 @@
       }
 
     </style>
-  
+
   <div style="position: fixed;
    left: 0;
    bottom: 0;
@@ -104,17 +104,17 @@
 <div class="modal fade" id="confirm-logout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-        
+
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel"></h4>
             </div>
-        
+
             <div class="modal-body">
                 <p> Do you want to save before logging out of the application ?</p>
                 <p class="debug-url"></p>
             </div>
-            
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-primary" id="btn-okay">okay</a>
@@ -134,7 +134,7 @@
 
 </script>
 
-     
+
 
 
 
