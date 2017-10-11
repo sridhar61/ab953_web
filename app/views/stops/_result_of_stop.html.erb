@@ -37,15 +37,37 @@
     </div>
     <div class="row row-buffer">
       <div class="col-md-3">
-        <label for="" >Result of Stop Section: </label>
+        <label for="" >Result of Stop Section: <em>*</em></label>
       </div>
       <div class="col-md-9">
         <%= check_box_tag "Contraband", :id => "" %>&nbsp No action <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Warning <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Citation or infraction	<br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp In-field cite and release			<br>
+        <%= check_box_tag "Contraband", :id => "" %>&nbsp Warning <br><!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+        <select name="yearselect">
+          <option selected="selected">Select</option>
+          <option value="year/1">65002 </option>
+         </select>
+         <a href="#">
+          <span class="glyphicon glyphicon-plus-sign"></span>
+        </a> <br>-->
+        <%= check_box_tag "Contraband", :id => "" %>&nbsp Citation or infraction<br>
+        <%= check_box_tag "Contraband", :id => "" %>&nbsp In-field cite and release<br>
+      <!--  <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+        <select name="yearselect">
+          <option selected="selected">Select</option>
+          <option value="year/1">65002 </option>
+         </select>
+         <a href="#">
+          <span class="glyphicon glyphicon-plus-sign"></span>
+        </a> <br>-->
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest pursuant to outstanding warrant <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest without warrant		<br>
+        <%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest without warrant <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+        <select name="yearselect">
+          <option selected="selected">Select</option>
+          <option value="year/1">65002 </option>
+         </select>
+         <a href="#">
+          <span class="glyphicon glyphicon-plus-sign"></span>
+        </a> 	<br> 
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Field interview card completed <br>
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Noncriminal transport or caretaking transport <br>
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>
