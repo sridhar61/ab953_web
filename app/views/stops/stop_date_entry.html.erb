@@ -1,0 +1,159 @@
+
+    <div class="panel-body">
+
+        <div class="col-md-12 col-lg-12">
+
+          <div class="tabs">
+            <ul class="nav nav-tabs tabs-primary">
+              <li class="active initial_stop">
+                <a href="#link_intial_stop_data" data-toggle="tab">Initial Stop Data</a>
+              </li>
+
+              </li>
+
+              <li class="location">
+                <a href="#link_location" data-toggle="tab">Location</a>
+              </li>
+              <li class="person_details">
+                <a href="#link_person_details" data-toggle="tab">Preceived Data</a>
+              </li>
+              <li class="reason_for_stop">
+                <a href="#link_reason_for_stop" data-toggle="tab">Reason for Stop</a>
+              </li>
+              <li class="action_taken">
+                <a href="#link_action_taken_stop" data-toggle="tab">Action Taken</a>
+              </li>
+              <li class="basis_for_search" style="display:none;">
+                <a href="#link_basis_for_search" data-toggle="tab">Basis for Search page</a>
+              </li>
+              <li class="property_seized" style="display:none;">
+                <a href="#link_property_seized_stop" data-toggle="tab">Property Seized</a>
+              </li>
+              <li class="contraband_evidence">
+                <a href="#link_contraband_evidence" data-toggle="tab">Contraband Evidence</a>
+              </li>
+
+              <li class="result_of_stop">
+                <a href="#link_result_of_stop" data-toggle="tab">Result of Stop</a>
+              </li>
+
+
+
+              <li class="stop_summary">
+                <a href="#link_stop_summary_stop" data-toggle="tab">Stop Summary</a>
+              </li>
+              <!--
+              <li class="skills_li">
+                <a href="#skills" data-toggle="tab">Post Stop Action</a>
+              </li>
+              <li class="stop_type">
+                <a href="#link_stop_type" data-toggle="tab">Stop Type</a>
+
+              <li class="skills_li">
+                <a href="#skills" data-toggle="tab">Search</a>
+              </li>
+
+              <li class="skills_li">
+                <a href="#skills" data-toggle="tab">Items Seized</a>
+              </li>
+
+              <li class="skills_li">
+                <a href="#skills" data-toggle="tab">Result of Stop</a>
+              </li>
+
+              <li class="skills_li">
+                <a href="#skills" data-toggle="tab">Officers at Scene</a>
+              </li> -->
+              <div class="container" >
+
+            </ul>
+            <div class="tab-content">
+
+              <div id="link_intial_stop_data" class="tab-pane active">
+                <div class="row top-buffer">
+                  <%= render 'stops/initial_stop' %>
+                </div>
+              </div>
+
+              <div id="link_stop_type" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/stop_type' %>
+                </div>
+              </div>
+
+
+              <div id="link_location" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/location' %>
+                </div>
+              </div>
+
+              <div id = "link_person_details" class="tab-pane">
+                <div class="row row-buffer">
+
+                  <%= render "stops/person_details"%>
+                </div>
+              </div>
+
+              <div id="link_reason_for_stop" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/reason_for_stop' %>
+                </div>
+
+              </div>
+
+              <div id="link_basis_for_search" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/basis_for_search' %>
+                </div>
+              </div>
+
+
+              <div id = "link_action_taken_stop" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/action_taken'%>
+                </div>
+              </div>
+
+
+              <div id="link_property_seized_stop" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/property_seized' %>
+                </div>
+              </div>
+
+              <div id="link_stop_summary_stop" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/stop_summary' %>
+                </div>
+              </div>
+
+
+              <div id="link_result_of_stop" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/result_of_stop' %>
+                </div>
+              </div>
+
+              <div id="link_contraband_evidence" class="tab-pane">
+                <div class="row top-buffer">
+                  <%= render 'stops/contraband_evidence' %>
+                </div>
+              </div>
+
+           </div>
+
+          </div>
+
+        </div>
+
+    </div>
+
+  <!--
+    <div align="center">
+    <button type="button" class="btn btn-primary">New Stop</button>
+      <button type="button" class="btn btn-success">Incomplete</button>
+      <button type="button" class="btn btn-info">account</button>
+      </div>
+
+  -->

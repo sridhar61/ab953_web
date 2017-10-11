@@ -34,7 +34,7 @@
   </div>
 
 
-  <h4> Officer Information: </h4>
+  <h4> Officer Information: <!-- <span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information"> --> </span></h4>
 
 
   <div class="form-group">
@@ -142,6 +142,10 @@
     else{
       $('.other_text_area').hide();
     }
+  });
+
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
   });
 
 </script>

@@ -1,10 +1,15 @@
 class StopsController < ApplicationController
   include HTTParty
+  add_breadcrumb "home", :stops_path
 
   def index
     #@basis_search_options = Constant.get_all_constants
+    #add_breadcrumb "", stops_path
   end
 
+  def stop_date_entry
+    add_breadcrumb "Stop Data", stop_date_entry_stops_path
+  end
 
   def initial_stop
     #raise @queue.inspect

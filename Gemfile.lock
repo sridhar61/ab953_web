@@ -42,6 +42,7 @@ GEM
     bindex (0.5.0)
     bootstrap-datepicker-rails (1.7.1.1)
       railties (>= 3.0)
+    breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     byebug (9.1.0)
     coffee-rails (4.2.2)
@@ -209,6 +210,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
+  breadcrumbs_on_rails
   byebug
   coffee-rails (~> 4.2)
   httparty

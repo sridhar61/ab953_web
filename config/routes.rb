@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       get 'k12_related'
       get 'result_of_stop'
       get 'contraband_evidence'
+      get 'stop_date_entry'
   	end
   end
 
