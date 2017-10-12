@@ -2,9 +2,11 @@
 
 <h2> Contact - 1</h2>
 
+<!--
 <button type="button" class="pull-right btn btn-default btn-sm">
   <span class="glyphicon glyphicon-plus"></span> Add Person
 </button>
+-->
 
 <div class="person_form">
 
@@ -44,7 +46,7 @@
       <input type=checkbox class="perceived_gender" name="perceived_race_gender[female]"> Female <br>
       <input type=checkbox class="perceived_gender" id="tansgender_man" name="perceived_race_gender[transgender_man]"> Transgender man/boy <br>
       <input type=checkbox class="perceived_gender" id="tansgender_woman" name="perceived_race_gender[transgender_woman]"> Transgender woman/girl <br>
-       <input type=checkbox class="perceived_gender" name="perceived_race_gender[gender_nonconfirming]"> Gender Nonconfirming <br>
+       <input type=checkbox class="perceived_gender_non_confirming" name="perceived_race_gender[gender_nonconfirming]"> Gender Nonconfirming <br>
 
     </fieldset>
   </div>
@@ -54,7 +56,7 @@
 <div class="row row-buffer">
    <div class="col-md-6">
     <b>Perceived Age <em>*</em></b><br/>
-    <input type="number" class="perceived_age" name="perceived_age" min="1" max="100" class="form-control" style="width:400px;"> <br>
+    <input type="number" class="perceived_age" name="perceived_age" min="1" max="120" class="form-control" style="width:400px;"> <br>
   </div>
 
 
@@ -68,7 +70,7 @@
 
 <div class="row row-buffer ">
   <div class="col-md-6">
-    <b>If person is a student?<em>*</em></b><br/>
+    <b>Is Person Stopped a Student?<em>*</em></b><b class='studentError'style="display:none;">Please select atleast one option</b><br/>
     <input type="radio" class="is_person_student" name="person_is_student" value="yes" /> Yes &nbsp &nbsp
     <input type="radio" class="is_person_student" name="person_is_student" value="no" /> No
   </div>
@@ -116,6 +118,7 @@
 
 
 <script type="text/javascript">
+  //var a = true;
   $(document).ready(function(){
     $('.student_perceived_disability_disability').hide();
   });
@@ -151,18 +154,55 @@
   });
 
   $('.person_details_submit').click(function(){
+
+    if($('.perceived_gender:checked').length < 1){
+      $('.perceived_gender_non_confirming').attr('checked', true);
+    }
+    if($('.is_person_student:checked').length < 1){
+      $('.studentError').show();
+      //return false;
+    }
+    else {
+      $('.studentError').hide();
+    }
     if($('.perceived_race_set:checked').length < 1){
       $('.raceError').show();
       //return false;
     }
+    else {
+      $('.raceError').hide();
+    }
     if($('.perceived_gender:checked').length < 1){
-      $('.genderError').show();
+      //$('.genderError').show();
       //return false;
+    }
+    else {
+      //$('.genderError').show();
     }
     if($('.perceived_disability:checked').length < 1){
       $('.disabilityError').show();
       return false;
     }
+    else {
+      $('.disabilityError').hide();
+    }
 
+  });
+
+  $("#person_details_form").validate({
+      rules: {
+          perceived_age: {required: true}
+      },
+      messages: {
+          input: { required: "required" }
+      },
+      ignore:      "",
+      errorClass:  'fieldError',
+      onkeyup:     false,
+      onblur:      false,
+      errorElement:'label',
+      submitHandler: function(form) {
+            $.rails.handleRemote( $(form) );
+      }
   });
 </script>
