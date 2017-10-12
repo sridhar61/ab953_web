@@ -22,15 +22,20 @@
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Chemical spray used<br>
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Other physical or vehicle contact<br>
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Person photographed<br>
-      		<%= check_box_tag "Contraband", :id => "" %>&nbsp Asked for consent to search person<br>
-      		<b> Consent Given </b> <br>
-      	  <%= radio_button_tag "Contraband", :id => "" %>Yes&nbsp&nbsp
-      	  <%= radio_button_tag "Contraband", :id => "" %>No <br>
+      		<%= check_box_tag "search_person_yes", :id => "" %>&nbsp Asked for consent to search person<br>
+          <div class="search_person_yes">
+            <b> Consent Given </b> <br>
+        	  <%= radio_button_tag "Contraband", :id => "" %>Yes&nbsp&nbsp
+        	  <%= radio_button_tag "Contraband", :id => "" %>No <br>
+          </div>
+
           <%= check_box_tag "basis_for_search[none]", "", false, class: "additional search_of_person" %>&nbsp Search of person was conducted <br>
-          <%= check_box_tag "basis_for_search[none]", "", false, class: "additional asked_for_consent" %>&nbsp Asked for consent to search property <br>
-          <b> Consent Given </b> <br>
-          <%= radio_button_tag "Contraband", :id => "" %>Yes&nbsp&nbsp
-          <%= radio_button_tag "Contraband", :id => "" %>No <br>
+          <%= check_box_tag "search_property_yes", "", false, class: "additional asked_for_consent" %>&nbsp Asked for consent to search property <br>
+          <div class="search_property_yes">
+            <b> Consent Given </b> <br>
+            <%= radio_button_tag "Contraband", :id => "" %>Yes&nbsp&nbsp
+            <%= radio_button_tag "Contraband", :id => "" %>No <br>
+          </div>
           <%= check_box_tag "basis_for_search[none]", "", false, class: "additional search_of_property" %>&nbsp Search of property was conducted <br>
       		<%= check_box_tag "basis_for_search[none]", "", false, class: "additional property_was_seized" %>&nbsp Property was seized <br>
       		<%= check_box_tag "Contraband", :id => "" %>&nbsp Vehicle impounded <br>
@@ -45,6 +50,11 @@
 <%end%>
 
 <script>
+
+  $(document).ready(function(){
+    $('.search_person_yes').hide();
+    $('.search_property_yes').hide();
+  });
   $(".search_of_person").change(function(){
     if($(".search_of_person").is(":checked")) {
       $('.basis_for_search').show();
@@ -69,4 +79,23 @@
       $('.property_seized').hide();
     }
   });
+
+  $('#search_person_yes').change(function(){
+    if($("#search_person_yes").is(":checked")) {
+     $('.search_person_yes').show();
+    }
+    else{
+      $('.search_person_yes').hide();
+    }
+
+  });
+
+  $('#search_property_yes').change(function(){
+    if($("#search_property_yes").is(":checked")) {
+     $('.search_property_yes').show();
+    }
+    else{
+      $('.search_property_yes').hide();
+    }
+  });  
 </script>

@@ -7,7 +7,8 @@
   <div class="col-md-6">
     <%= radio_button_tag 'response_to_call_service', "", false %> Yes
     <%= radio_button_tag 'response_to_call_service', "", false %> No
-    <b id="response-call-error" style="display:none;">Please select an option</b>
+    <b id="response-call-error" style="display:none;">Please select an option</b> <br/>
+    <p style="font-family:Times New Roman;">check only if stop was made in response to call for service, radio call or dispatch</p>
 </div>
 </div>
 
@@ -23,8 +24,8 @@
       	<option>  Knowledge of outstanding arrest warrant/wanted person</option>
       	<option>  Investigation to determine whether the person was truant</option>
       	<option>  Consensual encounter resulting in search</option>
-      	<option>  Possible conduct warranting discipline under Education Code (if student)</option>
-      	<option>  Determine whether the student violated school policy (if student)</option>
+      	<option value="student_conduct_warning">  Possible conduct warranting discipline under Education Code</option>
+      	<option value="student_violated_school_policy">  Determine whether the student violated school policy</option>
       </select>
     </div>
 
@@ -38,16 +39,69 @@
       </div>
 </div>
 
-<div class="form-group suspicion_cjis_offense_code " style="display: none;">
-  <label class="col-md-3 control-label" for="" ></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
+<div class="form-group type_traffic_violation" style="display: none;">
+  <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
+  <div id="traffic-error" class='hide error'>Please select an option</div>
+   <div class="col-md-6">
+    <select class="form-control" name="type_of_traffic_violation" class="type_of_traffic_violation">
+        <option value="0">  Select</option>
+        <option>  Moving</option>
+        <option>  Equipment violation</option>
+        <option>  Non-moving violation, including registration violation</option>
+    </select>
+    </div>
+</div>
+
+
+<div class="form-group suspicion_cjis_offense_code_vioaltion" >
+
+    <label class="col-md-3 control-label" for="" >Filter by Offense Type of Statute CD: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
+
   <div class="col-md-6">
-    <input type="radio" name="Offense_code" value="male"> Code Type &nbsp
-    <input type="radio" name="Offense_code" value="female" checked> Code Section &nbsp
-    <input type="radio" name="Offense_code" value="other" > Description
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspPenal Code &nbsp &nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspHealth and Safety&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspWelfare and Institution&nbsp<br>
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspVehicle Code&nbsp&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspBusiness and Professional&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspOther&nbsp <br>
   </div>
 </div>
 
-<div class="form-group suspicion_cjis_offense_code" style="display: none;">
+<div class="form-group suspicion_cjis_offense_code" >
+
+    <label class="col-md-3 control-label" for="" >Filter by Offense Type of Statute CD: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
+
+  <div class="col-md-6">
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspPenal Code &nbsp &nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspHealth and Safety&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspWelfare and Institution&nbsp<br>
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspVehicle Code&nbsp&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspBusiness and Professional&nbsp&nbsp
+    <%= radio_button_tag "Contraband", :id => "" %>&nbspOther&nbsp <br>
+  </div>
+</div>
+
+<div class="form-group filter_by_code_section_violation">
+
+    <label class="col-md-3 control-label" for="" >Filter by Code Section or Description: </label>  </span>
+
+  <div class="col-md-6">
+    <%= radio_button_tag "filter_by_code", :id => "" %>&nbspCode Section &nbsp &nbsp&nbsp
+    <%= radio_button_tag "filter_by_code", :id => "" %>&nbspDescription
+  </div>
+</div>
+
+<div class="form-group filter_by_code_section">
+
+    <label class="col-md-3 control-label" for="" >Filter by Code Section or Description: </label>  </span>
+
+  <div class="col-md-6">
+    <%= radio_button_tag "filter_by_code", :id => "" %>&nbspCode Section &nbsp &nbsp&nbsp
+    <%= radio_button_tag "filter_by_code", :id => "" %>&nbspDescription
+  </div>
+</div>
+
+<div class="form-group suspicion_cjis_offense_code" >
   <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
     <select class="form-control">
@@ -58,7 +112,7 @@
     </div>
 </div>
 
-<div class="form-group suspicion_cjis_offense_code" style="display: none;">
+<div class="form-group suspicion_cjis_offense_code" >
   <label class="col-md-3 control-label" for="" > Reasonable Suspicion Sub Type: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Officer witnessed commission of a crime <br/>
@@ -74,18 +128,6 @@
 </div>
 
 
-<div class="form-group type_traffic_violation" style="display: none;">
-  <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
-  <div id="traffic-error" class='hide error'>Please select an option</div>
-   <div class="col-md-6">
-    <select class="form-control" name="type_of_traffic_violation" class="type_of_traffic_violation">
-        <option value="0">  Select</option>
-        <option>  Moving</option>
-        <option>  Equipment violation</option>
-        <option>  Non-moving violation, including registration violation</option>
-    </select>
-    </div>
-</div>
 
 <input type="submit" value="Next" class="btn btn-primary pull-right reason_for_stop_submit">
 
@@ -150,7 +192,10 @@
   $(document).ready(function(){
     $('.type_traffic_violation').hide();
     $('.violation_types').hide();
-    //$('.suspicion_cjis_offense_code').hide();
+    $('.suspicion_cjis_offense_code').hide();
+    $('.suspicion_cjis_offense_code_vioaltion').hide();
+    $('.filter_by_code_section').hide();
+    $('.filter_by_code_section_violation').hide();
   });
 
   $('.select_reason_for_stop').on('change',function(){
@@ -159,16 +204,27 @@
       //alert("2");
         $('.violation_types').show();
       $('.suspicion_cjis_offense_code').show();
+      $('.filter_by_code_section').show();
+      //$('.filter_by_code_section_violation').show();
     }
     else{
       $('.suspicion_cjis_offense_code').hide();
         $('.violation_types').hide();
+        $('.filter_by_code_section').hide();
+        //$('.filter_by_code_section_violation').hide();
     }
     if($('.select_reason_for_stop').val() == 'violation') {
       $('.type_traffic_violation').show();
+      $('.suspicion_cjis_offense_code_vioaltion').show();
+      //$('.filter_by_code_section').show();
+      $('.filter_by_code_section_violation').show();
+
     }
     else{
       $('.type_traffic_violation').hide();
+      $('.suspicion_cjis_offense_code_vioaltion').hide();
+      //$('.filter_by_code_section').hide();
+      $('.filter_by_code_section_violation').hide();
     }
   });
 

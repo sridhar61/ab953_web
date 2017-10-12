@@ -122,6 +122,8 @@
   //var a = true;
   $(document).ready(function(){
     $('.student_perceived_disability_disability').hide();
+    $(".select_reason_for_stop option[value='student_conduct_warning']").hide();
+    $(".select_reason_for_stop option[value='student_violated_school_policy']").hide();
   });
 
   $('#tansgender_man').change(function(){
@@ -147,10 +149,14 @@
     //alert();
      if($(".is_person_student:checked").val() == "yes"){
        $('.student_perceived_disability_disability').show();
+       $(".select_reason_for_stop option[value='student_conduct_warning']").show();
+       $(".select_reason_for_stop option[value='student_violated_school_policy']").show();
      }
      if($(".is_person_student:checked").val() == "no"){
        //alert();
        $('.student_perceived_disability_disability').hide();
+       $(".select_reason_for_stop option[value='student_conduct_warning']").hide();
+       $(".select_reason_for_stop option[value='student_violated_school_policy']").hide();
      }
   });
 
