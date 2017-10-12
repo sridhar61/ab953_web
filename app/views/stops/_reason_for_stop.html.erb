@@ -1,3 +1,5 @@
+<div class="container">
+<h2> Contact - 1</h2>
 
 <%= form_tag reason_for_stop_stops_path, :method => :get, :remote => true, :id => 'reason_for_stop_form',:class => "form-horizontal form-bordered"  do %>
 
@@ -58,7 +60,7 @@
     <label class="col-md-3 control-label" for="" >Filter by Offense Type of Statute CD: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
 
   <div class="col-md-6">
-    <%= radio_button_tag "Contraband", :id => "" %>&nbspPenal Code &nbsp &nbsp&nbsp
+    <%= radio_button_tag "penal_code", "", true %>&nbspPenal Code &nbsp &nbsp&nbsp
     <%= radio_button_tag "Contraband", :id => "" %>&nbspHealth and Safety&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <%= radio_button_tag "Contraband", :id => "" %>&nbspWelfare and Institution&nbsp<br>
     <%= radio_button_tag "Contraband", :id => "" %>&nbspVehicle Code&nbsp&nbsp&nbsp
@@ -72,7 +74,7 @@
     <label class="col-md-3 control-label" for="" >Filter by Offense Type of Statute CD: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
 
   <div class="col-md-6">
-    <%= radio_button_tag "Contraband", :id => "" %>&nbspPenal Code &nbsp &nbsp&nbsp
+    <%= radio_button_tag "Contraband", "", true %>&nbspPenal Code &nbsp &nbsp&nbsp
     <%= radio_button_tag "Contraband", :id => "" %>&nbspHealth and Safety&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <%= radio_button_tag "Contraband", :id => "" %>&nbspWelfare and Institution&nbsp<br>
     <%= radio_button_tag "Contraband", :id => "" %>&nbspVehicle Code&nbsp&nbsp&nbsp
@@ -86,7 +88,7 @@
     <label class="col-md-3 control-label" for="" >Filter by Code Section or Description: </label>  </span>
 
   <div class="col-md-6">
-    <%= radio_button_tag "filter_by_code", :id => "" %>&nbspCode Section &nbsp &nbsp&nbsp
+    <%= radio_button_tag "filter_by_code_violation", "", true %>&nbspCode Section &nbsp &nbsp&nbsp
     <%= radio_button_tag "filter_by_code", :id => "" %>&nbspDescription
   </div>
 </div>
@@ -96,7 +98,7 @@
     <label class="col-md-3 control-label" for="" >Filter by Code Section or Description: </label>  </span>
 
   <div class="col-md-6">
-    <%= radio_button_tag "filter_by_code", :id => "" %>&nbspCode Section &nbsp &nbsp&nbsp
+    <%= radio_button_tag "filter_by_code", "", true %>&nbspCode Section &nbsp &nbsp&nbsp
     <%= radio_button_tag "filter_by_code", :id => "" %>&nbspDescription
   </div>
 </div>
@@ -111,7 +113,16 @@
     </select>
     </div>
 </div>
-
+<div class="form-group suspicion_cjis_offense_code_vio" >
+  <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
+   <div class="col-md-6">
+    <select class="form-control">
+        <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+        <option>  Code Section (e.g. 290, 647, etc)</option>
+        <option>  Description (e.g. Drunk in public</option>
+    </select>
+    </div>
+</div>
 <div class="form-group suspicion_cjis_offense_code" >
   <label class="col-md-3 control-label" for="" > Reasonable Suspicion Sub Type: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
@@ -134,7 +145,7 @@
 
 <% end %>
 
-
+</div>
 
 
 <script type="text/javascript">
@@ -196,6 +207,7 @@
     $('.suspicion_cjis_offense_code_vioaltion').hide();
     $('.filter_by_code_section').hide();
     $('.filter_by_code_section_violation').hide();
+    $('.suspicion_cjis_offense_code_vio').hide();
   });
 
   $('.select_reason_for_stop').on('change',function(){
@@ -218,6 +230,7 @@
       $('.suspicion_cjis_offense_code_vioaltion').show();
       //$('.filter_by_code_section').show();
       $('.filter_by_code_section_violation').show();
+      $('.suspicion_cjis_offense_code_vio').show();
 
     }
     else{
@@ -225,6 +238,7 @@
       $('.suspicion_cjis_offense_code_vioaltion').hide();
       //$('.filter_by_code_section').hide();
       $('.filter_by_code_section_violation').hide();
+      $('.suspicion_cjis_offense_code_vio').hide();
     }
   });
 

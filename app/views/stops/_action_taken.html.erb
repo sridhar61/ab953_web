@@ -1,4 +1,5 @@
-<h3>Contact-1:</h3>
+<div class="container">
+<h2>Contact - 1</h2>
 <%= form_tag action_taken_stops_path, :method => :get, :remote => true, :class => "form-horizontal form-bordered"  do %>
 
   <div class="row top-buffer">
@@ -49,6 +50,7 @@
 
 <%end%>
 
+</div>
 <script>
 
   $(document).ready(function(){
@@ -97,5 +99,5 @@
     else{
       $('.search_property_yes').hide();
     }
-  });  
+  });
 </script>
