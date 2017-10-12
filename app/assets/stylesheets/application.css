@@ -45,7 +45,9 @@
 #response-call-error{
   color:#FF0000;
 }
-
+.studentError{
+color:#FF0000;
+}
 .contrabandEvidenceError{
   color: #FF0000;
 }
