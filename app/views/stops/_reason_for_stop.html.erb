@@ -2,7 +2,7 @@
 <%= form_tag reason_for_stop_stops_path, :method => :get, :remote => true, :id => 'reason_for_stop_form',:class => "form-horizontal form-bordered"  do %>
 
 <div class="form-group">
-  <label class="col-md-3 control-label" for="">Stop Made in Response to a Call of Service? <em>*</em> </label>
+  <label class="col-md-3 control-label" for="">Stop Made in Response to a Call of Service? <em>*</em> </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
 
   <div class="col-md-6">
     <%= radio_button_tag 'response_to_call_service', "", false %> Yes
@@ -13,7 +13,7 @@
 
 
 <div class="form-group">
-  <label class="col-md-3 control-label" for="" >Primary Reason for Stop: <em>*</em></label>
+  <label class="col-md-3 control-label" for="" >Primary Reason for Stop: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
       <div class="col-md-6">
       <select class="form-control select_reason_for_stop" name="select_reason_for_stop">
          <option value="0">  Select</option>
@@ -32,14 +32,14 @@
 
 
 <div class="form-group">
-      <label class="col-md-3 control-label" for="" > Reason for Stop Explanation/Narrative: <em>*</em></label>
+      <label class="col-md-3 control-label" for="" > Reason for Stop Explanation/Narrative: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
       <div class="col-md-6">
         <textarea rows="4" cols="60" maxlength="250" class="form-control" name="reason_for_stop_explaination" placeholder="Enter text here..."> </textarea>
       </div>
 </div>
 
 <div class="form-group suspicion_cjis_offense_code " style="display: none;">
-  <label class="col-md-3 control-label" for="" ></label>
+  <label class="col-md-3 control-label" for="" ></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
   <div class="col-md-6">
     <input type="radio" name="Offense_code" value="male"> Code Type &nbsp
     <input type="radio" name="Offense_code" value="female" checked> Code Section &nbsp
@@ -48,7 +48,7 @@
 </div>
 
 <div class="form-group suspicion_cjis_offense_code" style="display: none;">
-  <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label>
+  <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
     <select class="form-control">
         <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
@@ -59,7 +59,7 @@
 </div>
 
 <div class="form-group suspicion_cjis_offense_code" style="display: none;">
-  <label class="col-md-3 control-label" for="" > Reasonable Suspicion Sub Type: <em>*</em></label>
+  <label class="col-md-3 control-label" for="" > Reasonable Suspicion Sub Type: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Officer witnessed commission of a crime <br/>
       <%= check_box_tag 'suspicion_sub_types[]', "Officer witnessed commission of a crime" %> Matched suspect description <br/>
@@ -75,7 +75,7 @@
 
 
 <div class="form-group type_traffic_violation" style="display: none;">
-  <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label>
+  <label class="col-md-3 control-label" for="" > Type of Traffic violation: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
   <div id="traffic-error" class='hide error'>Please select an option</div>
    <div class="col-md-6">
     <select class="form-control" name="type_of_traffic_violation" class="type_of_traffic_violation">

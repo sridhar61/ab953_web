@@ -5,7 +5,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-6">
-        <label for="" >Result of Stop Section: </label><br/>
+        <label for="" >Result of Stop Section: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><br/>
         <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
         <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
         <%= check_box_tag "basis_for_search[search_warrant]", "", false, class: "basis_for_search" %>&nbsp Search Warrant <br>
@@ -18,7 +18,7 @@
         <%= check_box_tag "basis_for_search[exigent_circumstances]", "", false, class: "basis_for_search" %>&nbsp Exigent circumstances /emergency <br>
       </div>
       <div class="col-md-6">
-            <label> Basis for Search Explanation/Narrative: <em>*</em></label>
+            <label> Basis for Search Explanation/Narrative: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
               <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
       </div>
     </div>
