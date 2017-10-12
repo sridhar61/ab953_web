@@ -9,13 +9,13 @@
       <%= text_field_tag "date_of_stop", "", class: "form-control", "data-provide" => 'datepicker', placeholder: 'mm/dd/yyyy' %>
       <!-- <input id="date" value=" " name="date_of_stop" class="form-control" data-provide='datepicker' placeholder="mm/dd/yyyy"> -->
     </div>
-    <div id='date-error' class='hide error'>Date of Stop cannot be blank</div>
+    <div id='date-error' class='hide error'>Date of Stop cannot be blank</div><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
     <div id='invalid-date-error' class='hide error'>Date of Stop is invalid</div>
   </div>
 
 
   <div class="form-group">
-    <label class="col-md-3 control-label" for=""> Time of Stop: <em>*</em></label>
+    <label class="col-md-3 control-label" for=""> Time of Stop: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
      <div class="col-md-6">
        <!--  <input type="text"  size="5" name="time_of_stop" placeholder="hh:mm" id="hour" maxlength="5"  class="form-control" > -->
       <%= text_field_tag "time_of_stop", "", placeholder: "hh:mm", maxlength: "5", class: "form-control" %>
@@ -25,7 +25,7 @@
 
 
   <div class="form-group">
-     <label class="col-md-3 control-label" for=""> Duration of Stop: <em>*</em></label>
+     <label class="col-md-3 control-label" for=""> Duration of Stop: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
       <div class="col-md-6">
          <!-- <input type="number" name="duration_of_stop" placeholder="Please enter duration in minutes" min="1" max="1440" id="min" class="form-control"> -->
          <%= text_field_tag "duration_of_stop", "", placeholder: "Please enter duration in minutes", min: "1", max: "1440", class: "form-control" %>
@@ -34,11 +34,11 @@
   </div>
 
 
-  <h4> Officer Information: <!-- <span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information"> --> </span></h4>
+  <h4> Officer Information: </h4>
 
 
   <div class="form-group">
-      <label class="col-md-3 control-label" for="">Agency ORI:<em>*</em></label>
+      <label class="col-md-3 control-label" for="">Agency ORI:<em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
        <div class="col-md-6">
           ABC123456
        </div>
@@ -46,7 +46,7 @@
 
 
   <div class="form-group">
-      <label class="col-md-3 control-label" for="">Officer UID:<em>*</em></label>
+      <label class="col-md-3 control-label" for="">Officer UID:<em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
        <div class="col-md-6">
           ABC123456
        </div>
@@ -54,7 +54,7 @@
 
 
   <div class="form-group">
-    <label class="col-md-3 control-label" for="">Experience: <em>*</em></label>
+    <label class="col-md-3 control-label" for="">Experience: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
     <div class="col-md-6">
     <!-- <input type="number" name="experience" id="experience" name="firstname" value=" " class="form-control" min=0 > -->
       <%= text_field_tag "experience", "", min: "1", max: "99", class: "form-control", placeholder: "Please enter years of experience"%>
@@ -63,7 +63,7 @@
   </div>
 
   <div class="form-group">
-   <label class="col-md-3 control-label" for="">Assignment Type: <em>*</em></label>
+   <label class="col-md-3 control-label" for="">Assignment Type: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
     <div class="col-md-6 ">
       <%= select_tag("assignment_type", options_for_select([['select', 0], ['Patrol, traffic enforcement, field operations', 1], [' Gang enforcement', 2], ['Compliance check (e.g., parole/PRCS/probation/mandatory supervision)', 3], [' Special events (e.g., sports, concerts, protests)', 4], ['Roadblock or DUI sobriety checkpoint', 5], ['Narcotics/vice', 6], ['Task force', 7], ['K-12 Public School, including school resource officer or school police officer', 8], ['Investigative/detective', 9], ['Other', 10]], :selected => params[:option]), class: "form-control") %>
 
@@ -74,7 +74,7 @@
 
 
   <div class="form-group other_text_area" style="display:none;">
-   <label class="col-md-3 control-label" for=""> Other Assignment Type: <em>*</em></label>
+   <label class="col-md-3 control-label" for=""> Other Assignment Type: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
     <div class="col-md-6 ">
       <%= text_area_tag :hatch, "", cols: "6", rows: "6", class: "form-control" %>
     </div>

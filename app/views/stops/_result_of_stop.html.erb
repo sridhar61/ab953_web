@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 <div class="container">
 <h4> Contact - 1 </h4>
 
@@ -15,7 +6,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-3">
-        <label for="" >Filter by Offense Type of Statute CD: </label>
+        <label for="" >Filter by Offense Type of Statute CD: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
       </div>
       <div class="col-md-9">
         <%= radio_button_tag "Contraband", :id => "" %>&nbspPenal Code &nbsp &nbsp&nbsp
@@ -28,7 +19,7 @@
     </div>
     <div class="row row-buffer">
       <div class="col-md-3">
-        <label for="" >Filter by Code Section or Description: </label>
+        <label for="" >Filter by Code Section or Description: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
       </div>
       <div class="col-md-9">
         <%= radio_button_tag "filter_by_code", :id => "" %>&nbspCode Section &nbsp &nbsp&nbsp
@@ -37,7 +28,7 @@
     </div>
     <div class="row row-buffer">
       <div class="col-md-3">
-        <label for="" >Result of Stop Section: <em>*</em></label>
+        <label for="" >Result of Stop Section: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
       </div>
       <div class="col-md-9">
         <%= check_box_tag "Contraband", :id => "" %>&nbsp No action <br>
@@ -67,7 +58,7 @@
          </select>
          <a href="#">
           <span class="glyphicon glyphicon-plus-sign"></span>
-        </a> 	<br> 
+        </a> 	<br>
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Field interview card completed <br>
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Noncriminal transport or caretaking transport <br>
         <%= check_box_tag "Contraband", :id => "" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>

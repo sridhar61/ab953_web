@@ -1,7 +1,7 @@
 <div class="container">
   <%= form_tag contraband_evidence_stops_path, :method => :get, :remote => true, :id => 'contraband_evidence_form',:class => "form-horizontal form-bordered"  do %>
   <div class="row row-buffer">
-    <label>Contraband Evidence: <em>*</em></label><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
+    <label>Contraband Evidence: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
       <p style="font-family:Times New Roman;"> Please enter any contraband or evidence discovered, including any in plain view or as a result of a search.</p>
         <div class="col-md-6">
            <%= check_box_tag "basis_for_search[none]", "", false, class: "contraband_evidence" %>&nbsp None <br>
