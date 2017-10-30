@@ -31,8 +31,8 @@
         <label for="" >Result of Stop Section: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
       </div>
       <div class="col-md-9">
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp No action <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Warning <br><!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= check_box_tag "noaction" %>&nbsp No action <br>
+        <%= check_box_tag "warning" %>&nbsp Warning <br><!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
         <select name="yearselect">
           <option selected="selected">Select</option>
           <option value="year/1">65002 </option>
@@ -40,8 +40,8 @@
          <a href="#">
           <span class="glyphicon glyphicon-plus-sign"></span>
         </a> <br>-->
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Citation or infraction<br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp In-field cite and release<br>
+        <%= check_box_tag "citationorinfraction" %>&nbsp Citation or infraction<br>
+        <%= check_box_tag "infieldciteandrel" %>&nbsp In-field cite and release<br>
       <!--  <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
         <select name="yearselect">
           <option selected="selected">Select</option>
@@ -50,8 +50,8 @@
          <a href="#">
           <span class="glyphicon glyphicon-plus-sign"></span>
         </a> <br>-->
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest pursuant to outstanding warrant <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Custodial arrest without warrant <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+        <%= check_box_tag "custodialarrestwarr" %>&nbsp Custodial arrest pursuant to outstanding warrant <br>
+        <%= check_box_tag "custodialarrestnowarr" %>&nbsp Custodial arrest without warrant <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
         <select name="yearselect">
           <option selected="selected">Select</option>
           <option value="year/1">65002 </option>
@@ -59,13 +59,13 @@
          <a href="#">
           <span class="glyphicon glyphicon-plus-sign"></span>
         </a> 	<br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Field interview card completed <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Noncriminal transport or caretaking transport <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Psychiatric hold <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Contacted U.S. Department of Homeland Security (e.g., Immigration and Customs Enforcement, Customs and Border Protection)<br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Referral to school administrator (if student) <br>
-        <%= check_box_tag "Contraband", :id => "" %>&nbsp Referral to school counselor or other support staff (if student) <br>
+        <%= check_box_tag "fieldcard" %>&nbsp Field interview card completed <br>
+        <%= check_box_tag "noncrimtransport" %>&nbsp Noncriminal transport or caretaking transport <br>
+        <%= check_box_tag "contactedparent" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>
+        <%= check_box_tag "psychiatrichold" %>&nbsp Psychiatric hold <br>
+        <%= check_box_tag "homelandsecureferral" %>&nbsp Contacted U.S. Department of Homeland Security (e.g., Immigration and Customs Enforcement, Customs and Border Protection)<br>
+        <%= check_box_tag "k12referadministrator" %>&nbsp Referral to school administrator (if student) <br>
+        <%= check_box_tag "k12refercounselor" %>&nbsp Referral to school counselor or other support staff (if student) <br>
       </div>
     </div>
   </div>

@@ -7,8 +7,8 @@
   <label class="col-md-3 control-label" for="">Stop Made in Response to a Call of Service? <em>*</em> </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
 
   <div class="col-md-6">
-    <%= radio_button_tag 'response_to_call_service', "", false %> Yes
-    <%= radio_button_tag 'response_to_call_service', "", false %> No
+    <%= radio_button_tag 'response_to_call_service', true %> Yes
+    <%= radio_button_tag 'response_to_call_service', false %> No
     <b id="response-call-error" style="display:none;">Please select an option</b> <br/>
     <p style="font-family:Times New Roman;">check only if stop was made in response to call for service, radio call or dispatch</p>
 </div>
@@ -22,7 +22,7 @@
          <option value="0">  Select</option>
       	<option value="violation">  Traffic violation</option>
       	<option value="suspicion_criminal_activity">  Reasonable suspicion of criminal activity</option>
-      	<option>  Known to be on parole/probation/PRCS/mandatory supervision</option>
+      	<option >  Known to be on parole/probation/PRCS/mandatory supervision</option>
       	<option>  Knowledge of outstanding arrest warrant/wanted person</option>
       	<option>  Investigation to determine whether the person was truant</option>
       	<option>  Consensual encounter resulting in search</option>
@@ -47,9 +47,9 @@
    <div class="col-md-6">
     <select class="form-control" name="type_of_traffic_violation" class="type_of_traffic_violation">
         <option value="0">  Select</option>
-        <option>  Moving</option>
-        <option>  Equipment violation</option>
-        <option>  Non-moving violation, including registration violation</option>
+        <option value="1">  Moving</option>
+        <option value="2">  Equipment violation</option>
+        <option value="3">  Non-moving violation, including registration violation</option>
     </select>
     </div>
 </div>
@@ -106,20 +106,20 @@
 <div class="form-group suspicion_cjis_offense_code" >
   <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
-    <select class="form-control">
-        <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
-        <option>  Code Section (e.g. 290, 647, etc)</option>
-        <option>  Description (e.g. Drunk in public</option>
+    <select class="form-control" name="suspicion_cjis_offense_code">
+      <option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+      <option value="2">  Code Section (e.g. 290, 647, etc)</option>
+      <option value="3">  Description (e.g. Drunk in public</option>
     </select>
     </div>
 </div>
 <div class="form-group suspicion_cjis_offense_code_vio" >
   <label class="col-md-3 control-label" for="" > Suspicion CJIS Offense Code: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
    <div class="col-md-6">
-    <select class="form-control">
-        <option>  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
-        <option>  Code Section (e.g. 290, 647, etc)</option>
-        <option>  Description (e.g. Drunk in public</option>
+    <select class="form-control" name="violation_suspicion_cjis_offense_code">
+        <option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+        <option value="2">  Code Section (e.g. 290, 647, etc)</option>
+        <option value="3">  Description (e.g. Drunk in public</option>
     </select>
     </div>
 </div>

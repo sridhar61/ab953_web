@@ -18,7 +18,7 @@
     <label class="col-md-3 control-label" for=""> Time of Stop: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Time of stop format should be in military timing">  </span>
      <div class="col-md-6">
        <!--  <input type="text"  size="5" name="time_of_stop" placeholder="hh:mm" id="hour" maxlength="5"  class="form-control" > -->
-      <%= text_field_tag "time_of_stop", "", placeholder: "hh:mm", maxlength: "5", class: "form-control" %>
+      <%= text_field_tag "time_of_stop", "", placeholder: "hh:mm", maxlength: "5", class: "form-control timepicker" %>
     </div>
     <div id='hour-error' class='hide error'>Time of Stop cannot be blank</div>
   </div>
@@ -71,12 +71,12 @@
     <div id='ass-error' class='hide error'>Please select Assignment type</div>
   </div>
 
-
+  <input type="hidden" name="doj_record_id" value="<%= @created_doj_record_id%>">
 
   <div class="form-group other_text_area" style="display:none;">
    <label class="col-md-3 control-label" for=""> Other Assignment Type: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
     <div class="col-md-6 ">
-      <%= text_area_tag :hatch, "", cols: "6", rows: "6", class: "form-control" %>
+      <%= text_area_tag :other_assingment_type, "", cols: "6", rows: "6", class: "form-control" %>
     </div>
     <div id='ass-error' class='hide error'>Please select Assignment type</div>
   </div>
@@ -92,6 +92,7 @@
 
 
 <script type="text/javascript">
+
   $(function(){
     $.validator.addMethod("time", function(value, element) {
       return this.optional(element) || /^(([0-1]?[0-9])|([2][0-3])):([0-5]?[0-9])(:([0-5]?[0-9]))?$/i.test(value);
@@ -129,11 +130,14 @@
     });
 
     $("#initial_stop_submit").on("click", function(e) {
+      //var date = new Date($('#date_of_stop').val());
       $("#initial_stop_form").submit();
       //return false;
     });
   });
 
+  //var date = new Date('2014-01-06');
+  //var newDate = date.toString('dd-MM-yy');
 
   $("#assignment_type").change(function(){
     if ($("#assignment_type").val() == 10){
@@ -146,6 +150,7 @@
 
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
+    $('.timepicker').timepicker();
   });
 
 </script>

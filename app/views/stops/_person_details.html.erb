@@ -26,13 +26,13 @@
     <fieldset>
       <b>Perceived Race Set:<em>*</em><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span> </b><b class='raceError'style="display:none;">Please select atleast one option</b>
 <br/>
-      <input type="checkbox" class="perceived_race_set" name="perceived_race_set[asian]"> Asian <br>
-      <input type="checkbox" class="perceived_race_set" name="perceived_race_set[african]"> Black/African <br>
-      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[hispanic_latino]"> Hispanic/Latino(a) <br>
-      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[middle_eastern_or_south_asian]"> Middle Eastern or South Asian <br>
-      <input type= "checkbox" class="perceived_race_set" name= "perceived_race_set[native_american]"> Native American <br>
-      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[pacific_islander]"> Pacific Islander <br>
-      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[white]"> White<br>
+      <input type="checkbox" class="perceived_race_set" name="perceived_race_set[]" value="1"> Asian <br>
+      <input type="checkbox" class="perceived_race_set" name="perceived_race_set[]" value="2"> Black/African <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[]" value="3"> Hispanic/Latino(a) <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[]" value="4"> Middle Eastern or South Asian <br>
+      <input type= "checkbox" class="perceived_race_set" name= "perceived_race_set[]" value="5"> Native American <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[]" value="6"> Pacific Islander <br>
+      <input type= "checkbox" class="perceived_race_set" name="perceived_race_set[]" value="7"> White<br>
     </fieldset>
   </div>
 
@@ -42,11 +42,11 @@
     <fieldset>
       <b> Perceived Gender: <em>*</em><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></b><b class='genderError'style="display:none;">Please select atleast one option</b><br>
 
-      <input type=checkbox class="perceived_gender" name="perceived_race_gender[male]"> Male <br>
-      <input type=checkbox class="perceived_gender" name="perceived_race_gender[female]"> Female <br>
-      <input type=checkbox class="perceived_gender" id="tansgender_man" name="perceived_race_gender[transgender_man]"> Transgender man/boy <br>
-      <input type=checkbox class="perceived_gender" id="tansgender_woman" name="perceived_race_gender[transgender_woman]"> Transgender woman/girl <br>
-       <input type=checkbox class="perceived_gender_non_confirming" name="perceived_race_gender[gender_nonconfirming]"> Gender Nonconfirming <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gender" value="1"> Male <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gende" value="2"> Female <br>
+      <input type=checkbox class="perceived_gender" id="tansgender_man" name="perceived_race_gende" value="3"> Transgender man/boy <br>
+      <input type=checkbox class="perceived_gender" id="tansgender_woman" name="perceived_race_gender" value="4"> Transgender woman/girl <br>
+      <input type=checkbox class="perceived_gender_non_confirming" name="perceived_gender_non_confirming" value="yes"> Gender Nonconfirming <br>
 
     </fieldset>
   </div>
@@ -62,7 +62,7 @@
 
   <div class="col-md-6">
    <b>Perceived to be LGBT?</b><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><br/>
-     <input type=checkbox id="lgbt" value="lgbt" class="perceived_lgbt" name="perceived_lgbt"> LGBT <br>
+     <input type=checkbox id="lgbt" value="yes" class="perceived_lgbt" name="perceived_lgbt"> LGBT <br>
 
   </div>
 </div>
@@ -77,7 +77,7 @@
   </div>
    <div class="col-md-6">
     <b>Perceived English Fluency</b><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><br/>
-    <input name="perceived_english_fluency" class="perceived_english_fluency" type="checkbox"> Limited English Fluency
+    <input name="perceived_english_fluency" value="yes" class="perceived_english_fluency" type="checkbox"> Limited English Fluency
   </div>
 </div>
 
@@ -85,15 +85,15 @@
   <div class="col-md-6">
     <fieldset>
       <b>Perceived Disability: <em>*</em><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></b><b class='disabilityError'style="display:none;">Please select atleast one option</b></br>
-      <input type="checkbox" class="perceived_disability" name="perceived_disability[deafness]"> Deafness or difficulty hearing<br>
-      <input type="checkbox" class="perceived_disability"  name="perceived_disability[speech_impairment]"> Speech impairment or limited use of language<br>
-      <input type="checkbox" class="perceived_disability" name="perceived_disability[blind_limited_version]"> Blind or limited vision<br>
-      <input type="checkbox" class="perceived_disability"  name="perceived_disability[mental_health_condition]"> Mental health condition<br>
-      <input type="checkbox" class="perceived_disability" name="perceived_disability[intellectual_or_developed]"> Intellectual or developed disability, including dementia<br>
-      <input type="checkbox" class="perceived_disability" name="perceived_disability[other_disability]"> Other disability<br>
-      <input type="checkbox" class="perceived_disability"  name="perceived_disability[none]"> None   <br/>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[]" value="1"> Deafness or difficulty hearing<br>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[]" value="2"> Speech impairment or limited use of language<br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[]" value="3"> Blind or limited vision<br>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[]" value="4"> Mental health condition<br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[]" value="5"> Intellectual or developed disability, including dementia<br>
+      <input type="checkbox" class="perceived_disability" name="perceived_disability[]" value="6"> Other disability<br>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[]" value="7"> None   <br/>
       <div class="student_perceived_disability_disability">
-      <input type="checkbox" class="perceived_disability_disability"  name="perceived_disability[disability_related_to_hyperactivity]"> Disability related to hyperactivity or impulsive behavior </div><br>
+      <input type="checkbox" class="perceived_disability_disability"  name="perceived_disability[]" value="8"> Disability related to hyperactivity or impulsive behavior </div><br>
     </fieldset>
 
   </div>

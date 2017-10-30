@@ -6,20 +6,20 @@
     <div class="row">
       <div class="col-md-6">
         <label for="" >Result of Stop Section: </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><br/>
-        <%= check_box_tag "basis_for_search[consent_given]", "", false, class: "basis_for_search" %>&nbsp Consent given <br>
-        <%= check_box_tag "basis_for_search[officer_safety]", "", false, class: "basis_for_search" %>&nbsp Officer safety/safety of others <br>
-        <%= check_box_tag "basis_for_search[search_warrant]", "", false, class: "basis_for_search" %>&nbsp Search Warrant <br>
-        <%= check_box_tag "basis_for_search[condition_of_parole]", "", false, class: "basis_for_search" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
-        <%= check_box_tag "basis_for_search[suspected_weapons]", "", false, class: "basis_for_search" %>&nbsp Suspected weapons <br>
-        <%= check_box_tag "basis_for_search[visible_contraband]", "", false, class: "basis_for_search"%>&nbsp Visible contraband <br>
-        <%= check_box_tag "basis_for_search[odor_of_contraband]", "", false, class: "basis_for_search" %>&nbsp Odor of contraband <br>
-        <%= check_box_tag "basis_for_search[canine_detection]", "", false, class: "basis_for_search" %>&nbsp Canine detection <br>
-        <%= check_box_tag "basis_for_search[evidence_of_crime]", "", false, class: "basis_for_search" %>&nbsp Evidence of crime <br>
-        <%= check_box_tag "basis_for_search[exigent_circumstances]", "", false, class: "basis_for_search" %>&nbsp Exigent circumstances /emergency <br>
+        <%= check_box_tag "consentgiven" %>&nbsp Consent given <br>
+        <%= check_box_tag "officersafety" %>&nbsp Officer safety/safety of others <br>
+        <%= check_box_tag "searchwarrant" %>&nbsp Search Warrant <br>
+        <%= check_box_tag "conditionofparole" %>&nbsp Condition of parole/probation/PRCS/mandatory supervision <br>
+        <%= check_box_tag "suspectedweapon" %>&nbsp Suspected weapons <br>
+        <%= check_box_tag "visiblecontraband"%>&nbsp Visible contraband <br>
+        <%= check_box_tag "odorofcontraband" %>&nbsp Odor of contraband <br>
+        <%= check_box_tag "caninedetection" %>&nbsp Canine detection <br>
+        <%= check_box_tag "evidenceofcrime" %>&nbsp Evidence of crime <br>
+        <%= check_box_tag "exigentcircumstances" %>&nbsp Exigent circumstances /emergency <br>
       </div>
       <div class="col-md-6">
             <label> Basis for Search Explanation/Narrative: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
-              <textarea rows="6" cols="60" maxlength="250" class="form-control"> Enter text here...</textarea>
+              <textarea rows="6" cols="60" maxlength="250" class="form-control" name="basisforsearchnarrative"> Enter text here...</textarea>
       </div>
     </div>
   </div>

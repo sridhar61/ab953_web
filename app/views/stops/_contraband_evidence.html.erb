@@ -5,17 +5,17 @@
     <label>Contraband Evidence: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><b class='contrabandEvidenceError'style="display:none;">Please select atleast one option</b>
       <p style="font-family:Times New Roman;"> Please enter any contraband or evidence discovered, including any in plain view or as a result of a search.</p>
         <div class="col-md-6">
-           <%= check_box_tag "basis_for_search[none]", "", false, class: "contraband_evidence" %>&nbsp None <br>
-            <%= check_box_tag "basis_for_search[fire_arm]", "", false, class: "contraband_evidence" %>&nbsp Firearm(s) <br>
-            <%= check_box_tag "basis_for_search[ammunition]", "", false, class: "contraband_evidence" %>&nbsp Ammunition <br>
-            <%= check_box_tag "basis_for_search[weapons]", "", false, class: "contraband_evidence" %>&nbsp Weapon(s) other than a firearm <br>
-            <%= check_box_tag "basis_for_search[drugs]", "", false, class: "contraband_evidence" %>&nbsp Drugs/narcotics <br>
-            <%= check_box_tag "basis_for_search[alcohol]", "", false, class: "contraband_evidence" %>&nbsp Alcohol <br>
-            <%= check_box_tag "basis_for_search[money]", "", false, class: "contraband_evidence" %>&nbsp Money <br>
-            <%= check_box_tag "basis_for_search[drug_paraphernalia]", "", false, class: "contraband_evidence" %>&nbsp Drug paraphernalia <br>
-            <%= check_box_tag "basis_for_search[suspected_stolen]", "", false, class: "contraband_evidence" %>&nbsp Suspected stolen property <br>
-            <%= check_box_tag "basis_for_search[cell_phone]", "", false, class: "contraband_evidence" %>&nbsp Cell phone(s) or electronic device(s) <br>
-            <%= check_box_tag "basis_for_search[other_contraband]", "", false, class: "contraband_evidence" %>&nbsp Other contraband or evidence <br>
+           <%= check_box_tag "none" %>&nbsp None <br>
+            <%= check_box_tag "firearm" %>&nbsp Firearm(s) <br>
+            <%= check_box_tag "ammunition" %>&nbsp Ammunition <br>
+            <%= check_box_tag "otherweapon" %>&nbsp Weapon(s) other than a firearm <br>
+            <%= check_box_tag "drugs" %>&nbsp Drugs/narcotics <br>
+            <%= check_box_tag "alcohol" %>&nbsp Alcohol <br>
+            <%= check_box_tag "money" %>&nbsp Money <br>
+            <%= check_box_tag "drugparaphen" %>&nbsp Drug paraphernalia <br>
+            <%= check_box_tag "suspectedstolenproperty" %>&nbsp Suspected stolen property <br>
+            <%= check_box_tag "cellphone" %>&nbsp Cell phone(s) or electronic device(s) <br>
+            <%= check_box_tag "othercontraband" %>&nbsp Other contraband or evidence <br>
         </div>
   </div>
 
