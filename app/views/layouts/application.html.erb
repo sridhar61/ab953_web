@@ -23,6 +23,37 @@
      <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
 
      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+     <script type="text/javascript">
+        $(function()
+        {
+            // Prevent accidental navigation away
+            $(':input').bind(
+                'change', function() { setConfirmUnload(true); });
+            $('.noprompt-required').click(
+                function() { setConfirmUnload(false); });
+
+            function setConfirmUnload(on)
+            {
+                window.onbeforeunload = on ? unloadMessage : null;
+            }
+            function unloadMessage()
+            {
+                return ('You have entered new data on this page. ' +
+                        'If you navigate away from this page without ' +
+                        'first saving your data, the changes will be lost.');
+            }
+
+            window.onerror = UnspecifiedErrorHandler;
+            function UnspecifiedErrorHandler()
+            {
+                return true;
+            }
+
+        });
+        $('.noprompt-required').click(function() { setConfirmUnload(false); });
+
+    </script>
   </head>
 
 
@@ -138,6 +169,8 @@
       window.location.replace("/login");
     }
   });
+
+
 
 </script>
 

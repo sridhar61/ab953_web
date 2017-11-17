@@ -43,10 +43,10 @@
       <b> Perceived Gender: <em>*</em><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></b><b class='genderError'style="display:none;">Please select atleast one option</b><br>
 
       <input type=checkbox class="perceived_gender" name="perceived_race_gender" value="1"> Male <br>
-      <input type=checkbox class="perceived_gender" name="perceived_race_gende" value="2"> Female <br>
-      <input type=checkbox class="perceived_gender" id="tansgender_man" name="perceived_race_gende" value="3"> Transgender man/boy <br>
+      <input type=checkbox class="perceived_gender" name="perceived_race_gender" value="2"> Female <br>
+      <input type=checkbox class="perceived_gender" id="tansgender_man" name="perceived_race_gender" value="3"> Transgender man/boy <br>
       <input type=checkbox class="perceived_gender" id="tansgender_woman" name="perceived_race_gender" value="4"> Transgender woman/girl <br>
-      <input type=checkbox class="perceived_gender_non_confirming" name="perceived_gender_non_confirming" value="yes"> Gender Nonconfirming <br>
+      <input type=checkbox class="perceived_gender_non_confirming" name="perceived_gender_non_confirming" value="5"> Gender Nonconfirming <br>
 
     </fieldset>
   </div>
@@ -62,8 +62,9 @@
 
   <div class="col-md-6">
    <b>Perceived to be LGBT?</b><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><br/>
-     <input type=checkbox id="lgbt" value="yes" class="perceived_lgbt" name="perceived_lgbt"> LGBT <br>
 
+     <input type="radio" class="perceived_lgbt" id="lgbt" name="perceived_lgbt" value="yes" /> Yes &nbsp &nbsp
+     <input type="radio" class="perceived_lgbt" name="perceived_lgbt" value="no" /> No
   </div>
 </div>
 
@@ -77,7 +78,10 @@
   </div>
    <div class="col-md-6">
     <b>Perceived English Fluency</b><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span><br/>
-    <input name="perceived_english_fluency" value="yes" class="perceived_english_fluency" type="checkbox"> Limited English Fluency
+
+    <input type="radio" class="perceived_english_fluency" name="perceived_english_fluency" value="yes" /> Yes &nbsp &nbsp
+    <input type="radio" class="perceived_english_fluency" name="perceived_english_fluency" value="no" /> No
+
   </div>
 </div>
 
@@ -91,9 +95,11 @@
       <input type="checkbox" class="perceived_disability"  name="perceived_disability[]" value="4"> Mental health condition<br>
       <input type="checkbox" class="perceived_disability" name="perceived_disability[]" value="5"> Intellectual or developed disability, including dementia<br>
       <input type="checkbox" class="perceived_disability" name="perceived_disability[]" value="6"> Other disability<br>
-      <input type="checkbox" class="perceived_disability"  name="perceived_disability[]" value="7"> None   <br/>
       <div class="student_perceived_disability_disability">
-      <input type="checkbox" class="perceived_disability_disability"  name="perceived_disability[]" value="8"> Disability related to hyperactivity or impulsive behavior </div><br>
+        <input type="checkbox" class="perceived_disability perceived_disability_disability"  name="perceived_disability[]" value="7"> Disability related to hyperactivity or impulsive behavior <br>
+      </div>
+      <input type="checkbox" class="perceived_disability"  name="perceived_disability[]" value="8"> None   <br/>
+      <br>
     </fieldset>
 
   </div>
@@ -151,12 +157,14 @@
        $('.student_perceived_disability_disability').show();
        $(".select_reason_for_stop option[value='student_conduct_warning']").show();
        $(".select_reason_for_stop option[value='student_violated_school_policy']").show();
+       $(".person_stopped_student").show();
      }
      if($(".is_person_student:checked").val() == "no"){
        //alert();
        $('.student_perceived_disability_disability').hide();
        $(".select_reason_for_stop option[value='student_conduct_warning']").hide();
        $(".select_reason_for_stop option[value='student_violated_school_policy']").hide();
+       $(".person_stopped_student").hide();
      }
   });
 

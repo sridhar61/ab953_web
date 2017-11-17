@@ -33,6 +33,16 @@
       <div id='min-error' class='hide error'>Duration of Stop cannot be blank</div>
   </div>
 
+  <div class="form-group">
+    <label class="col-md-3 control-label" for="">Stop Made in Response to a Call of Service? <em>*</em> </label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></h4>
+
+    <div class="col-md-6">
+      <%= radio_button_tag 'response_to_call_service', true %> Yes
+      <%= radio_button_tag 'response_to_call_service', false %> No
+      <b id="response-call-error" style="display:none;">Please select an option</b> <br/>
+      <p style="font-family:Times New Roman;">check only if stop was made in response to call for service, radio call or dispatch</p>
+    </div>
+  </div>
 
   <h4> Officer Information: </h4>
 

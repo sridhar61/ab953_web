@@ -31,41 +31,90 @@
         <label for="" >Result of Stop Section: <em>*</em></label><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span>
       </div>
       <div class="col-md-9">
-        <%= check_box_tag "noaction" %>&nbsp No action <br>
-        <%= check_box_tag "warning" %>&nbsp Warning <br><!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
-        <select name="yearselect">
-          <option selected="selected">Select</option>
-          <option value="year/1">65002 </option>
-         </select>
-         <a href="#">
-          <span class="glyphicon glyphicon-plus-sign"></span>
-        </a> <br>-->
-        <%= check_box_tag "citationorinfraction" %>&nbsp Citation or infraction<br>
-        <%= check_box_tag "infieldciteandrel" %>&nbsp In-field cite and release<br>
-      <!--  <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
-        <select name="yearselect">
-          <option selected="selected">Select</option>
-          <option value="year/1">65002 </option>
-         </select>
-         <a href="#">
-          <span class="glyphicon glyphicon-plus-sign"></span>
-        </a> <br>-->
-        <%= check_box_tag "custodialarrestwarr" %>&nbsp Custodial arrest pursuant to outstanding warrant <br>
-        <%= check_box_tag "custodialarrestnowarr" %>&nbsp Custodial arrest without warrant <br>&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
-        <select name="yearselect">
-          <option selected="selected">Select</option>
-          <option value="year/1">65002 </option>
-         </select>
-         <a href="#">
-          <span class="glyphicon glyphicon-plus-sign"></span>
-        </a> 	<br>
-        <%= check_box_tag "fieldcard" %>&nbsp Field interview card completed <br>
-        <%= check_box_tag "noncrimtransport" %>&nbsp Noncriminal transport or caretaking transport <br>
-        <%= check_box_tag "contactedparent" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>
-        <%= check_box_tag "psychiatrichold" %>&nbsp Psychiatric hold <br>
-        <%= check_box_tag "homelandsecureferral" %>&nbsp Contacted U.S. Department of Homeland Security (e.g., Immigration and Customs Enforcement, Customs and Border Protection)<br>
-        <%= check_box_tag "k12referadministrator" %>&nbsp Referral to school administrator (if student) <br>
-        <%= check_box_tag "k12refercounselor" %>&nbsp Referral to school counselor or other support staff (if student) <br>
+
+          <%= check_box_tag "result_of_stop[]", "1" %> No action <br>
+          <input type='checkbox' value='2' name='result_of_stop[]' id='warning'> Warning <br>
+          <div class="warning_div" style="display:none;">
+            <div id="InputsWrapper">
+              <select class="form-control warning_suspicion_cjis_offense_code" id="field_1" name="warning_suspicion_cjis_offense_code[]">
+                <option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+                <option value="2">  Code Section (e.g. 290, 647, etc)</option>
+                <option value="3">  Description (e.g. Drunk in public</option>
+              </select>
+              <span id="AddMoreFileBox" class="glyphicon glyphicon-plus-sign"></span>
+            </div>
+
+            <div id="lineBreak"></div>
+
+            <!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+            <select name="yearselect">
+              <option selected="selected">Select</option>
+              <option value="year/1">65002 </option>
+             </select>
+             <a href="#">
+              <span class="glyphicon glyphicon-plus-sign"></span>
+            </a> <br>-->
+          </div>
+
+
+          <input type='checkbox' value='3' name='result_of_stop[]' id='citationorinfraction'> Citation or infraction
+          <span class="citation_notification" style="display:none;"> 65002 LOCAL ORDINANCE VIOL </span>
+          <br>
+          <input type='checkbox' value='4' name='result_of_stop[]' id='infieldciteandrel'>  In-field cite and release <br>
+
+          <div class="infield_div" style="display:none;">
+            <div id="InfieldWrapper">
+              <select class="form-control infield_suspicion_cjis_offense_code" id="field_1" name="infieldcite_suspicion_cjis_offense_code[]">
+                <option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+                <option value="2">  Code Section (e.g. 290, 647, etc)</option>
+                <option value="3">  Description (e.g. Drunk in public</option>
+              </select>
+              <span id="infieldAddMoreFileBox" class="glyphicon glyphicon-plus-sign"></span>
+            </div>
+
+            <div id="infieldlineBreak"></div>
+
+            <!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+            <select name="yearselect">
+              <option selected="selected">Select</option>
+              <option value="year/1">65002 </option>
+             </select>
+             <a href="#">
+              <span class="glyphicon glyphicon-plus-sign"></span>
+            </a> <br>-->
+          </div>
+
+          <%= check_box_tag "result_of_stop[]", "5" %>&nbsp Custodial arrest pursuant to outstanding warrant <br>
+          <input type='checkbox' value='6' name='result_of_stop[]' id='custodialarrestnowarr'> Custodial arrest without warrant <br>
+          <div class="custodialarrestnowarr_div" style="display:none;">
+            <div id="custodialarrestnowarrWrapper">
+              <select class="form-control nowarr_suspicion_cjis_offense_code" id="field_1" name="custodialarrestnowarr_suspicion_cjis_offense_code[]">
+                <option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option>
+                <option value="2">  Code Section (e.g. 290, 647, etc)</option>
+                <option value="3">  Description (e.g. Drunk in public</option>
+              </select>
+              <span id="custodialarrestnowarrAddMoreFileBox" class="glyphicon glyphicon-plus-sign"></span>
+            </div>
+
+            <div id="custodialarrestnowarrlineBreak"></div>
+
+            <!--&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp
+            <select name="yearselect">
+              <option selected="selected">Select</option>
+              <option value="year/1">65002 </option>
+             </select>
+             <a href="#">
+              <span class="glyphicon glyphicon-plus-sign"></span>
+            </a> <br>-->
+          </div>
+          <%= check_box_tag "result_of_stop[]", "7" %>&nbsp Field interview card completed <br>
+          <%= check_box_tag "result_of_stop[]", "8" %>&nbsp Noncriminal transport or caretaking transport <br>
+          <%= check_box_tag "result_of_stop[]", "9" %>&nbsp Contacted parent/legal guardian or  other person responsible for the minor <br>
+          <%= check_box_tag "result_of_stop[]", "10" %>&nbsp Psychiatric hold <br>
+          <%= check_box_tag "result_of_stop[]", "11" %>&nbsp Contacted U.S. Department of Homeland Security (e.g., Immigration and Customs Enforcement, Customs and Border Protection)<br>
+          <%= check_box_tag "result_of_stop[]", "12" %>&nbsp Referral to school administrator (if student) <br>
+          <%= check_box_tag "result_of_stop[]", "13" %>&nbsp Referral to school counselor or other support staff (if student) <br>
+
       </div>
     </div>
   </div>
@@ -75,3 +124,180 @@
 <% end %>
 
 </div>
+
+
+
+<script>
+
+
+
+$(document).ready(function() {
+
+var MaxInputs       = 5; //maximum extra input boxes allowed
+var InputsWrapper   = $("#InputsWrapper"); //Input boxes wrapper ID
+var InfieldWrapper = $("#InfieldWrapper");
+var AddButton       = $("#AddMoreFileBox"); //Add button ID
+var AddButtoninfield = $("#infieldAddMoreFileBox");
+var nowarrWrapper = $("#custodialarrestnowarrWrapper");
+var AddButtonnowarr       = $("#custodialarrestnowarrAddMoreFileBox");
+
+var x = InputsWrapper.length; //initlal text box count
+
+var y = InfieldWrapper.length;
+var FieldCount=1; //to keep track of text box added
+
+//on add input button click
+$(AddButton).click(function (e) {
+        //max input box allowed
+        if(x <= MaxInputs) {
+            FieldCount++; //text box added ncrement
+            //add input box
+            $(InputsWrapper).append('<div><select class="form-control warning_suspicion_cjis_offense_code" id="field_'+ FieldCount +'" name="warning_suspicion_cjis_offense_code[]"><option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option><option value="2">  Code Section (e.g. 290, 647, etc)</option><option value="3">  Description (e.g. Drunk in public</option></select> <span class="removeclass glyphicon glyphicon-minus-sign"></span><br/></div> ');
+            x++; //text box increment
+
+            //$("#AddMoreFileId").show();
+
+            $('AddMoreFileBox').html("Add field");
+
+            // Delete the "add"-link if there is 3 fields.
+            if(x == 5) {
+                //$("#AddMoreFileId").hide();
+             	$("#lineBreak").html("<br>");
+            }
+        }
+        return false;
+});
+
+$("body").on("click",".removeclass", function(e){ //user click on remove text
+        if( x > 1 ) {
+                $(this).parent('div').remove(); //remove text box
+                x--; //decrement textbox
+
+            	//$("#AddMoreFileId").show();
+
+            	$("#lineBreak").html("");
+
+                // Adds the "add" link again when a field is removed.
+                $('AddMoreFileBox').html("Add field");
+        }
+	return false;
+})
+
+
+
+//on add input button click
+$(AddButtoninfield).click(function (e) {
+        //max input box allowed
+        if(x <= MaxInputs) {
+            FieldCount++; //text box added ncrement
+            //add input box
+            $(InfieldWrapper).append('<div><select class="form-control infield_suspicion_cjis_offense_code" id="field_'+ FieldCount +'" name="infieldcite_suspicion_cjis_offense_code[]"><option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option><option value="2">  Code Section (e.g. 290, 647, etc)</option><option value="3">  Description (e.g. Drunk in public</option></select> <span class="infieldremoveclass glyphicon glyphicon-minus-sign"></span><br/></div> ');
+            x++; //text box increment
+
+
+
+            // Delete the "add"-link if there is 3 fields.
+            if(x == 5) {
+                //$("#AddMoreFileId").hide();
+             	$("#infieldlineBreak").html("<br>");
+            }
+        }
+        return false;
+});
+
+$("body").on("click",".infieldremoveclass", function(e){ //user click on remove text
+        if( x > 1 ) {
+                $(this).parent('div').remove(); //remove text box
+                x--; //decrement textbox
+
+            	//$("#AddMoreFileId").show();
+
+            	$("#infieldlineBreak").html("");
+
+                // Adds the "add" link again when a field is removed.
+                $('AddMoreFileBox').html("Add field");
+        }
+	return false;
+})
+
+
+$(AddButtonnowarr).click(function (e) {
+      //alert();
+        //max input box allowed
+        if(x <= MaxInputs) {
+            FieldCount++; //text box added ncrement
+            //add input box
+            $(nowarrWrapper).append('<div><select class="form-control nowarr_suspicion_cjis_offense_code" id="field_'+ FieldCount +'" name="custodialarrestnowarr_suspicion_cjis_offense_code[]"><option value="1">  Code Type (e.g. Vehicle Code, Penal Code, etc)</option><option value="2">  Code Section (e.g. 290, 647, etc)</option><option value="3">  Description (e.g. Drunk in public</option></select> <span class="nowarremoveclass glyphicon glyphicon-minus-sign"></span><br/></div> ');
+            x++; //text box increment
+
+            //$("#AddMoreFileId").show();
+
+            //$('AddButtonnowarr').html("Add field");
+
+            // Delete the "add"-link if there is 3 fields.
+            if(x == 5) {
+                //$("#AddMoreFileId").hide();
+             	$("#lineBreak").html("<br>");
+            }
+        }
+        return false;
+});
+
+$("body").on("click",".nowarremoveclass", function(e){ //user click on remove text
+        if( x > 1 ) {
+                $(this).parent('div').remove(); //remove text box
+                x--; //decrement textbox
+
+            	//$("#AddMoreFileId").show();
+
+            	$("#custodialarrestnowarrlineBreak").html("");
+
+                // Adds the "add" link again when a field is removed.
+                //$('AddMoreFileBox').html("Add field");
+        }
+	return false;
+})
+
+
+});
+
+
+$("#warning").change(function(){
+  //alert();
+ if($("#warning").is(":checked")){
+    $('.warning_div').show();
+  }
+  else{
+    $('.warning_div').hide();
+  }
+});
+
+$("#citationorinfraction").change(function(){
+ if($("#citationorinfraction").is(":checked")){
+    $('.citation_notification').show();
+  }
+  else{
+    $('.citation_notification').hide();
+  }
+});
+
+$("#infieldciteandrel").change(function(){
+ if($("#infieldciteandrel").is(":checked")){
+    $('.infield_div').show();
+  }
+  else{
+    $('.infield_div').hide();
+  }
+});
+
+$("#custodialarrestnowarr").change(function(){
+ if($("#custodialarrestnowarr").is(":checked")){
+    $('.custodialarrestnowarr_div').show();
+  }
+  else{
+    $('.custodialarrestnowarr_div').hide();
+  }
+});
+
+
+</script>

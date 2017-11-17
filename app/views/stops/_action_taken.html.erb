@@ -7,41 +7,47 @@
       <div class="form-group">
       <h4>Action Taken:<em>*</em><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span> </h4>
         <div class="col-md-6">
-      		<%= check_box_tag "removedbyorder" %>&nbsp Person removed from vehicle by order <br>
-      		<%= check_box_tag "removedbycontact" %>&nbsp Person removed from vehicle by physical contact<br>
-      		<%= check_box_tag "fieldsobrietytest" %>&nbsp Field sobriety test conducted <br>
-      		<%= check_box_tag "curbsidedetention" %>&nbsp Curbside detention<br>
-      		<%= check_box_tag "cuffed" %>&nbsp Handcuffed or flex cuffed<br>
-      		<%= check_box_tag "cardetention" %>&nbsp Patrol car detention<br>
-      		<%= check_box_tag "canineused" %>&nbsp Canine removed from vehicle or used to search<br>
-      		<%= check_box_tag "firearmpointed" %>&nbsp Firearm pointed at person<br>
-      		<%= check_box_tag "firearmused" %>&nbsp Firearm discharged or used<br>
-      		<%= check_box_tag "stungunused" %>&nbsp Electronic control device<br>
-      		<%= check_box_tag "rubberbulletsused" %>&nbsp Impact projectile discharged or used<br>
-      		<%= check_box_tag "caninebit" %>&nbsp Canine bit or held person <br>
-      		<%= check_box_tag "batonused" %>&nbsp Baton or other impact weapon used<br>
-      		<%= check_box_tag "maceused" %>&nbsp Chemical spray used<br>
-      		<%= check_box_tag "otherphysicalvehicle" %>&nbsp Other physical or vehicle contact<br>
-      		<%= check_box_tag "photographed" %>&nbsp Person photographed<br>
-      		<%= check_box_tag "search_person_yes" %>&nbsp Asked for consent to search person<br>
+      		<%= check_box_tag "actionstaken[]", 1 %>&nbsp Person removed from vehicle by order <br>
+      		<%= check_box_tag "actionstaken[]", 2 %>&nbsp Person removed from vehicle by physical contact<br>
+      		<%= check_box_tag "actionstaken[]", 3 %>&nbsp Field sobriety test conducted <br>
+      		<%= check_box_tag "actionstaken[]", 4 %>&nbsp Curbside detention<br>
+      		<%= check_box_tag "actionstaken[]", 5%>&nbsp Handcuffed or flex cuffed<br>
+      		<%= check_box_tag "actionstaken[]", 6 %>&nbsp Patrol car detention<br>
+      		<%= check_box_tag "actionstaken[]", 7 %>&nbsp Canine removed from vehicle or used to search<br>
+      		<%= check_box_tag "actionstaken[]", 8 %>&nbsp Firearm pointed at person<br>
+      		<%= check_box_tag "actionstaken[]", 9 %>&nbsp Firearm discharged or used<br>
+      		<%= check_box_tag "actionstaken[]", 10 %>&nbsp Electronic control device<br>
+      		<%= check_box_tag "actionstaken[]", 11 %>&nbsp Impact projectile discharged or used<br>
+      		<%= check_box_tag "actionstaken[]", 12 %>&nbsp Canine bit or held person <br>
+      		<%= check_box_tag "actionstaken[]", 13 %>&nbsp Baton or other impact weapon used<br>
+      		<%= check_box_tag "actionstaken[]", 14 %>&nbsp Chemical spray used<br>
+      		<%= check_box_tag "actionstaken[]", 15 %>&nbsp Other physical or vehicle contact<br>
+      		<%= check_box_tag "actionstaken[]", 16 %>&nbsp Person photographed<br>
+          <input type=checkbox id="search_person_yes" name="actionstaken[]" value="17"> Asked for consent to search person <br>
+
           <div class="search_person_yes">
             <b> Consent Given </b> <br>
         	  <%= radio_button_tag "consenttosearchpersongiven", true %>Yes&nbsp&nbsp
         	  <%= radio_button_tag "consenttosearchpersongiven", false %>No <br>
           </div>
-
-          <%= check_box_tag "searchofpersonconducted", "", false, class: "additional search_of_person" %>&nbsp Search of person was conducted <br>
-          <%= check_box_tag "search_property_yes", "", false, class: "additional asked_for_consent" %>&nbsp Asked for consent to search property <br>
+          <input type=checkbox class="additional search_of_person" name="actionstaken[]" value="18"> Search of person was conducted <br>
+          <input type=checkbox id="search_property_yes" class="additional asked_for_consent" name="actionstaken[]" value="19"> Asked for consent to search property <br>
           <div class="search_property_yes">
             <b> Consent Given </b> <br>
             <%= radio_button_tag "consenttosearchpropertygiven", true %>Yes&nbsp&nbsp
             <%= radio_button_tag "consenttosearchpropertygiven", false %>No <br>
           </div>
-          <%= check_box_tag "searchofpropertyconducted", "", false, class: "additional search_of_property" %>&nbsp Search of property was conducted <br>
-      		<%= check_box_tag "propertywasseized", "", false, class: "additional property_was_seized" %>&nbsp Property was seized <br>
-      		<%= check_box_tag "impounded" %>&nbsp Vehicle impounded <br>
-          <%= check_box_tag "none" %>&nbsp NONE <br>
-          <%= check_box_tag "k12adminstatm" %>&nbsp Admission or written statement obtained from student <br>
+
+          <input type=checkbox id="searchofpropertyconducted" class="additional search_of_property" name="actionstaken[]" value="20">  Search of property was conducted <br>
+
+          <input type=checkbox id="propertywasseized" class="additional property_was_seized" name="actionstaken[]" value="21"> Property was seized<br>
+
+      		<%= check_box_tag "actionstaken[]", 22 %>&nbsp Vehicle impounded <br>
+          <div class="person_stopped_student" style="display:none;">
+            <%= check_box_tag "actionstaken[]", 23 %>&nbsp Admission or written statement obtained from student <br>
+          </div>
+          <%= check_box_tag "actionstaken[]", 24 %>&nbsp NONE <br>
+
         </div>
       </div>
     </div>

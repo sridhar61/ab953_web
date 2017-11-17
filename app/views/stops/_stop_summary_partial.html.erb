@@ -1,0 +1,241 @@
+
+<div class="row top-buffer">
+  <div class="container">
+   <%# f.collection_select :provider_id, Provider.order(:name),:id,:name, include_blank: true %>
+
+   <div class="container">
+   <div class="panel-group" id="accordion">
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            Initial Stop
+             <a href="#">
+               <span class="glyphicon glyphicon-pencil pull-right"></span>
+             </a>
+
+           </a>
+         </h4>
+       </div>
+       <div id="collapseOne" class="panel-collapse collapse in">
+
+         <div class="panel-body">
+           <h3>Stop Timing Information:</h3>
+           <div class="row">
+               <label class="col-md-3 control-label" for=""> DOJ Record ID:</label>
+                <div class="col-md-6">
+                   <%= @doj_record_id  %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Date of Stop:</label>
+                <div class="col-md-6">
+                   <%= @dateofstop %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Time of Stop:</label>
+                <div class="col-md-6">
+                   <%= @starttimeofstop %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Duration of Stop:</label>
+                <div class="col-md-6">
+                   <%= @durationofstop %> Minutes
+                </div>
+           </div>
+           <h3>Officer Information:</h3>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Experience:</label>
+                <div class="col-md-6">
+                   <%= @officeryearsofexperience  %>
+                </div>
+           </div>
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Assignment Type:</label>
+                <div class="col-md-6">
+                   <%= @final_officer_assignment  %>
+                </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+             Location
+             <a href="#">
+          <span class="glyphicon glyphicon-pencil pull-right"></span>
+        </a>
+
+           </a>
+         </h4>
+       </div>
+       <div id="collapseTwo" class="panel-collapse collapse">
+         <div class="panel-body">
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Location for Stop:</label>
+                <div class="col-md-6">
+                   <%= @locationdescription %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Closest City:</label>
+                <div class="col-md-6">
+                   <%= @closestcity %>
+                </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              Person Details
+             <a href="#">
+          <span class="glyphicon glyphicon-pencil pull-right"></span>
+        </a>
+
+           </a>
+         </h4>
+       </div>
+       <div id="collapseThree" class="panel-collapse collapse">
+         <div class="panel-body">
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Perceived Race Set:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @final_ethnicity%>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Perceived Gender:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @final_gender %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Perceived Age:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @age %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Perceived to be LGBT?:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @lgbt %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Perceived Disability:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @final_disability %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Perceived English Fluency:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @limitedenglish %>
+                </div>
+           </div>
+
+           <div class="row">
+               <label class="col-md-3 control-label" for="">Is Person Stopped a Student?:<em>*</em></label>
+                <div class="col-md-6">
+                   <%= @stopforastudent %>
+                </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+             Reason for Stop
+             <a href="#">
+               <span class="glyphicon glyphicon-pencil pull-right"></span>
+             </a>
+           </a>
+         </h4>
+       </div>
+       <div id="collapseFour" class="panel-collapse collapse">
+         <div class="panel-body">
+           <div class="row">
+             <label class="col-md-3 control-label" for="">Primary Reason for Stop:</label>
+              <div class="col-md-6">
+                 <%= @final_primaryreason %>
+              </div>
+           </div>
+
+           <div class="row">
+             <label class="col-md-3 control-label" for="">Reason for Stop Explanation/Narrative:</label>
+              <div class="col-md-6">
+                 <%= @reasonforstopnarrative %>
+              </div>
+           </div>
+
+           <div class="row">
+             <label class="col-md-3 control-label" for="">Suspicion CJIS Offense Code:</label>
+              <div class="col-md-6">
+                 <%= @suspicion_offense_cd %>
+              </div>
+           </div>
+
+           <div class="row">
+             <label class="col-md-3 control-label" for="">Reasonable Suspicion Sub Type:</label>
+              <div class="col-md-6">
+                 <%= @final_suspicion_subtype %>
+              </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+
+     <div class="panel panel-default">
+       <div class="panel-heading">
+         <h4 class="panel-title">
+           <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+             Action Taken
+             <a href="#">
+               <span class="glyphicon glyphicon-pencil pull-right"></span>
+             </a>
+           </a>
+         </h4>
+       </div>
+       <div id="collapseFive" class="panel-collapse collapse">
+         <div class="panel-body">
+           <div class="row">
+             <label class="col-md-3 control-label" for="">Action Taken:</label>
+              <div class="col-md-6">
+                 <%= @final_primaryreason %>
+              </div>
+           </div>
+
+         </div>
+       </div>
+     </div>
+     <!--- -->
+
+    </div>
+   </div>
+  <br>
+ </div>
+</div>

@@ -9,29 +9,29 @@
   <div class="col-md-6">
     <fieldset>
       <b>Basis of Property Seizure:<em>*</em> <span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span></b> <br/>
-      <%= check_box_tag "safekeeping"%>&nbsp Safekeeping as allowed by law/statute <br>
-      <%= check_box_tag "contraband" %>&nbsp Contraband<br>
-      <%= check_box_tag "evidence" %>&nbsp Evidence<br>
-      <%= check_box_tag "impoundvehicle" %>&nbsp Impound of vehicle<br>
-      <%= check_box_tag "abandonedproperty" %>&nbsp Abandoned property<br>
-      <%= check_box_tag "k12violationschoolpolicy" %>&nbsp Suspected of violation of school policy (if student)<br>
-</fieldset>
-   </div>
+      <%= check_box_tag "property_seized[]", "1" %> Safekeeping as allowed by law/statute <br>
+      <%= check_box_tag "property_seized[]", "2" %> Contraband<br>
+      <%= check_box_tag "property_seized[]", "3" %> Evidence<br>
+      <%= check_box_tag "property_seized[]", "4" %> Impound of vehicle<br>
+      <%= check_box_tag "property_seized[]", "5" %> Abandoned property<br>
+      <%= check_box_tag "property_seized[]", "6" %> Suspected of violation of school policy (if student)<br>
+    </fieldset>
+  </div>
 
    <div class="col-md-6">
      <fieldset>
        <b>Type of property seized:<em>*</em><span href="#" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="Officer's information">  </span> </b> <br/>
-       <%= check_box_tag "firearm_p" %> Firearms <br>
-       <%= check_box_tag "ammunition_p" %>  Ammunition <br>
-       <%= check_box_tag "otherweapon_p" %>  Weapon(s) other than firearm <br>
-       <%= check_box_tag "drugs_p" %>&nbsp  Drugs/narcotics <br>
-       <%= check_box_tag "alcohol_p" %>&nbsp  Alcohol <br>
-       <%= check_box_tag "money_p" %>&nbsp  Money <br>
-       <%= check_box_tag "drugparaphen_p" %>&nbsp  Drug paraphernalia<br>
-       <%= check_box_tag "suspectedstolenproperty_p" %>&nbsp  Suspected stolen property <br>
-       <%= check_box_tag "cellphone_p" %>&nbsp  Cell phone(s) or electronic devices <br>
-       <%= check_box_tag "vehicle_p" %>&nbsp  Vehicle <br>
-       <%= check_box_tag "otherevidencecontraband_p" %>&nbsp  Other contraband or evidence<br>
+       <%= check_box_tag "property_seized_type[]", "1"  %> Firearms <br>
+       <%= check_box_tag "property_seized_type[]", "2"  %>  Ammunition <br>
+       <%= check_box_tag "property_seized_type[]", "3"  %>  Weapon(s) other than firearm <br>
+       <%= check_box_tag "property_seized_type[]", "4"  %> Drugs/narcotics <br>
+       <%= check_box_tag "property_seized_type[]", "5"  %> Alcohol <br>
+       <%= check_box_tag "property_seized_type[]", "6"  %> Money <br>
+       <%= check_box_tag "property_seized_type[]", "7"  %> Drug paraphernalia<br>
+       <%= check_box_tag "property_seized_type[]", "8"  %> Suspected stolen property <br>
+       <%= check_box_tag "property_seized_type[]", "9"  %> Cell phone(s) or electronic devices <br>
+       <%= check_box_tag "property_seized_type[]", "10" %> Vehicle <br>
+       <%= check_box_tag "property_seized_type[]", "11" %> Other contraband or evidence<br>
      </fieldset>
     </div>
   </div>

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get 'result_of_stop'
       get 'contraband_evidence'
       get 'stop_date_entry'
+      get 'stop_summary'
   	end
   end
 
